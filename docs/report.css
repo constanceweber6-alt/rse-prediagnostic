@@ -1,0 +1,64 @@
+/* Printable report (PDF export). Built by JavaScript, only visible when printing. */
+.report { display: none; }
+
+@media print {
+  @page { size: A4; margin: 0; }
+  @page flow { size: A4; margin: 16mm 18mm 16mm; }
+  html, body { background: #fff !important; }
+  body.has-report > *:not(.report) { display: none !important; }
+  body.has-report .report { display: block; }
+
+  .report { font-family: var(--body); color: var(--ink); font-size: 10.5pt; line-height: 1.45; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .rp-page { position: relative; width: 210mm; height: 296mm; padding: 16mm 18mm 14mm; display: flex; flex-direction: column; overflow: hidden; break-after: page; }
+  .rp-page:last-child { break-after: auto; }
+  .rp-top { display: flex; justify-content: space-between; align-items: center; font-size: 9pt; color: var(--muted); padding-bottom: 5mm; border-bottom: 1.5pt solid var(--ink); margin-bottom: 9mm; }
+  .rp-top b { color: var(--ink); font-family: var(--display); font-size: 10.5pt; }
+  .rp-foot { margin-top: auto; padding-top: 4mm; border-top: .5pt solid var(--line); display: flex; justify-content: space-between; gap: 8mm; font-size: 8pt; color: var(--muted); }
+  .rp-title { font-family: var(--display); font-size: 26pt; line-height: 1.1; margin: 0 0 4mm; letter-spacing: -0.01em; }
+  .rp-h2 { font-family: var(--display); font-size: 15pt; margin: 0 0 2mm; }
+  .rp-h3 { font-size: 9pt; font-weight: 600; color: var(--muted); margin: 0 0 3mm; letter-spacing: .02em; }
+  .rp-lead { color: var(--ink-2); margin: 0 0 6mm; }
+  .rp-meta { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 3mm 6mm; margin: 0 0 9mm; font-size: 9pt; }
+  .rp-meta span { display: block; color: var(--muted); font-size: 8pt; }
+  .rp-verdict { display: grid; grid-template-columns: 42mm minmax(0, 1fr); gap: 8mm; align-items: center; padding: 7mm 8mm; border-radius: 4mm; margin-bottom: 9mm; }
+  .rp-score { font-family: var(--display); font-size: 48pt; font-weight: 700; line-height: 1; }
+  .rp-score small { font-size: 14pt; font-weight: 600; color: var(--muted); margin-left: 1mm; }
+  .rp-pill { display: inline-block; font-weight: 600; font-size: 9.5pt; padding: 1mm 3.5mm; border-radius: 10mm; margin-bottom: 2.5mm; }
+  .rp-verdict p { margin: 0; font-size: 11pt; }
+  .rp-cols { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 12mm; margin-bottom: 9mm; }
+  .rp-bar { margin-bottom: 3.5mm; }
+  .rp-bar .lbl { display: flex; justify-content: space-between; font-size: 9.5pt; margin-bottom: 1.2mm; }
+  .rp-bar .lbl b { font-variant-numeric: tabular-nums; }
+  .rp-bar .track { height: 2.4mm; border-radius: 2mm; overflow: hidden; }
+  .rp-bar .track i { display: block; height: 100%; border-radius: 2mm; }
+  .rp-list { margin: 0; padding-left: 4.5mm; display: grid; gap: 1.6mm; font-size: 9.5pt; }
+  .rp-empty { color: var(--muted); font-size: 9.5pt; margin: 0; }
+  .rp-prio { list-style: none; margin: 0; padding: 0; display: grid; gap: 4mm; counter-reset: rp; }
+  .rp-prio li { counter-increment: rp; display: grid; grid-template-columns: 11mm minmax(0, 1fr); gap: 0 3mm; break-inside: avoid; }
+  .rp-prio li::before { content: counter(rp); font-family: var(--display); font-weight: 700; font-size: 20pt; line-height: 1; }
+  .rp-prio .act { font-weight: 600; font-size: 11pt; margin: 0 0 1mm; }
+  .rp-prio .sub { color: var(--muted); font-size: 9pt; margin: 0; }
+  .rp-tag { display: inline-block; font-size: 8pt; font-weight: 600; padding: .4mm 2.2mm; border-radius: 10mm; margin-right: 1.5mm; vertical-align: 1px; }
+  .rp-table { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin-bottom: 9mm; }
+  .rp-table th { text-align: left; font-size: 8pt; font-weight: 600; color: var(--muted); padding: 0 3mm 2.5mm 0; border-bottom: 1pt solid var(--ink); }
+  .rp-table td { padding: 3mm 3mm 3mm 0; border-bottom: .5pt solid var(--line); vertical-align: top; }
+  .rp-table tr { break-inside: avoid; }
+  .rp-table .num { font-family: var(--display); font-weight: 700; width: 8mm; }
+  .rp-fine { font-size: 8pt; color: var(--muted); margin: 0 0 2mm; }
+  .rp-section { margin-bottom: 8mm; }
+  .rp-flow { page: flow; }
+  .rp-flow .rp-top { margin-bottom: 7mm; }
+  .rp-columns { column-count: 2; column-gap: 10mm; }
+  .rp-cat { break-inside: avoid; margin: 0 0 6mm; }
+  .rp-columns .rp-todo { font-size: 9pt; }
+  .rp-columns .rp-cat h3 { font-size: 10.5pt; }
+  .rp-cat h3 { font-family: var(--display); font-size: 11.5pt; margin: 0 0 2mm; display: flex; justify-content: space-between; gap: 4mm; }
+  .rp-cat h3 span { font-family: var(--body); font-size: 8.5pt; font-weight: 500; color: var(--muted); white-space: nowrap; }
+  .rp-todo { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.6mm; font-size: 9.5pt; }
+  .rp-todo li { display: grid; grid-template-columns: 4mm minmax(0, 1fr); gap: 2.5mm; }
+  .rp-todo li::before { content: ""; width: 3mm; height: 3mm; border: .8pt solid var(--ink-2); border-radius: .8mm; margin-top: 1mm; }
+  .rp-prog { display: grid; grid-template-columns: minmax(0, 1fr) 52mm 16mm; gap: 3mm 6mm; align-items: center; font-size: 9.5pt; }
+  .rp-prog .track { height: 2.4mm; border-radius: 2mm; overflow: hidden; }
+  .rp-prog .track i { display: block; height: 100%; }
+  .rp-prog b { text-align: right; font-variant-numeric: tabular-nums; }
+}

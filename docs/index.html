@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="report.css">
 <style>
   .layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 28px; align-items: start; }
   .side { position: sticky; top: 84px; }
@@ -134,7 +135,7 @@
   }
 </style>
 </head>
-<body>
+<body class="has-report">
 <nav class="nav" aria-label="Main">
   <div class="wrap">
     <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span id="brandName"></span></a>
@@ -309,6 +310,8 @@
         Solide: "La démarche est structurée. L'enjeu est maintenant de la déployer dans tous les pays et d'en mesurer les résultats.",
         "Avancé": "Démarche mature. Concentrez vos efforts sur la chaîne d'approvisionnement et sur la preuve des résultats.",
       },
+      rpTool: "Pré-diagnostic RSE", rpPrio: "Vos 3 priorités", rpKpi: "À suivre", rpPlanSub: "Les actions les plus utiles, classées par priorité. La liste complète est dans l'outil en ligne.",
+      rpNum: "N°", rpStrong: (n) => `${n} pratique${n > 1 ? "s" : ""} déployée${n > 1 ? "s" : ""} et mesurée${n > 1 ? "s" : ""} partout`, rpTheme: "Thème", rpAction: "Action", rpPage: (a, b) => `Page ${a} sur ${b}`, rpMade: "Outil gratuit : constanceweber6-alt.github.io/rse-prediagnostic",
       footer: "Projet réalisé par Constance Weber.",
       demoName: "Exemple : filiale IT Asie-Pacifique",
       loadError: "Le questionnaire n'a pas pu être chargé. Rechargez la page.",
@@ -358,6 +361,8 @@
         Good: "The approach is structured. The next step is to deploy it in every country and measure the results.",
         Advanced: "A mature approach. Focus on the supply chain and on proving results.",
       },
+      rpTool: "CSR pre-assessment", rpPrio: "Your 3 priorities", rpKpi: "To track", rpPlanSub: "The most useful actions, ranked by priority. The full list is in the online tool.",
+      rpNum: "No.", rpStrong: (n) => `${n} practice${n > 1 ? "s" : ""} rolled out and measured everywhere`, rpTheme: "Theme", rpAction: "Action", rpPage: (a, b) => `Page ${a} of ${b}`, rpMade: "Free tool: constanceweber6-alt.github.io/rse-prediagnostic",
       footer: "Project by Constance Weber.",
       demoName: "Example: APAC IT subsidiary",
       loadError: "The questionnaire could not be loaded. Reload the page.",
@@ -407,6 +412,8 @@
         "良好": "体制は整っています。次はすべての国に展開し、成果を測定することが課題です。",
         "先進的": "成熟した取り組みです。サプライチェーンと成果の証明に注力しましょう。",
       },
+      rpTool: "CSR簡易診断", rpPrio: "優先すべき3つの取り組み", rpKpi: "追跡指標", rpPlanSub: "効果の高い取り組みを優先順に掲載しています。全項目はオンラインツールで確認できます。",
+      rpNum: "No.", rpStrong: (n) => `全拠点で展開・測定済みの取り組み${n}件`, rpTheme: "テーマ", rpAction: "取り組み", rpPage: (a, b) => `${b}ページ中${a}ページ`, rpMade: "無料ツール：constanceweber6-alt.github.io/rse-prediagnostic",
       footer: "制作：コンスタンス・ウェベール",
       demoName: "例：アジア太平洋のIT子会社",
       loadError: "質問票を読み込めませんでした。ページを再読み込みしてください。",
@@ -662,6 +669,66 @@
     renderThemes();
   }
 
+  // ---------- Printable report: 2 pages, synthesis first ----------
+  function buildReport() {
+    const r = evaluate(), sep = W("sep");
+    const date = new Date().toLocaleDateString(W("locale"), { day: "numeric", month: "long", year: "numeric" });
+    const name = state.name.trim() || T("unnamed");
+    const lvl = L(r.level);
+    const lvlIdx = D.levels.findIndex((l) => L(l.label) === lvl); // 0 = most advanced
+    const pill = [["var(--pine)", "#fff"], ["var(--moss)", "#fff"], ["var(--amber-soft)", "var(--amber-ink)"], ["var(--danger-soft)", "#7A2E12"]][lvlIdx] || ["var(--mist)", "var(--ink)"];
+    const regions = state.regions.map((k) => L(D.regions[k])).join(W("listSep")) || "-";
+    const top = (pageNo) => `<div class="rp-top"><b>${esc(W("rpTool"))}</b><span>${esc(date)}</span></div>`;
+    const foot = (a) => `<div class="rp-foot"><span>${esc(W("rpMade"))}</span><span>${esc(W("rpPage")(a, 2))}</span></div>`;
+    const tags = (a) => `<span class="rp-tag" style="background:var(--mist);color:var(--pine-deep)">${esc(L(D.pillars[a.q.pillar]))}</span>` +
+      (a.quick ? `<span class="rp-tag" style="background:var(--amber-soft);color:var(--amber-ink)">${esc(T("quick_win"))}</span>` : "") +
+      (a.q.regulations.length ? `<span class="rp-tag" style="background:#EEF0EE;color:var(--ink-2)">${esc(W("reg"))}</span>` : "");
+    const prio = r.actions.slice(0, 3);
+    const page1 = `<section class="rp-page">
+      ${top()}
+      <h1 class="rp-title">${esc(name)}</h1>
+      <div class="rp-meta">
+        <div><span>${esc(T("sector"))}</span>${esc(L(D.sectors[state.sector]))}</div>
+        <div><span>${esc(T("entity_type"))}</span>${esc(L(D.entity_types[state.type]))}</div>
+        <div style="grid-column:span 2"><span>${esc(T("regions"))}</span>${esc(regions)}</div>
+      </div>
+      <div class="rp-verdict" style="background:var(--paper)">
+        <div class="rp-score">${Math.round(r.overall)}<small>/100</small></div>
+        <div><span class="rp-pill" style="background:${pill[0]};color:${pill[1]}">${esc(lvl)}</span><p>${esc(W("verdict")[lvl] || "")}</p></div>
+      </div>
+      <div class="rp-cols">
+        <div><p class="rp-h3">${esc(T("by_theme"))}</p>
+          ${pillarKeys().map((k) => `<div class="rp-bar"><div class="lbl"><span>${esc(L(D.pillars[k]))}</span><b>${Math.round(r.scores[k])}</b></div><div class="track" style="background:var(--mist)"><i style="width:${Math.max(1, r.scores[k])}%;background:var(--pine)"></i></div></div>`).join("")}
+        </div>
+        <div><p class="rp-h3">${esc(T("regulations"))}</p>
+          ${r.regs.length ? `<ul class="rp-list">${r.regs.slice(0, 6).map((k) => `<li>${esc(L(D.regulations[k]))}</li>`).join("")}</ul>` : `<p class="rp-empty">${esc(T("no_regulation"))}</p>`}
+        </div>
+      </div>
+      <p class="rp-h3">${esc(W("rpPrio"))}</p>
+      ${prio.length ? `<ol class="rp-prio">${prio.map((a) => `<li><div><p class="act">${esc(L(a.q.action))}</p>
+        <p class="sub">${tags(a)} ${esc(W("rpKpi"))}${esc(sep)}${esc(L(a.q.kpi))}</p></div></li>`).join("")}</ol>` : `<p class="rp-empty">${esc(W("allDone"))}</p>`}
+      ${foot(1)}
+    </section>`;
+    const plan = r.actions.slice(0, 8);
+    const page2 = `<section class="rp-page">
+      ${top()}
+      <h2 class="rp-h2">${esc(T("action_plan"))}</h2>
+      <p class="rp-lead">${esc(W("rpPlanSub"))}</p>
+      ${plan.length ? `<table class="rp-table"><thead><tr><th>${esc(W("rpNum"))}</th><th>${esc(W("rpAction"))}</th><th style="width:44mm">${esc(W("rpTheme"))}</th></tr></thead>
+        <tbody>${plan.map((a, i) => `<tr><td class="num">${i + 1}</td><td>${esc(L(a.q.action))}${a.quick ? ` <span class="rp-tag" style="background:var(--amber-soft);color:var(--amber-ink)">${esc(T("quick_win"))}</span>` : ""}</td><td>${esc(L(D.pillars[a.q.pillar]))}</td></tr>`).join("")}</tbody></table>`
+        : `<p class="rp-empty">${esc(W("allDone"))}</p>`}
+      <div class="rp-section"><p class="rp-h3">${esc(T("strengths"))}</p>
+        ${r.strengths.length ? `<ul class="rp-list">${pillarKeys().map((k) => [k, r.strengths.filter((q) => q.pillar === k).length]).filter(([, n]) => n).map(([k, n]) => `<li>${esc(L(D.pillars[k]))}${esc(sep)}${esc(W("rpStrong")(n))}</li>`).join("")}</ul>` : `<p class="rp-empty">${esc(T("no_strength"))}</p>`}
+      </div>
+      <div style="margin-top:auto">
+        <p class="rp-fine"><b>${esc(T("methodology"))}</b>${esc(sep)}${esc(T("methodology_text"))}</p>
+        <p class="rp-fine">${esc(T("disclaimer"))}</p>
+      </div>
+      ${foot(2)}
+    </section>`;
+    $("report").innerHTML = page1 + page2;
+  }
+
   function renderAll() { renderStatic(); renderRegions(); renderQuestions(); renderResults(); }
 
   function goToQuestion(id) {
@@ -707,11 +774,8 @@
     $("map").addEventListener("click", (e) => { const c = e.target.closest("[data-goto]"); if (c) goToQuestion(c.dataset.goto); });
     $("planFilter").addEventListener("click", (e) => { const b = e.target.closest("[data-quick]"); if (!b) return; ui.planQuick = b.dataset.quick === "true"; ui.planAll = false; renderResults(); });
     $("planMore").addEventListener("click", () => { ui.planAll = !ui.planAll; renderResults(); });
-    $("sPrint").addEventListener("click", () => {
-      ui.planAll = true; ui.planQuick = false; renderResults();
-      document.querySelectorAll("details.sheet").forEach((d) => { d.open = true; });
-      window.print();
-    });
+    $("sPrint").addEventListener("click", () => { buildReport(); window.print(); });
+    window.addEventListener("beforeprint", buildReport);
     $("sShare").addEventListener("click", copyShare);
     $("sharedClear").addEventListener("click", () => { $("sharedBanner").hidden = true; $("sReset").click(); });
     $("ctaDemo").addEventListener("click", () => {
@@ -744,5 +808,6 @@
     .catch(() => { document.querySelector("main").innerHTML = `<div class="panel">${esc(WEB[state.lang].loadError)}</div>`; });
 })();
 </script>
+<div class="report" id="report" aria-hidden="true"></div>
 </body>
 </html>

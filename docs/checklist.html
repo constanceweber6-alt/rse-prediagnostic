@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="report.css">
 <style>
   .hero-row { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 40px; align-items: end; }
   .tally { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 22px; }
@@ -81,7 +82,7 @@
   }
 </style>
 </head>
-<body>
+<body class="has-report">
 <nav class="nav" aria-label="Main">
   <div class="wrap">
     <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span id="brandName"></span></a>
@@ -173,6 +174,10 @@
       none: "Aucune action ne correspond à ce filtre.",
       saved: "Liste téléchargée",
       cleared: "Toutes les actions ont été décochées",
+      rpTool: "Pré-diagnostic RSE", rpTitle: "Avancement du plan d'amélioration RSE", rpDone: (d, t) => `${d} actions faites sur ${t}`,
+      rpByCat: "Avancement par thème", rpQuick: "Actions rapides à lancer ensuite", rpNoQuick: "Toutes les actions rapides sont faites.",
+      rpTodo: "Actions restantes", rpTodoSub: "Classées par thème. Les actions déjà faites ne sont pas reprises.", rpLeft: (n) => `${n} à faire`,
+      rpAllDone: "Toutes les actions sont faites.", rpMade: "Outil gratuit : constanceweber6-alt.github.io/rse-prediagnostic",
       footer: "Projet réalisé par Constance Weber.",
       csvHead: ["Thème", "Action", "Statut", "Action rapide", "Réglementaire"],
       statusDone: "Fait",
@@ -210,6 +215,10 @@
       none: "No action matches this filter.",
       saved: "List downloaded",
       cleared: "Every action has been unticked",
+      rpTool: "CSR pre-assessment", rpTitle: "CSR improvement plan progress", rpDone: (d, t) => `${d} of ${t} actions done`,
+      rpByCat: "Progress by theme", rpQuick: "Quick wins to start next", rpNoQuick: "All quick wins are done.",
+      rpTodo: "Remaining actions", rpTodoSub: "Grouped by theme. Actions already done are not listed.", rpLeft: (n) => `${n} to do`,
+      rpAllDone: "All actions are done.", rpMade: "Free tool: constanceweber6-alt.github.io/rse-prediagnostic",
       footer: "Project by Constance Weber.",
       csvHead: ["Theme", "Action", "Status", "Quick win", "Regulatory"],
       statusDone: "Done",
@@ -247,6 +256,10 @@
       none: "条件に合う取り組みはありません。",
       saved: "リストをダウンロードしました",
       cleared: "すべてのチェックを外しました",
+      rpTool: "CSR簡易診断", rpTitle: "CSR改善計画の進捗", rpDone: (d, t) => `${t}件中${d}件を実施済み`,
+      rpByCat: "テーマ別の進捗", rpQuick: "次に着手したいクイックウィン", rpNoQuick: "クイックウィンはすべて実施済みです。",
+      rpTodo: "未実施の取り組み", rpTodoSub: "テーマ別に掲載しています。実施済みの項目は含みません。", rpLeft: (n) => `残り${n}件`,
+      rpAllDone: "すべての取り組みが実施済みです。", rpMade: "無料ツール：constanceweber6-alt.github.io/rse-prediagnostic",
       footer: "制作：コンスタンス・ウェベール",
       csvHead: ["テーマ", "取り組み", "状況", "すぐに着手可能", "規制関連"],
       statusDone: "実施済み",
@@ -417,6 +430,45 @@
     toast(X("saved"));
   }
 
+  // ---------- Printable report: summary page, then the remaining actions ----------
+  function buildReport() {
+    const all = allItems(), done = all.filter((i) => state.done[i.id]);
+    const date = new Date().toLocaleDateString(X("locale"), { day: "numeric", month: "long", year: "numeric" });
+    const pct = all.length ? Math.round(done.length / all.length * 100) : 0;
+    const top = `<div class="rp-top"><b>${esc(X("rpTool"))}</b><span>${esc(date)}</span></div>`;
+    const quick = all.filter((i) => i.tags.includes("quick") && !state.done[i.id]).slice(0, 6);
+    const catOf = (item) => CATS.find((c) => c.items.includes(item));
+    const page1 = `<section class="rp-page">
+      ${top}
+      <h1 class="rp-title">${esc(X("rpTitle"))}</h1>
+      <div class="rp-verdict" style="background:var(--paper);grid-template-columns:42mm minmax(0,1fr)">
+        <div class="rp-score">${pct}<small>%</small></div>
+        <div><p style="font-weight:600;margin-bottom:3mm">${esc(X("rpDone")(done.length, all.length))}</p>
+          <div class="rp-bar" style="margin:0"><div class="track" style="background:var(--mist)"><i style="width:${Math.max(1, pct)}%;background:var(--pine)"></i></div></div></div>
+      </div>
+      <div class="rp-section"><p class="rp-h3">${esc(X("rpByCat"))}</p>
+        <div class="rp-prog">${CATS.map((c) => {
+          const d = c.items.filter((i) => state.done[i.id]).length, p = Math.round(d / c.items.length * 100);
+          return `<span>${esc(c.name[lang])}</span><div class="track" style="background:var(--mist)"><i style="width:${Math.max(1, p)}%;background:var(--pine)"></i></div><b>${d}/${c.items.length}</b>`;
+        }).join("")}</div>
+      </div>
+      <div class="rp-section"><p class="rp-h3">${esc(X("rpQuick"))}</p>
+        ${quick.length ? `<ul class="rp-todo">${quick.map((i) => `<li><span>${esc(i.label[lang])} <span class="rp-fine" style="display:inline">(${esc(catOf(i).name[lang])})</span></span></li>`).join("")}</ul>` : `<p class="rp-empty">${esc(X("rpNoQuick"))}</p>`}
+      </div>
+      <div class="rp-foot"><span>${esc(X("rpMade"))}</span><span></span></div>
+    </section>`;
+    const left = CATS.map((c) => ({ c, items: c.items.filter((i) => !state.done[i.id]) })).filter((x) => x.items.length);
+    const flow = `<section class="rp-flow">
+      ${top}
+      <h2 class="rp-h2">${esc(X("rpTodo"))}</h2>
+      <p class="rp-lead">${esc(X("rpTodoSub"))}</p>
+      ${left.length ? `<div class="rp-columns">` + left.map(({ c, items }) => `<div class="rp-cat"><h3>${esc(c.name[lang])}<span>${esc(X("rpLeft")(items.length))}</span></h3>
+        <ul class="rp-todo">${items.map((i) => `<li><span>${esc(i.label[lang])}${i.tags.includes("quick") ? ` <span class="rp-tag" style="background:var(--amber-soft);color:var(--amber-ink)">${esc(X("quick"))}</span>` : ""}</span></li>`).join("")}</ul></div>`).join("") + `</div>`
+        : `<p class="rp-empty">${esc(X("rpAllDone"))}</p>`}
+    </section>`;
+    $("report").innerHTML = page1 + (left.length ? flow : "");
+  }
+
   function bind() {
     document.querySelectorAll(".lang button").forEach((b) => b.addEventListener("click", () => { lang = b.dataset.lang; save(); renderAll(); }));
     $("search").addEventListener("input", (e) => { query = e.target.value.trim(); renderCats(); });
@@ -444,7 +496,8 @@
       }
     });
     $("dlCsv").addEventListener("click", downloadCsv);
-    $("dlPdf").addEventListener("click", () => window.print());
+    $("dlPdf").addEventListener("click", () => { buildReport(); window.print(); });
+    window.addEventListener("beforeprint", buildReport);
     $("share").addEventListener("click", copyShare);
     $("sharedClose").addEventListener("click", () => { $("sharedBanner").hidden = true; });
     $("reset").addEventListener("click", () => {
@@ -467,5 +520,6 @@
     .catch(() => { $("cats").innerHTML = `<div class="empty-state">${esc(X("loadError"))}</div>`; });
 })();
 </script>
+<div class="report" id="report" aria-hidden="true"></div>
 </body>
 </html>
