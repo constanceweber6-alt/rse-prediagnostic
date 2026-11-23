@@ -1,0 +1,869 @@
+[
+ {
+  "id": "GOV",
+  "name": {
+   "fr": "Gouvernance et stratégie RSE",
+   "en": "CSR governance and strategy"
+  },
+  "items": [
+   {
+    "id": "GOV01",
+    "label": {
+     "fr": "Nommer un responsable RSE avec un mandat clair de la direction",
+     "en": "Appoint a CSR lead with a clear mandate from top management"
+    },
+    "tags": [
+     "quick"
+    ]
+   },
+   {
+    "id": "GOV02",
+    "label": {
+     "fr": "Réaliser une analyse de double matérialité",
+     "en": "Run a double materiality assessment"
+    },
+    "tags": [
+     "reg"
+    ]
+   },
+   {
+    "id": "GOV03",
+    "label": {
+     "fr": "Formaliser une feuille de route RSE à 3 ans avec des objectifs chiffrés",
+     "en": "Formalise a 3-year CSR roadmap with quantified targets"
+    },
+    "tags": []
+   },
+   {
+    "id": "GOV04",
+    "label": {
+     "fr": "Intégrer des critères RSE dans la rémunération variable des dirigeants",
+     "en": "Add CSR criteria to executive variable pay"
+    },
+    "tags": []
+   },
+   {
+    "id": "GOV05",
+    "label": {
+     "fr": "Créer un comité RSE qui se réunit au moins chaque trimestre",
+     "en": "Set up a CSR committee that meets at least every quarter"
+    },
+    "tags": [
+     "quick"
+    ]
+   },
+   {
+    "id": "GOV06",
+    "label": {
+     "fr": "Nommer un relais RSE dans chaque pays ou filiale",
+     "en": "Appoint a CSR contact in each country or subsidiary"
+    },
+    "tags": []
+   },
+   {
+    "id": "GOV07",
+    "label": {
+     "fr": "Cartographier les attentes des parties prenantes (clients, salariés, investisseurs)",
+     "en": "Map stakeholder expectations (customers, employees, investors)"
+    },
+    "tags": []
+   },
+   {
+    "id": "GOV08",
+    "label": {
+     "fr": "Présenter les résultats RSE au conseil d'administration une fois par an",
+     "en": "Present CSR results to the board once a year"
+    },
+    "tags": [
+     "quick"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "CLI",
+  "name": {
+   "fr": "Climat et énergie",
+   "en": "Climate and energy"
+  },
+  "items": [
+   {
+    "id": "CLI01",
+    "label": {
+     "fr": "Réaliser un bilan carbone scopes 1 et 2",
+     "en": "Measure scope 1 and 2 emissions"
+    },
+    "tags": [
+     "reg"
+    ]
+   },
+   {
+    "id": "CLI02",
+    "label": {
+     "fr": "Étendre le bilan carbone au scope 3 (achats, cloud, transport, déplacements)",
+     "en": "Extend the carbon footprint to scope 3 (purchases, cloud, transport, travel)"
+    },
+    "tags": [
+     "reg"
+    ]
+   },
+   {
+    "id": "CLI03",
+    "label": {
+     "fr": "Fixer des objectifs de réduction alignés sur l'Accord de Paris",
+     "en": "Set reduction targets aligned with the Paris Agreement"
+    },
+    "tags": []
+   },
+   {
+    "id": "CLI04",
+    "label": {
+     "fr": "Faire valider les objectifs par la SBTi",
+     "en": "Have targets validated by the SBTi"
+    },
+    "tags": []
+   },
+   {
+    "id": "CLI05",
+    "label": {
+     "fr": "Passer à un contrat d'électricité renouvelable",
+     "en": "Switch to a renewable electricity contract"
+    },
+    "tags": [
+     "quick"
+    ]
+   },
+   {
+    "id": "CLI06",
+    "label": {
+     "fr": "Suivre les consommations d'énergie par site chaque mois",
+     "en": "Track energy use per site every month"
+    },
+    "tags": [
+     "quick"
+    ]
+   },
+   {
+    "id": "CLI07",
+    "label": {
+     "fr": "Mettre en place une politique de déplacements professionnels bas carbone",
+     "en": "Set up a low-carbon business travel policy"
+    },
+    "tags": []
+   },
+   {
+    "id": "CLI08",
+    "label": {
+     "fr": "Analyser les risques climatiques physiques sur les sites clés",
+     "en": "Assess physical climate risks for key sites"
+    },
+    "tags": [
+     "reg"
+    ]
+   },
+   {
+    "id": "CLI09",
+    "label": {
+     "fr": "Réaliser un audit énergétique des bâtiments",
+     "en": "Run an energy audit of buildings"
+    },
+    "tags": [
+     "reg"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "GIT",
+  "name": {
+   "fr": "Green IT et numérique responsable",
+   "en": "Green IT and responsible digital"
+  },
+  "items": [
+   {
+    "id": "GIT01",
+    "label": {
+     "fr": "Faire l'inventaire du parc informatique et de son empreinte",
+     "en": "Inventory IT equipment and its footprint"
+    },
+    "tags": []
+   },
+   {
+    "id": "GIT02",
+    "label": {
+     "fr": "Allonger la durée d'utilisation des ordinateurs et smartphones",
+     "en": "Extend the lifetime of laptops and smartphones"
+    },
+    "tags": [
+     "quick"
+    ]
+   },
+   {
+    "id": "GIT03",
+    "label": {
+     "fr": "Acheter du matériel reconditionné quand c'est possible",
+     "en": "Buy refurbished equipment when possible"
+    },
+    "tags": [
+     "quick"
+    ]
+   },
+   {
+    "id": "GIT04",
+    "label": {
+     "fr": "Passer par une filière certifiée pour le recyclage des déchets électroniques",
+     "en": "Use a certified partner for e-waste recycling"
+    },
+    "tags": [
+     "reg"
+    ]
+   },
+   {
+    "id": "GIT05",
+    "label": {
+     "fr": "Choisir des hébergeurs et clouds avec énergie renouvelable et bon PUE",
+     "en": "Choose hosting and cloud providers with renewable energy and a good PUE"
+    },
+    "tags": []
+   },
+   {
+    "id": "GIT06",
+    "label": {
+     "fr": "Supprimer les données et environnements inutilisés dans le cloud",
+     "en": "Delete unused data and environments in the cloud"
+    },
+    "tags": [
+     "quick"
+    ]
+   },
+   {
+    "id": "GIT07",
+    "label": {
+     "fr": "Intégrer l'écoconception dans les projets logiciels",
+     "en": "Include eco-design in software projects"
+    },
+    "tags": []
+   },
+   {
+    "id": "GIT08",
+    "label": {
+     "fr": "Sensibiliser les équipes à la sobriété numérique",
+     "en": "Raise team awareness of digital sobriety"
+    },
+    "tags": [
+     "quick"
+    ]
+   },
+   {
+    "id": "GIT09",
+    "label": {
+     "fr": "Mesurer l'empreinte des usages d'IA générative",
+     "en": "Measure the footprint of generative AI use"
+    },
+    "tags": []
+   }
+  ]
+ },
+ {
+  "id": "LOG",
+  "name": {
+   "fr": "Logistique, transport et emballages",
+   "en": "Logistics, transport and packaging"
+  },
+  "items": [
+   {
+    "id": "LOG01",
+    "label": {
+     "fr": "Mesurer les émissions du transport par flux et par mode",
+     "en": "Measure transport emissions by flow and mode"
+    },
+    "tags": []
+   },
+   {
+    "id": "LOG02",
+    "label": {
+     "fr": "Ajouter des critères carbone dans le choix des transporteurs",
+     "en": "Add carbon criteria to carrier selection"
+    },
+    "tags": []
+   },
+   {
+    "id": "LOG03",
+    "label": {
+     "fr": "Tester le report modal (rail, fluvial) sur un flux pilote",
+     "en": "Pilot modal shift (rail, river) on one flow"
+    },
+    "tags": []
+   },
+   {
+    "id": "LOG04",
+    "label": {
+     "fr": "Optimiser le taux de remplissage des camions",
+     "en": "Improve truck fill rates"
+    },
+    "tags": []
+   },
+   {
+    "id": "LOG05",
+    "label": {
+     "fr": "Réduire les emballages plastiques à usage unique",
+     "en": "Reduce single-use plastic packaging"
+    },
+    "tags": [
+     "reg"
+    ]
+   },
+   {
+    "id": "LOG06",
+    "label": {
+     "fr": "Mettre en place des emballages réutilisables avec les partenaires clés",
+     "en": "Set up reusable packaging with key partners"
+    },
+    "tags": []
+   },
+   {
+    "id": "LOG07",
+    "label": {
+     "fr": "Rejoindre un programme de transport responsable (type EVE ou SmartWay)",
+     "en": "Join a responsible freight programme (such as SmartWay)"
+    },
+    "tags": []
+   },
+   {
+    "id": "LOG08",
+    "label": {
+     "fr": "Rationaliser les stocks pour limiter les pertes et la casse",
+     "en": "Streamline inventory to limit waste and damage"
+    },
+    "tags": []
+   }
+  ]
+ },
+ {
+  "id": "SOC",
+  "name": {
+   "fr": "Social et conditions de travail",
+   "en": "Labour and working conditions"
+  },
+  "items": [
+   {
+    "id": "SOC01",
+    "label": {
+     "fr": "Tenir à jour l'évaluation des risques professionnels de chaque site",
+     "en": "Keep the occupational risk assessment of each site up to date"
+    },
+    "tags": [
+     "reg"
+    ]
+   },
+   {
+    "id": "SOC02",
+    "label": {
+     "fr": "Suivre le taux de fréquence et de gravité des accidents",
+     "en": "Track accident frequency and severity rates"
+    },
+    "tags": []
+   },
+   {
+    "id": "SOC03",
+    "label": {
+     "fr": "Étendre les exigences santé et sécurité aux sous-traitants",
+     "en": "Extend health and safety requirements to subcontractors"
+    },
+    "tags": []
+   },
+   {
+    "id": "SOC04",
+    "label": {
+     "fr": "Définir un socle social commun à tous les pays",
+     "en": "Define a common labour baseline for every country"
+    },
+    "tags": []
+   },
+   {
+    "id": "SOC05",
+    "label": {
+     "fr": "Garantir un salaire décent dans tous les pays d'implantation",
+     "en": "Guarantee a living wage in every country of operation"
+    },
+    "tags": []
+   },
+   {
+    "id": "SOC06",
+    "label": {
+     "fr": "Mener une enquête annuelle d'engagement des salariés",
+     "en": "Run a yearly employee engagement survey"
+    },
+    "tags": [
+     "quick"
+    ]
+   },
+   {
+    "id": "SOC07",
+    "label": {
+     "fr": "Construire un plan de formation sur le numérique et l'IA",
+     "en": "Build a training plan on digital and AI"
+    },
+    "tags": []
+   },
+   {
+    "id": "SOC08",
+    "label": {
+     "fr": "Encadrer le droit à la déconnexion et le télétravail",
+     "en": "Frame the right to disconnect and remote work"
+    },
+    "tags": [
+     "quick"
+    ]
+   },
+   {
+    "id": "SOC09",
+    "label": {
+     "fr": "Proposer un accompagnement psychologique confidentiel",
+     "en": "Offer confidential psychological support"
+    },
+    "tags": []
+   }
+  ]
+ },
+ {
+  "id": "DEI",
+  "name": {
+   "fr": "Diversité et inclusion",
+   "en": "Diversity and inclusion"
+  },
+  "items": [
+   {
+    "id": "DEI01",
+    "label": {
+     "fr": "Publier une politique diversité et non-discrimination",
+     "en": "Publish a diversity and non-discrimination policy"
+    },
+    "tags": [
+     "quick"
+    ]
+   },
+   {
+    "id": "DEI02",
+    "label": {
+     "fr": "Mesurer l'écart de rémunération femmes-hommes",
+     "en": "Measure the gender pay gap"
+    },
+    "tags": [
+     "reg"
+    ]
+   },
+   {
+    "id": "DEI03",
+    "label": {
+     "fr": "Fixer un objectif de femmes dans les postes de direction",
+     "en": "Set a target for women in leadership roles"
+    },
+    "tags": []
+   },
+   {
+    "id": "DEI04",
+    "label": {
+     "fr": "Former les managers aux biais dans le recrutement",
+     "en": "Train managers on hiring bias"
+    },
+    "tags": []
+   },
+   {
+    "id": "DEI05",
+    "label": {
+     "fr": "Rendre les postes et les outils accessibles aux personnes en situation de handicap",
+     "en": "Make roles and tools accessible to people with disabilities"
+    },
+    "tags": [
+     "reg"
+    ]
+   },
+   {
+    "id": "DEI06",
+    "label": {
+     "fr": "Soutenir des réseaux internes (femmes, LGBT+, générations)",
+     "en": "Support employee networks (women, LGBT+, generations)"
+    },
+    "tags": [
+     "quick"
+    ]
+   },
+   {
+    "id": "DEI07",
+    "label": {
+     "fr": "Accueillir des alternants et des profils en reconversion",
+     "en": "Welcome apprentices and career changers"
+    },
+    "tags": []
+   }
+  ]
+ },
+ {
+  "id": "ETH",
+  "name": {
+   "fr": "Éthique et conformité",
+   "en": "Ethics and compliance"
+  },
+  "items": [
+   {
+    "id": "ETH01",
+    "label": {
+     "fr": "Rédiger un code de conduite et le traduire pour chaque pays",
+     "en": "Write a code of conduct and translate it for each country"
+    },
+    "tags": []
+   },
+   {
+    "id": "ETH02",
+    "label": {
+     "fr": "Former tous les salariés au code de conduite chaque année",
+     "en": "Train all employees on the code of conduct every year"
+    },
+    "tags": []
+   },
+   {
+    "id": "ETH03",
+    "label": {
+     "fr": "Cartographier les risques de corruption par pays et par processus",
+     "en": "Map corruption risks by country and process"
+    },
+    "tags": [
+     "reg"
+    ]
+   },
+   {
+    "id": "ETH04",
+    "label": {
+     "fr": "Encadrer les cadeaux, invitations et conflits d'intérêts",
+     "en": "Frame gifts, hospitality and conflicts of interest"
+    },
+    "tags": [
+     "quick",
+     "reg"
+    ]
+   },
+   {
+    "id": "ETH05",
+    "label": {
+     "fr": "Vérifier l'intégrité des intermédiaires et partenaires",
+     "en": "Run integrity checks on intermediaries and partners"
+    },
+    "tags": [
+     "reg"
+    ]
+   },
+   {
+    "id": "ETH06",
+    "label": {
+     "fr": "Mettre en place un canal d'alerte multilingue ouvert aux tiers",
+     "en": "Set up a multilingual whistleblowing channel open to third parties"
+    },
+    "tags": [
+     "reg"
+    ]
+   },
+   {
+    "id": "ETH07",
+    "label": {
+     "fr": "Publier une politique sur le lobbying et les contributions politiques",
+     "en": "Publish a policy on lobbying and political contributions"
+    },
+    "tags": []
+   },
+   {
+    "id": "ETH08",
+    "label": {
+     "fr": "Encadrer l'usage éthique de l'IA (charte, comité, revue des cas d'usage)",
+     "en": "Frame the ethical use of AI (charter, committee, use case review)"
+    },
+    "tags": [
+     "reg"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "CYB",
+  "name": {
+   "fr": "Cybersécurité et données",
+   "en": "Cybersecurity and data"
+  },
+  "items": [
+   {
+    "id": "CYB01",
+    "label": {
+     "fr": "Rédiger une politique de sécurité de l'information",
+     "en": "Write an information security policy"
+    },
+    "tags": [
+     "quick"
+    ]
+   },
+   {
+    "id": "CYB02",
+    "label": {
+     "fr": "Activer l'authentification multifacteur pour tous les comptes",
+     "en": "Enable multi-factor authentication for every account"
+    },
+    "tags": [
+     "quick"
+    ]
+   },
+   {
+    "id": "CYB03",
+    "label": {
+     "fr": "Lancer une démarche de certification ISO 27001",
+     "en": "Start an ISO 27001 certification programme"
+    },
+    "tags": [
+     "reg"
+    ]
+   },
+   {
+    "id": "CYB04",
+    "label": {
+     "fr": "Organiser une sensibilisation au phishing chaque année",
+     "en": "Run phishing awareness training every year"
+    },
+    "tags": [
+     "quick"
+    ]
+   },
+   {
+    "id": "CYB05",
+    "label": {
+     "fr": "Tester le plan de continuité et de reprise d'activité",
+     "en": "Test the business continuity and disaster recovery plan"
+    },
+    "tags": [
+     "reg"
+    ]
+   },
+   {
+    "id": "CYB06",
+    "label": {
+     "fr": "Tenir à jour le registre des traitements de données personnelles",
+     "en": "Keep the records of personal data processing up to date"
+    },
+    "tags": [
+     "reg"
+    ]
+   },
+   {
+    "id": "CYB07",
+    "label": {
+     "fr": "Encadrer les transferts de données hors Union européenne",
+     "en": "Frame data transfers outside the European Union"
+    },
+    "tags": [
+     "reg"
+    ]
+   },
+   {
+    "id": "CYB08",
+    "label": {
+     "fr": "Ajouter des exigences de sécurité dans les contrats prestataires",
+     "en": "Add security requirements to provider contracts"
+    },
+    "tags": []
+   }
+  ]
+ },
+ {
+  "id": "ACH",
+  "name": {
+   "fr": "Achats responsables et vigilance",
+   "en": "Sustainable procurement and due diligence"
+  },
+  "items": [
+   {
+    "id": "ACH01",
+    "label": {
+     "fr": "Rédiger une politique d'achats responsables",
+     "en": "Write a sustainable procurement policy"
+    },
+    "tags": [
+     "quick"
+    ]
+   },
+   {
+    "id": "ACH02",
+    "label": {
+     "fr": "Faire signer un code de conduite à tous les fournisseurs",
+     "en": "Have every supplier sign a code of conduct"
+    },
+    "tags": [
+     "quick"
+    ]
+   },
+   {
+    "id": "ACH03",
+    "label": {
+     "fr": "Cartographier les risques fournisseurs par pays et par catégorie",
+     "en": "Map supplier risks by country and category"
+    },
+    "tags": [
+     "reg"
+    ]
+   },
+   {
+    "id": "ACH04",
+    "label": {
+     "fr": "Demander une évaluation RSE aux fournisseurs stratégiques",
+     "en": "Ask strategic suppliers for a CSR assessment"
+    },
+    "tags": []
+   },
+   {
+    "id": "ACH05",
+    "label": {
+     "fr": "Fixer un score RSE minimum pour référencer un fournisseur",
+     "en": "Set a minimum CSR score to list a supplier"
+    },
+    "tags": []
+   },
+   {
+    "id": "ACH06",
+    "label": {
+     "fr": "Auditer sur site les fournisseurs les plus à risque",
+     "en": "Audit the highest-risk suppliers on site"
+    },
+    "tags": []
+   },
+   {
+    "id": "ACH07",
+    "label": {
+     "fr": "Suivre les plans d'actions correctives des fournisseurs",
+     "en": "Track supplier corrective action plans"
+    },
+    "tags": []
+   },
+   {
+    "id": "ACH08",
+    "label": {
+     "fr": "Identifier les fournisseurs de rang 2 sur les catégories à risque",
+     "en": "Identify tier-2 suppliers in high-risk categories"
+    },
+    "tags": [
+     "reg"
+    ]
+   },
+   {
+    "id": "ACH09",
+    "label": {
+     "fr": "Lancer un programme climat avec les plus gros fournisseurs émetteurs",
+     "en": "Launch a climate programme with the largest emitting suppliers"
+    },
+    "tags": []
+   },
+   {
+    "id": "ACH10",
+    "label": {
+     "fr": "Respecter les délais de paiement des PME",
+     "en": "Pay small suppliers on time"
+    },
+    "tags": [
+     "quick",
+     "reg"
+    ]
+   },
+   {
+    "id": "ACH11",
+    "label": {
+     "fr": "Publier un plan de vigilance et son compte rendu de mise en œuvre",
+     "en": "Publish a due diligence plan and its implementation report"
+    },
+    "tags": [
+     "reg"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "REP",
+  "name": {
+   "fr": "Reporting et communication",
+   "en": "Reporting and communication"
+  },
+  "items": [
+   {
+    "id": "REP01",
+    "label": {
+     "fr": "Définir une liste d'indicateurs RSE suivis chaque année",
+     "en": "Define a list of CSR KPIs tracked every year"
+    },
+    "tags": [
+     "quick"
+    ]
+   },
+   {
+    "id": "REP02",
+    "label": {
+     "fr": "Collecter les données RSE de toutes les filiales avec un outil commun",
+     "en": "Collect CSR data from every subsidiary with a shared tool"
+    },
+    "tags": []
+   },
+   {
+    "id": "REP03",
+    "label": {
+     "fr": "Préparer le reporting CSRD (normes ESRS)",
+     "en": "Prepare CSRD reporting (ESRS standards)"
+    },
+    "tags": [
+     "reg"
+    ]
+   },
+   {
+    "id": "REP04",
+    "label": {
+     "fr": "Faire vérifier les données RSE par un tiers",
+     "en": "Have CSR data verified by a third party"
+    },
+    "tags": [
+     "reg"
+    ]
+   },
+   {
+    "id": "REP05",
+    "label": {
+     "fr": "Répondre aux questionnaires RSE des clients avec un dossier de preuves prêt",
+     "en": "Answer customer CSR questionnaires with a ready evidence pack"
+    },
+    "tags": [
+     "quick"
+    ]
+   },
+   {
+    "id": "REP06",
+    "label": {
+     "fr": "Publier un rapport ou une page RSE accessible au public",
+     "en": "Publish a public CSR report or page"
+    },
+    "tags": []
+   },
+   {
+    "id": "REP07",
+    "label": {
+     "fr": "Éviter l'écoblanchiment : chaque affirmation appuyée par une preuve",
+     "en": "Avoid greenwashing: back every claim with evidence"
+    },
+    "tags": [
+     "quick",
+     "reg"
+    ]
+   },
+   {
+    "id": "REP08",
+    "label": {
+     "fr": "Partager les résultats RSE avec les salariés en interne",
+     "en": "Share CSR results with employees internally"
+    },
+    "tags": [
+     "quick"
+    ]
+   }
+  ]
+ }
+]

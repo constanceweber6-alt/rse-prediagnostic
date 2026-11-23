@@ -50,3 +50,13 @@ data = {
 out = ROOT / "docs" / "questionnaire.json"
 out.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
 print(f"Wrote {out.relative_to(ROOT)} ({len(data['questions'])} questions)")
+
+# Checklist of generic improvement actions (docs/checklist.html)
+sys.path.insert(0, str(ROOT / "tools"))
+from checklist_data import as_json  # noqa: E402
+
+checklist = as_json()
+out2 = ROOT / "docs" / "checklist.json"
+out2.write_text(json.dumps(checklist, ensure_ascii=False, indent=1), encoding="utf-8")
+total = sum(len(c["items"]) for c in checklist)
+print(f"Wrote {out2.relative_to(ROOT)} ({len(checklist)} categories, {total} actions)")

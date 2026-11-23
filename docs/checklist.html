@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Axes d'amélioration RSE · IT et supply chain</title>
+<meta name="description" content="85 actions RSE concrètes classées par thème, à cocher et à télécharger.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='4' y='4' width='44' height='44' rx='8' fill='%231E5B45'/%3E%3Crect x='52' y='4' width='44' height='44' rx='8' fill='%236E9C82'/%3E%3Crect x='4' y='52' width='44' height='44' rx='8' fill='%23C8D8C5'/%3E%3Crect x='52' y='52' width='44' height='44' rx='8' fill='%23F0D9A6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .hero-row { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 40px; align-items: end; }
+  .tally { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 22px; }
+  .tally-num { font-family: var(--display); font-weight: 700; font-size: 56px; line-height: .9; letter-spacing: -0.03em; }
+  .tally-num small { font-size: 18px; color: var(--muted); font-weight: 600; letter-spacing: 0; }
+  .tally .meter { margin: 14px 0 8px; height: 10px; }
+  .tally-split { display: flex; gap: 16px; font-size: 13px; color: var(--muted); }
+
+  .toolbar {
+    position: sticky; top: 64px; z-index: 10; background: rgba(243, 245, 241, .95); backdrop-filter: blur(6px);
+    padding: 14px 0; border-bottom: 1px solid var(--line); margin-bottom: 24px;
+  }
+  .toolbar .wrap { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .search { position: relative; flex: 1 1 240px; max-width: 340px; }
+  .search input { padding-left: 38px; }
+  .search svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); pointer-events: none; }
+  .tally-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+
+  .cl-layout { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 32px; align-items: start; }
+  .toc { position: sticky; top: 150px; list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+  .toc a { display: grid; grid-template-columns: 1fr auto; gap: 4px 10px; padding: 9px 12px; border-radius: var(--r-sm); text-decoration: none; color: var(--ink-2); font-size: 14px; }
+  .toc a:hover { background: var(--mist); }
+  .toc .n { font-size: 12px; color: var(--muted); font-weight: 600; }
+  .toc .meter { grid-column: 1 / -1; height: 4px; }
+
+  .cat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); margin-bottom: 18px; scroll-margin-top: 150px; overflow: hidden; }
+  .cat-head { display: grid; grid-template-columns: 1fr auto auto; gap: 16px; align-items: center; padding: 18px 22px; }
+  .cat-toggle { display: flex; align-items: center; gap: 12px; border: 0; background: none; padding: 0; cursor: pointer; text-align: left; }
+  .cat-toggle h2 { font-family: var(--display); font-size: 21px; margin: 0; letter-spacing: -0.01em; }
+  .chev { transition: transform .2s; flex: none; }
+  .cat[data-open="false"] .chev { transform: rotate(-90deg); }
+  .cat[data-open="false"] .items { display: none; }
+  .cat-progress { display: grid; gap: 4px; justify-items: end; min-width: 120px; }
+  .cat-progress span { font-size: 13px; font-weight: 600; }
+  .cat-progress .meter { width: 120px; height: 6px; }
+  .items { list-style: none; margin: 0; padding: 0 8px 8px; }
+  .item { border-top: 1px solid var(--line); }
+  .item label { display: grid; grid-template-columns: 26px 1fr auto; gap: 12px; align-items: start; padding: 12px 14px; cursor: pointer; border-radius: var(--r-sm); }
+  .item label:hover { background: var(--paper); }
+  .item input { appearance: none; width: 22px; height: 22px; border: 1.5px solid #9AA8A0; border-radius: 6px; margin: 1px 0 0; display: grid; place-items: center; cursor: pointer; background: var(--surface); }
+  .item input:checked { background: var(--pine); border-color: var(--pine); }
+  .item input:checked::after { content: ""; width: 6px; height: 11px; border: solid #fff; border-width: 0 2.5px 2.5px 0; transform: rotate(45deg) translate(-1px, -1px); }
+  .item .txt { font-size: 15px; }
+  .item input:checked + .txt { color: var(--muted); text-decoration: line-through; text-decoration-color: rgba(102, 116, 110, .6); }
+  .item .tags { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+  .empty-state { text-align: center; padding: 48px 20px; color: var(--muted); }
+  .toast {
+    position: fixed; bottom: 24px; left: 50%; transform: translate(-50%, 20px); background: var(--ink); color: #fff;
+    padding: 10px 16px; border-radius: var(--r-md); font-size: 14px; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
+  }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  @media (max-width: 900px) {
+    .cl-layout { grid-template-columns: minmax(0, 1fr); }
+    .toc { display: none; }
+    .hero-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .cat-head { grid-template-columns: 1fr; gap: 10px; }
+    .cat-progress { justify-items: start; }
+    .item label { grid-template-columns: 26px 1fr; }
+    .item .tags { grid-column: 2; justify-content: flex-start; }
+    .toolbar { position: static; }
+  }
+  @media print {
+    .toolbar, .toc, .cat-head .btn, .toast, .tally-actions { display: none !important; }
+    .cl-layout { display: block; }
+    .cat { border: 0; margin-bottom: 12px; break-inside: avoid-page; }
+    .cat[data-open="false"] .items { display: block; }
+    .chev { display: none; }
+    .item label { padding: 4px 0; }
+    .item input { width: 14px; height: 14px; }
+    .item input:checked::after { width: 4px; height: 8px; }
+  }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span id="brandName"></span></a>
+    <div class="nav-links">
+      <a href="index.html" id="navDiag"></a>
+      <a href="checklist.html" aria-current="page" id="navCheck"></a>
+    </div>
+    <div class="lang" role="group" aria-label="Langue / Language">
+      <button type="button" data-lang="fr">FR</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-row">
+    <div>
+      <h1 id="title"></h1>
+      <p class="lead" id="lead"></p>
+    </div>
+    <div class="tally" aria-live="polite">
+      <div class="tally-num"><span id="doneCount">0</span><small> / <span id="totalCount">0</span></small></div>
+      <div class="meter"><i id="doneBar"></i></div>
+      <div class="tally-split"><span id="tallyText"></span></div>
+      <div class="tally-actions">
+        <button class="btn btn-primary btn-sm" type="button" id="dlCsv"></button>
+        <button class="btn btn-secondary btn-sm" type="button" id="dlPdf"></button>
+        <button class="btn btn-quiet btn-sm" type="button" id="reset"></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="wrap">
+    <label class="search">
+      <span class="visually-hidden" id="searchLabel"></span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#66746E" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input class="input" type="search" id="search" autocomplete="off">
+    </label>
+    <div class="chips" id="filters" role="group"></div>
+  </div>
+</div>
+
+<main class="wrap cl-layout">
+  <ul class="toc" id="toc"></ul>
+  <div>
+    <div class="print-only">
+      <h1 id="printTitle" style="font-family:var(--display);margin:0 0 4px"></h1>
+      <p class="sub" id="printMeta"></p>
+    </div>
+    <div id="cats"></div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span id="footerText"></span>
+    <span><a href="https://github.com/constanceweber6-alt/rse-prediagnostic">GitHub</a> &nbsp; <a href="https://www.linkedin.com/in/constance-weber/">LinkedIn</a></span>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(() => {
+  const TXT = {
+    fr: {
+      brand: "Pré-diagnostic RSE",
+      navDiag: "Diagnostic",
+      navCheck: "Axes d'amélioration",
+      title: (n) => `${n} axes d'amélioration RSE`,
+      lead: "Des actions concrètes pour les entreprises IT et supply chain, classées par thème. Cochez ce qui est déjà fait, filtrez ce qu'il reste, puis téléchargez votre liste pour la partager avec vos équipes.",
+      tally: (d, q) => `actions faites, dont ${q} actions rapides`,
+      search: "Rechercher une action",
+      filters: { all: "Toutes", todo: "À faire", done: "Faites", quick: "Actions rapides", reg: "Réglementaire" },
+      csv: "Télécharger (CSV)",
+      pdf: "Exporter en PDF",
+      reset: "Tout décocher",
+      resetConfirm: "Décocher toutes les actions ?",
+      checkAll: "Tout cocher",
+      uncheckAll: "Tout décocher",
+      quick: "Action rapide",
+      reg: "Réglementaire",
+      none: "Aucune action ne correspond à ce filtre.",
+      saved: "Liste téléchargée",
+      cleared: "Toutes les actions ont été décochées",
+      footer: "Projet réalisé par Constance Weber.",
+      csvHead: ["Thème", "Action", "Statut", "Action rapide", "Réglementaire"],
+      statusDone: "Fait",
+      statusTodo: "À faire",
+      yes: "Oui",
+      printMeta: (d, t, date) => `${d} actions faites sur ${t}, au ${date}`,
+      file: "axes-amelioration-rse.csv",
+    },
+    en: {
+      brand: "CSR Pre-assessment",
+      navDiag: "Assessment",
+      navCheck: "Improvement checklist",
+      title: (n) => `${n} CSR improvement actions`,
+      lead: "Concrete actions for IT and supply chain companies, grouped by theme. Tick what is already done, filter what is left, then download your list to share it with your teams.",
+      tally: (d, q) => `actions done, including ${q} quick wins`,
+      search: "Search an action",
+      filters: { all: "All", todo: "To do", done: "Done", quick: "Quick wins", reg: "Regulatory" },
+      csv: "Download (CSV)",
+      pdf: "Export as PDF",
+      reset: "Untick all",
+      resetConfirm: "Untick every action?",
+      checkAll: "Tick all",
+      uncheckAll: "Untick all",
+      quick: "Quick win",
+      reg: "Regulatory",
+      none: "No action matches this filter.",
+      saved: "List downloaded",
+      cleared: "Every action has been unticked",
+      footer: "Project by Constance Weber.",
+      csvHead: ["Theme", "Action", "Status", "Quick win", "Regulatory"],
+      statusDone: "Done",
+      statusTodo: "To do",
+      yes: "Yes",
+      printMeta: (d, t, date) => `${d} of ${t} actions done, as of ${date}`,
+      file: "csr-improvement-actions.csv",
+    },
+  };
+  const STORE = "csr-checklist-v1", LANG_KEY = "csr-lang";
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+  const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+
+  let CATS = [];
+  let state = { done: {}, closed: {} };
+  let lang = "fr", filter = "all", query = "";
+
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORE) || "null");
+    if (saved) state = { ...state, ...saved };
+    lang = localStorage.getItem(LANG_KEY) || ((navigator.language || "fr").toLowerCase().startsWith("fr") ? "fr" : "en");
+  } catch (e) {}
+  const save = () => { try { localStorage.setItem(STORE, JSON.stringify(state)); localStorage.setItem(LANG_KEY, lang); } catch (e) {} };
+  const X = (k) => TXT[lang][k];
+
+  let toastTimer;
+  function toast(msg) {
+    const t = $("toast"); t.textContent = msg; t.classList.add("show");
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove("show"), 2200);
+  }
+
+  function visible(item) {
+    const isDone = !!state.done[item.id];
+    if (filter === "todo" && isDone) return false;
+    if (filter === "done" && !isDone) return false;
+    if (filter === "quick" && !item.tags.includes("quick")) return false;
+    if (filter === "reg" && !item.tags.includes("reg")) return false;
+    if (query && !norm(item.label[lang]).includes(norm(query))) return false;
+    return true;
+  }
+
+  function renderStatic() {
+    document.documentElement.lang = lang;
+    const n = CATS.reduce((s, c) => s + c.items.length, 0);
+    document.title = X("title")(n);
+    document.querySelectorAll(".lang button").forEach((b) => { const on = b.dataset.lang === lang; b.classList.toggle("on", on); b.setAttribute("aria-pressed", on); });
+    $("brandName").textContent = X("brand");
+    $("navDiag").textContent = X("navDiag");
+    $("navCheck").textContent = X("navCheck");
+    $("title").textContent = X("title")(n);
+    $("lead").textContent = X("lead");
+    $("searchLabel").textContent = X("search");
+    $("search").placeholder = X("search");
+    $("dlCsv").textContent = X("csv");
+    $("dlPdf").textContent = X("pdf");
+    $("reset").textContent = X("reset");
+    $("footerText").textContent = X("footer");
+    $("printTitle").textContent = X("title")(n);
+    $("filters").innerHTML = Object.entries(X("filters")).map(([k, v]) =>
+      `<button type="button" class="chip btn-sm" data-filter="${k}" aria-pressed="${filter === k}">${esc(v)}</button>`).join("");
+  }
+
+  function renderTally() {
+    const all = CATS.flatMap((c) => c.items);
+    const done = all.filter((i) => state.done[i.id]);
+    const quick = done.filter((i) => i.tags.includes("quick")).length;
+    $("doneCount").textContent = done.length;
+    $("totalCount").textContent = all.length;
+    $("doneBar").style.width = (100 * done.length / all.length) + "%";
+    $("tallyText").textContent = X("tally")(done.length, quick);
+    const date = new Date().toLocaleDateString(lang === "fr" ? "fr-FR" : "en-GB");
+    $("printMeta").textContent = X("printMeta")(done.length, all.length, date);
+    $("toc").innerHTML = CATS.map((c) => {
+      const d = c.items.filter((i) => state.done[i.id]).length;
+      return `<li><a href="#cat-${c.id}"><span>${esc(c.name[lang])}</span><span class="n">${d}/${c.items.length}</span><span class="meter"><i style="width:${100 * d / c.items.length}%"></i></span></a></li>`;
+    }).join("");
+    for (const c of CATS) {
+      const d = c.items.filter((i) => state.done[i.id]).length;
+      const head = $("cat-" + c.id);
+      if (!head) continue;
+      head.querySelector(".cat-progress span").textContent = `${d}/${c.items.length}`;
+      head.querySelector(".cat-progress i").style.width = (100 * d / c.items.length) + "%";
+      head.querySelector("[data-all]").textContent = d === c.items.length ? X("uncheckAll") : X("checkAll");
+    }
+  }
+
+  function renderCats() {
+    const html = CATS.map((c) => {
+      const items = c.items.filter(visible);
+      if (!items.length) return "";
+      const open = !state.closed[c.id] || query !== "";
+      const rows = items.map((i) => {
+        const tags = [
+          i.tags.includes("quick") ? `<span class="tag tag-quick">${esc(X("quick"))}</span>` : "",
+          i.tags.includes("reg") ? `<span class="tag tag-reg">${esc(X("reg"))}</span>` : "",
+        ].join("");
+        return `<li class="item"><label><input type="checkbox" data-id="${i.id}" ${state.done[i.id] ? "checked" : ""}><span class="txt">${esc(i.label[lang])}</span><span class="tags">${tags}</span></label></li>`;
+      }).join("");
+      return `<section class="cat" id="cat-${c.id}" data-open="${open}">
+        <div class="cat-head">
+          <button type="button" class="cat-toggle" data-toggle="${c.id}" aria-expanded="${open}" aria-controls="items-${c.id}">
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3E4E47" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            <h2>${esc(c.name[lang])}</h2>
+          </button>
+          <div class="cat-progress"><span></span><div class="meter"><i></i></div></div>
+          <button type="button" class="btn btn-quiet btn-sm" data-all="${c.id}"></button>
+        </div>
+        <ul class="items" id="items-${c.id}">${rows}</ul>
+      </section>`;
+    }).join("");
+    $("cats").innerHTML = html || `<div class="empty-state">${esc(X("none"))}</div>`;
+    renderTally();
+  }
+
+  function renderAll() { renderStatic(); renderCats(); }
+
+  function downloadCsv() {
+    const q = (s) => `"${String(s).replace(/"/g, '""')}"`;
+    const rows = [X("csvHead").map(q).join(";")];
+    for (const c of CATS) for (const i of c.items) {
+      rows.push([c.name[lang], i.label[lang], state.done[i.id] ? X("statusDone") : X("statusTodo"),
+        i.tags.includes("quick") ? X("yes") : "", i.tags.includes("reg") ? X("yes") : ""].map(q).join(";"));
+    }
+    const blob = new Blob(["﻿" + rows.join("\r\n")], { type: "text/csv;charset=utf-8" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob); a.download = X("file");
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    toast(X("saved"));
+  }
+
+  function bind() {
+    document.querySelectorAll(".lang button").forEach((b) => b.addEventListener("click", () => { lang = b.dataset.lang; save(); renderAll(); }));
+    $("search").addEventListener("input", (e) => { query = e.target.value.trim(); renderCats(); });
+    $("filters").addEventListener("click", (e) => { const b = e.target.closest("[data-filter]"); if (!b) return; filter = b.dataset.filter; renderStatic(); renderCats(); });
+    $("cats").addEventListener("change", (e) => {
+      const cb = e.target.closest("input[data-id]"); if (!cb) return;
+      if (cb.checked) state.done[cb.dataset.id] = true; else delete state.done[cb.dataset.id];
+      save();
+      if (filter === "todo" || filter === "done") renderCats(); else renderTally();
+    });
+    $("cats").addEventListener("click", (e) => {
+      const t = e.target.closest("[data-toggle]");
+      if (t) {
+        const id = t.dataset.toggle, sec = $("cat-" + id), open = sec.dataset.open !== "true";
+        sec.dataset.open = String(open); t.setAttribute("aria-expanded", String(open));
+        if (open) delete state.closed[id]; else state.closed[id] = true;
+        save(); return;
+      }
+      const all = e.target.closest("[data-all]");
+      if (all) {
+        const cat = CATS.find((c) => c.id === all.dataset.all);
+        const allDone = cat.items.every((i) => state.done[i.id]);
+        for (const i of cat.items) { if (allDone) delete state.done[i.id]; else state.done[i.id] = true; }
+        save(); renderCats();
+      }
+    });
+    $("dlCsv").addEventListener("click", downloadCsv);
+    $("dlPdf").addEventListener("click", () => window.print());
+    $("reset").addEventListener("click", () => {
+      if (!Object.keys(state.done).length) return;
+      if (!window.confirm(X("resetConfirm"))) return;
+      state.done = {}; save(); renderCats(); toast(X("cleared"));
+    });
+  }
+
+  fetch("checklist.json")
+    .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then((data) => { CATS = data; bind(); renderAll(); })
+    .catch(() => { $("cats").innerHTML = `<div class="empty-state">${lang === "fr" ? "La liste n'a pas pu être chargée. Rechargez la page." : "The list could not be loaded. Reload the page."}</div>`; });
+})();
+</script>
+</body>
+</html>
