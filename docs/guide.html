@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bien démarrer en RSE · IT et supply chain</title>
+<meta name="description" content="Les 7 questions centrales de la RSE, une méthode en 5 étapes et des guides gratuits pour démarrer.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='4' y='4' width='44' height='44' rx='8' fill='%231E5B45'/%3E%3Crect x='52' y='4' width='44' height='44' rx='8' fill='%236E9C82'/%3E%3Crect x='4' y='52' width='44' height='44' rx='8' fill='%23C8D8C5'/%3E%3Crect x='52' y='52' width='44' height='44' rx='8' fill='%23F0D9A6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .section { margin-bottom: 28px; }
+  .section > h2 { font-family: var(--display); font-size: 28px; letter-spacing: -0.01em; margin: 0 0 6px; }
+  .section > p.sub { margin-bottom: 18px; max-width: 70ch; }
+
+  /* ISO 26000 map */
+  .iso { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+  .iso-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); padding: 16px 18px; display: grid; gap: 8px; align-content: start; }
+  .iso-card h3 { margin: 0; font-size: 16px; }
+  .iso-card p { margin: 0; font-size: 14px; color: var(--ink-2); }
+  .cov { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; border-radius: 6px; padding: 2px 8px; width: fit-content; }
+  .cov::before { content: ""; width: 8px; height: 8px; border-radius: 50%; }
+  .cov-full { background: #DCEAE2; color: var(--pine-deep); }
+  .cov-full::before { background: var(--pine); }
+  .cov-partial { background: #EEF4ED; color: var(--ink-2); }
+  .cov-partial::before { background: var(--moss); }
+  .cov-next { background: var(--amber-soft); color: var(--amber-ink); }
+  .cov-next::before { background: var(--amber); }
+
+  /* Steps: a real sequence, so numbered */
+  .steps { list-style: none; margin: 0; padding: 0; counter-reset: step; display: grid; gap: 12px; }
+  .steps li { counter-increment: step; display: grid; grid-template-columns: 52px 1fr; gap: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 20px 22px; }
+  .steps li::before { content: counter(step); width: 44px; height: 44px; border-radius: 12px; background: var(--ink); color: #fff; display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 20px; }
+  .steps h3 { margin: 2px 0 6px; font-size: 18px; }
+  .steps p { margin: 0; color: var(--ink-2); max-width: 70ch; }
+  .steps .btn { margin-top: 12px; }
+
+  .benefits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .benefit { border-top: 3px solid var(--pine); background: var(--surface); border-radius: 0 0 var(--r-md) var(--r-md); padding: 16px 18px; }
+  .benefit h3 { margin: 0 0 6px; font-size: 16px; }
+  .benefit p { margin: 0; font-size: 14px; color: var(--ink-2); }
+
+  .resources { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .resources li { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); padding: 16px 18px; display: grid; gap: 4px; }
+  .resources .who { font-size: 13px; color: var(--muted); }
+  .resources .what { font-weight: 600; }
+  .resources p { margin: 0; font-size: 14px; color: var(--ink-2); }
+  .resources a { font-size: 14px; font-weight: 600; width: fit-content; }
+
+  @media (max-width: 900px) { .benefits { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) {
+    .benefits { grid-template-columns: 1fr; }
+    .steps li { grid-template-columns: 1fr; gap: 10px; }
+  }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span id="brandName"></span></a>
+    <div class="nav-links">
+      <a href="index.html" id="navDiag"></a>
+      <a href="checklist.html" id="navCheck"></a>
+      <a href="guide.html" aria-current="page" id="navGuide"></a>
+    </div>
+    <div class="lang" role="group" aria-label="Langue / Language / 言語">
+      <button type="button" data-lang="fr">FR</button>
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="ja" lang="ja">日本語</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1 id="title"></h1>
+    <p class="lead" id="lead"></p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="index.html" id="ctaDiag"></a>
+      <a class="btn btn-secondary" href="checklist.html" id="ctaCheck"></a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="section" aria-labelledby="hSteps">
+    <h2 id="hSteps"></h2>
+    <p class="sub" id="subSteps"></p>
+    <ol class="steps" id="steps"></ol>
+  </section>
+
+  <section class="section" aria-labelledby="hIso">
+    <h2 id="hIso"></h2>
+    <p class="sub" id="subIso"></p>
+    <div class="iso" id="iso"></div>
+  </section>
+
+  <section class="section" aria-labelledby="hBenefits">
+    <h2 id="hBenefits"></h2>
+    <div class="benefits" id="benefits"></div>
+  </section>
+
+  <section class="section" aria-labelledby="hRes">
+    <h2 id="hRes"></h2>
+    <p class="sub" id="subRes"></p>
+    <ul class="resources" id="resources"></ul>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span id="footerText"></span>
+    <span><a href="https://github.com/constanceweber6-alt/rse-prediagnostic">GitHub</a> &nbsp; <a href="https://www.linkedin.com/in/constance-weber/">LinkedIn</a></span>
+  </div>
+</footer>
+
+<script>
+(() => {
+  // Content written for this site. Sources are listed in the "resources" section.
+  const C = {
+    fr: {
+      brand: "Pré-diagnostic RSE", navDiag: "Diagnostic", navCheck: "Axes d'amélioration", navGuide: "Bien démarrer",
+      title: "Bien démarrer en RSE",
+      lead: "La RSE n'est pas réservée aux grands groupes. Voici une méthode simple en 5 étapes, les grands sujets à couvrir et des guides gratuits pour aller plus loin.",
+      ctaDiag: "Faire le diagnostic", ctaCheck: "Voir les 85 axes d'amélioration",
+      hSteps: "La méthode en 5 étapes",
+      subSteps: "Les guides de référence s'accordent sur le même chemin. L'important est d'avancer pas à pas, à votre rythme.",
+      steps: [
+        ["Faire l'état des lieux", "Vous ne partez pas de zéro. Tri des déchets, formations, achats locaux, matériel reconditionné : beaucoup d'entreprises agissent déjà sans parler de RSE. Listez ce qui existe, puis mesurez votre maturité.", ["index.html", "Lancer le diagnostic"]],
+        ["Identifier vos parties prenantes", "Qui est concerné par votre activité ? Commencez par les plus proches (salariés, clients, fournisseurs), puis élargissez (pouvoirs publics, associations, riverains, investisseurs). Demandez-vous qui est impacté et qui a de l'influence.", null],
+        ["Choisir vos enjeux prioritaires", "Croisez deux regards : ce qui compte pour vos parties prenantes et ce qui pèse sur votre activité. C'est le principe de la double matérialité. Pour démarrer, 3 à 5 enjeux suffisent.", null],
+        ["Construire un plan d'actions avec des indicateurs", "Commencez par les actions rapides, puis planifiez les chantiers plus lourds. Associez à chaque action un indicateur simple pour suivre vos progrès dans le temps.", ["checklist.html", "Piocher dans les 85 actions"]],
+        ["Embarquer les équipes et communiquer", "Impliquez les salariés dès le début (ambassadeurs, idées d'amélioration, gestes du quotidien). Communiquez avec des preuves pour éviter l'écoblanchiment, et refaites le point chaque année.", null],
+      ],
+      hIso: "Les 7 questions centrales de la RSE",
+      subIso: "La norme internationale ISO 26000 organise la RSE autour de 7 questions centrales. Voici comment l'outil les couvre aujourd'hui.",
+      cov: { full: "Couvert", partial: "En partie", next: "Prochaine version" },
+      iso: [
+        ["Gouvernance de l'organisation", "partial", "Pilotage, comité RSE, feuille de route : dans la checklist, thème Gouvernance et stratégie."],
+        ["Droits de l'homme", "full", "Cartographie des risques, vigilance fournisseurs : dans le diagnostic et la checklist."],
+        ["Relations et conditions de travail", "full", "Santé et sécurité, socle social, compétences, diversité."],
+        ["Environnement", "full", "Climat, Green IT, transport et emballages."],
+        ["Loyauté des pratiques", "full", "Anticorruption, dispositif d'alerte, achats responsables."],
+        ["Questions relatives aux consommateurs", "partial", "Données personnelles et cybersécurité sont couvertes. Information des clients et sécurité des produits arrivent ensuite."],
+        ["Communautés et développement local", "next", "Achats locaux, partenariats avec des écoles, mécénat de compétences : à venir grâce à vos retours."],
+      ],
+      hBenefits: "Pourquoi s'y mettre",
+      benefits: [
+        ["Attirer et fidéliser", "Les candidats regardent de plus en plus l'engagement de leur futur employeur, et les équipes restent plus volontiers dans une entreprise qui agit."],
+        ["Anticiper la réglementation", "S'organiser tôt évite les mises en conformité dans l'urgence et prépare aux demandes des grands clients."],
+        ["Gagner en performance", "Économies d'énergie, clients rassurés, fournisseurs fidélisés : la RSE est aussi un levier économique."],
+        ["Renforcer la résilience", "Mieux connaître ses risques aide à anticiper les crises et à orienter sa stratégie sur le long terme."],
+      ],
+      hRes: "Pour aller plus loin",
+      subRes: "Des guides gratuits et reconnus, qui ont aussi servi de base pour enrichir cet outil.",
+      open: "Consulter",
+      footer: "Projet réalisé par Constance Weber.",
+    },
+    en: {
+      brand: "CSR Pre-assessment", navDiag: "Assessment", navCheck: "Improvement checklist", navGuide: "Getting started",
+      title: "Getting started with CSR",
+      lead: "CSR is not only for large groups. Here is a simple 5-step method, the main topics to cover and free guides to go further.",
+      ctaDiag: "Take the assessment", ctaCheck: "See the 85 improvement actions",
+      hSteps: "The 5-step method",
+      subSteps: "Reference guides agree on the same path. What matters is moving step by step, at your own pace.",
+      steps: [
+        ["Take stock", "You are not starting from scratch. Waste sorting, training, local purchasing, refurbished equipment: many companies already act without calling it CSR. List what exists, then measure your maturity.", ["index.html", "Start the assessment"]],
+        ["Identify your stakeholders", "Who is affected by your business? Start with the closest (employees, customers, suppliers), then widen the circle (public authorities, associations, neighbours, investors). Ask who is impacted and who has influence.", null],
+        ["Choose your priority topics", "Cross two views: what matters to your stakeholders and what weighs on your business. This is the double materiality principle. To start, 3 to 5 topics are enough.", null],
+        ["Build an action plan with KPIs", "Start with quick wins, then plan the heavier projects. Give each action a simple KPI to track progress over time.", ["checklist.html", "Pick from the 85 actions"]],
+        ["Involve your teams and communicate", "Involve employees from the start (ambassadors, improvement ideas, everyday habits). Communicate with evidence to avoid greenwashing, and review progress every year.", null],
+      ],
+      hIso: "The 7 core subjects of CSR",
+      subIso: "The international standard ISO 26000 organises CSR around 7 core subjects. Here is how the tool covers them today.",
+      cov: { full: "Covered", partial: "Partly", next: "Next version" },
+      iso: [
+        ["Organisational governance", "partial", "Steering, CSR committee, roadmap: in the checklist, Governance and strategy theme."],
+        ["Human rights", "full", "Risk mapping, supplier due diligence: in the assessment and the checklist."],
+        ["Labour practices", "full", "Health and safety, labour baseline, skills, diversity."],
+        ["The environment", "full", "Climate, Green IT, transport and packaging."],
+        ["Fair operating practices", "full", "Anti-corruption, whistleblowing, sustainable procurement."],
+        ["Consumer issues", "partial", "Personal data and cybersecurity are covered. Customer information and product safety come next."],
+        ["Community involvement and development", "next", "Local purchasing, school partnerships, skills-based volunteering: coming thanks to your feedback."],
+      ],
+      hBenefits: "Why it is worth it",
+      benefits: [
+        ["Attract and retain talent", "Candidates increasingly look at their future employer's commitment, and teams stay longer in a company that acts."],
+        ["Anticipate regulation", "Getting organised early avoids rushed compliance and prepares you for large customers' requests."],
+        ["Improve performance", "Energy savings, reassured customers, loyal suppliers: CSR is also an economic lever."],
+        ["Build resilience", "Knowing your risks better helps anticipate crises and steer your long-term strategy."],
+      ],
+      hRes: "Go further",
+      subRes: "Free, recognised guides (in French) that also served as a basis to enrich this tool.",
+      open: "Open",
+      footer: "Project by Constance Weber.",
+    },
+    ja: {
+      brand: "CSR事前診断", navDiag: "診断", navCheck: "改善チェックリスト", navGuide: "はじめに",
+      title: "CSRをはじめるために",
+      lead: "CSRは大企業だけのものではありません。シンプルな5つのステップ、取り組むべき主要テーマ、さらに学ぶための無料ガイドを紹介します。",
+      ctaDiag: "診断を受ける", ctaCheck: "85の改善策を見る",
+      hSteps: "5つのステップ",
+      subSteps: "主要なガイドはいずれも同じ道筋を示しています。大切なのは、自社のペースで一歩ずつ進めることです。",
+      steps: [
+        ["現状を把握する", "ゼロから始めるわけではありません。ごみの分別、研修、地元からの購買、再生品の活用など、CSRと呼ばずにすでに取り組んでいる企業は多くあります。今ある取り組みを書き出し、成熟度を測りましょう。", ["index.html", "診断を始める"]],
+        ["ステークホルダーを特定する", "自社の事業に関わるのは誰でしょうか。まずは身近な人々（従業員、顧客、サプライヤー）から始め、行政、団体、地域住民、投資家へと広げます。誰が影響を受け、誰が影響力を持つかを考えましょう。", null],
+        ["優先テーマを選ぶ", "ステークホルダーにとって重要なことと、自社の事業に影響することの2つの視点を重ね合わせます。これがダブルマテリアリティの考え方です。最初は3〜5のテーマで十分です。", null],
+        ["指標を伴う行動計画を立てる", "すぐに着手できる施策から始め、負担の大きい取り組みは計画的に進めます。各施策にシンプルな指標を設定し、進捗を継続的に確認しましょう。", ["checklist.html", "85の取り組みから選ぶ"]],
+        ["チームを巻き込み、発信する", "最初から従業員を巻き込みましょう（アンバサダー、改善のアイデア、日々の行動）。グリーンウォッシングを避けるために根拠を示して発信し、毎年見直しを行います。", null],
+      ],
+      hIso: "CSRの7つの中核主題",
+      subIso: "国際規格ISO 26000は、CSRを7つの中核主題で整理しています。本ツールの現在の対応状況は次のとおりです。",
+      cov: { full: "対応済み", partial: "一部対応", next: "次のバージョン" },
+      iso: [
+        ["組織統治", "partial", "推進体制、CSR委員会、ロードマップ：チェックリストの「ガバナンス・戦略」で扱っています。"],
+        ["人権", "full", "リスクの洗い出し、サプライヤーのデューデリジェンス：診断とチェックリストで扱っています。"],
+        ["労働慣行", "full", "安全衛生、共通労働基準、スキル、ダイバーシティ。"],
+        ["環境", "full", "気候変動、グリーンIT、輸送・梱包。"],
+        ["公正な事業慣行", "full", "腐敗防止、内部通報、持続可能な調達。"],
+        ["消費者課題", "partial", "個人情報とサイバーセキュリティは対応済みです。顧客への情報提供と製品の安全性は今後追加します。"],
+        ["コミュニティへの参画・発展", "next", "地元からの購買、学校との連携、プロボノ：皆さまのご意見をもとに追加予定です。"],
+      ],
+      hBenefits: "取り組むメリット",
+      benefits: [
+        ["人材の獲得と定着", "求職者は将来の勤務先の取り組みを重視するようになっており、行動する企業には人材が定着しやすくなります。"],
+        ["規制への先回り", "早めに体制を整えることで、慌てた対応を避け、大手顧客からの要請にも備えられます。"],
+        ["業績の向上", "エネルギーの節約、顧客の信頼、サプライヤーとの関係強化など、CSRは経済的なメリットにもつながります。"],
+        ["レジリエンスの強化", "自社のリスクを把握することで、危機に備え、長期的な戦略を描きやすくなります。"],
+      ],
+      hRes: "さらに学ぶために",
+      subRes: "本ツールの充実にも参考にした、無料で信頼できるガイドです（フランス語）。",
+      open: "見る",
+      footer: "制作：コンスタンス・ウェベール",
+    },
+  };
+  const RESOURCES = [
+    { who: "Bpifrance, 2021", what: "RSE, de l'intention à la mise en œuvre",
+      desc: { fr: "Une collection de guides pratiques organisée selon l'ISO 26000, avec les obligations réglementaires et des pistes d'actions pour les TPE, PME et ETI.",
+              en: "A collection of practical guides organised around ISO 26000, covering regulatory requirements and action ideas for small and mid-sized companies.",
+              ja: "ISO 26000に沿って構成された実践ガイド集。中小企業・中堅企業向けに、規制上の義務と取り組みのヒントをまとめています。" },
+      url: null },
+    { who: "Crowe France, 2024", what: "RSE : 10 fiches pratiques",
+      desc: { fr: "Dix fiches concrètes : structurer sa démarche, choisir ses indicateurs, démarrer la CSRD, bilan carbone, économie circulaire, achats responsables, droits humains.",
+              en: "Ten hands-on sheets: structuring your approach, choosing KPIs, starting CSRD reporting, carbon footprint, circular economy, sustainable procurement, human rights.",
+              ja: "推進体制づくり、指標の選び方、CSRD対応、カーボンフットプリント、サーキュラーエコノミー、持続可能な調達、人権など、10の実践シート。" },
+      url: "https://www.crowe.com/fr/ficorec/news/2024-rse-10-fiches-pratiques" },
+    { who: "KPMG France et Chaire Impact Positif d'Audencia, 2022", what: "Guide des bonnes pratiques RSE",
+      desc: { fr: "Des exemples concrets : inclusion et diversité, numérique responsable, labellisation B Corp, mécénat de compétences, intrapreneuriat.",
+              en: "Concrete examples: inclusion and diversity, responsible digital, B Corp certification, skills-based volunteering, intrapreneurship.",
+              ja: "インクルージョンとダイバーシティ、責任あるデジタル、Bコープ認証、プロボノ、社内起業などの具体例。" },
+      url: "https://kpmg.com/fr/fr/home/insights/2022/03/guide-bonnes-pratiques-rse.html" },
+    { who: "AKTO et branche des commerces de gros, 2024", what: "Référentiel RSE et autodiagnostic",
+      desc: { fr: "Un référentiel sectoriel en 4 thématiques et 16 enjeux, avec une échelle de maturité, des indicateurs et un autodiagnostic.",
+              en: "A sector framework with 4 themes and 16 topics, a maturity scale, KPIs and a self-assessment.",
+              ja: "4つのテーマと16の課題で構成された業界向けの枠組み。成熟度の段階、指標、自己診断ツールを備えています。" },
+      url: "https://www.akto.fr/mettre-en-place-une-demarche-rse-commercesdegros/" },
+  ];
+  const LANG_KEY = "csr-lang";
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+  let lang = "fr";
+  try {
+    const nav = (navigator.language || "fr").toLowerCase();
+    lang = localStorage.getItem(LANG_KEY) || (nav.startsWith("fr") ? "fr" : nav.startsWith("ja") ? "ja" : "en");
+  } catch (e) {}
+  if (!C[lang]) lang = "fr";
+
+  function render() {
+    const t = C[lang];
+    document.documentElement.lang = lang;
+    document.title = t.title;
+    document.querySelectorAll(".lang button").forEach((b) => { const on = b.dataset.lang === lang; b.classList.toggle("on", on); b.setAttribute("aria-pressed", on); });
+    for (const k of ["brand", "navDiag", "navCheck", "navGuide", "title", "lead", "ctaDiag", "ctaCheck", "hSteps", "subSteps", "hIso", "subIso", "hBenefits", "hRes", "subRes"]) {
+      const el = $(k === "brand" ? "brandName" : k); if (el) el.textContent = t[k];
+    }
+    $("footerText").textContent = t.footer;
+    $("steps").innerHTML = t.steps.map(([h, p, link]) =>
+      `<li><div><h3>${esc(h)}</h3><p>${esc(p)}</p>${link ? `<a class="btn btn-secondary btn-sm" href="${link[0]}">${esc(link[1])}</a>` : ""}</div></li>`).join("");
+    $("iso").innerHTML = t.iso.map(([h, cov, p]) =>
+      `<div class="iso-card"><span class="cov cov-${cov}">${esc(t.cov[cov])}</span><h3>${esc(h)}</h3><p>${esc(p)}</p></div>`).join("");
+    $("benefits").innerHTML = t.benefits.map(([h, p]) => `<div class="benefit"><h3>${esc(h)}</h3><p>${esc(p)}</p></div>`).join("");
+    $("resources").innerHTML = RESOURCES.map((r) =>
+      `<li><span class="who">${esc(r.who)}</span><span class="what">${esc(r.what)}</span><p>${esc(r.desc[lang])}</p>${r.url ? `<a href="${r.url}" target="_blank" rel="noopener">${esc(t.open)}</a>` : ""}</li>`).join("");
+  }
+
+  document.querySelectorAll(".lang button").forEach((b) => b.addEventListener("click", () => {
+    lang = b.dataset.lang;
+    try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+    render();
+  }));
+  render();
+})();
+</script>
+</body>
+</html>

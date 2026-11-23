@@ -88,6 +88,7 @@
     <div class="nav-links">
       <a href="index.html" id="navDiag"></a>
       <a href="checklist.html" aria-current="page" id="navCheck"></a>
+      <a href="guide.html" id="navGuide"></a>
     </div>
     <div class="lang" role="group" aria-label="Langue / Language / 言語">
       <button type="button" data-lang="fr">FR</button>
@@ -155,6 +156,7 @@
       brand: "Pré-diagnostic RSE",
       navDiag: "Diagnostic",
       navCheck: "Axes d'amélioration",
+      navGuide: "Bien démarrer",
       title: (n) => `${n} axes d'amélioration RSE`,
       lead: "Des actions concrètes pour les entreprises IT et supply chain, classées par thème. Cochez ce qui est déjà fait, filtrez ce qu'il reste, puis téléchargez votre liste pour la partager avec vos équipes.",
       tally: (d, q) => `actions faites, dont ${q} actions rapides`,
@@ -191,6 +193,7 @@
       brand: "CSR Pre-assessment",
       navDiag: "Assessment",
       navCheck: "Improvement checklist",
+      navGuide: "Getting started",
       title: (n) => `${n} CSR improvement actions`,
       lead: "Concrete actions for IT and supply chain companies, grouped by theme. Tick what is already done, filter what is left, then download your list to share it with your teams.",
       tally: (d, q) => `actions done, including ${q} quick wins`,
@@ -227,6 +230,7 @@
       brand: "CSR事前診断",
       navDiag: "診断",
       navCheck: "改善チェックリスト",
+      navGuide: "はじめに",
       title: (n) => `CSR改善のための${n}の取り組み`,
       lead: "IT・サプライチェーン企業向けの具体的な取り組みを、テーマ別にまとめました。実施済みの項目にチェックを入れ、残りを絞り込み、リストをダウンロードしてチームと共有できます。",
       tally: (d, q) => `件が実施済み（うち、すぐに着手可能なもの${q}件）`,
@@ -327,6 +331,7 @@
     $("brandName").textContent = X("brand");
     $("navDiag").textContent = X("navDiag");
     $("navCheck").textContent = X("navCheck");
+    $("navGuide").textContent = X("navGuide");
     $("title").textContent = X("title")(n);
     $("lead").textContent = X("lead");
     $("searchLabel").textContent = X("search");

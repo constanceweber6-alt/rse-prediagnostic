@@ -164,7 +164,8 @@ footer.site .wrap { display: flex; justify-content: space-between; gap: 16px; fl
 
 @media (max-width: 720px) {
   .nav .wrap { gap: 10px; height: auto; padding-top: 10px; padding-bottom: 10px; flex-wrap: wrap; }
-  .nav-links { order: 3; width: 100%; margin-left: 0; }
+  .nav-links { order: 3; width: 100%; margin-left: 0; flex-wrap: wrap; }
+  .nav-links a { padding: 6px 12px; font-size: 14px; }
   .panel { padding: 20px; }
   .hero { padding-top: 36px; }
 }
