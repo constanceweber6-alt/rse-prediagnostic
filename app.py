@@ -24,9 +24,10 @@ from scoring import Profile, evaluate
 st.set_page_config(page_title="CSR pre-assessment", page_icon="🌱", layout="wide")
 
 # Language
+LANG_CHOICES = {"Français": "fr", "English": "en", "日本語": "ja"}
 with st.sidebar:
-    lang_label = st.radio("Langue / Language", ["Français", "English"], horizontal=True)
-lang = "fr" if lang_label == "Français" else "en"
+    lang_label = st.radio("Langue / Language / 言語", list(LANG_CHOICES), horizontal=True)
+lang = LANG_CHOICES[lang_label]
 
 st.title(t(lang, "app_title"))
 st.write(t(lang, "tagline"))
@@ -66,7 +67,8 @@ if profile.has_higher_risk_region:
 st.header(t(lang, "step_questions"))
 with st.expander(t(lang, "scale_title")):
     for value, label in ANSWER_SCALE[lang].items():
-        st.write(f"**{value}** : {label}" if lang == "fr" else f"**{value}**: {label}")
+        sep = {"fr": " : ", "en": ": ", "ja": "："}[lang]
+        st.write(f"**{value}**{sep}{label}")
 
 answers = {}
 tabs = st.tabs([PILLARS[p][lang] for p in PILLARS])
@@ -148,6 +150,14 @@ if result.actions:
         ]
     )
     st.dataframe(plan, hide_index=True, use_container_width=True)
+
+    st.subheader(t(lang, "help_sheets"))
+    for i, a in enumerate(result.actions, start=1):
+        with st.expander(f"{i}. {a.question.action[lang]}"):
+            st.markdown(f"**{t(lang, 'evidence')}**")
+            for item in a.question.evidence[lang]:
+                st.write(f"- {item}")
+            st.markdown(f"**{t(lang, 'kpi')}** : {a.question.kpi[lang]}")
 
 # Downloads
 d1, d2 = st.columns(2)

@@ -3,14 +3,16 @@
   "id": "GOV",
   "name": {
    "fr": "Gouvernance et stratégie RSE",
-   "en": "CSR governance and strategy"
+   "en": "CSR governance and strategy",
+   "ja": "CSRガバナンス・戦略"
   },
   "items": [
    {
     "id": "GOV01",
     "label": {
      "fr": "Nommer un responsable RSE avec un mandat clair de la direction",
-     "en": "Appoint a CSR lead with a clear mandate from top management"
+     "en": "Appoint a CSR lead with a clear mandate from top management",
+     "ja": "経営層から明確な権限を与えられたCSR責任者を任命する"
     },
     "tags": [
      "quick"
@@ -20,7 +22,8 @@
     "id": "GOV02",
     "label": {
      "fr": "Réaliser une analyse de double matérialité",
-     "en": "Run a double materiality assessment"
+     "en": "Run a double materiality assessment",
+     "ja": "ダブルマテリアリティ評価を実施する"
     },
     "tags": [
      "reg"
@@ -30,7 +33,8 @@
     "id": "GOV03",
     "label": {
      "fr": "Formaliser une feuille de route RSE à 3 ans avec des objectifs chiffrés",
-     "en": "Formalise a 3-year CSR roadmap with quantified targets"
+     "en": "Formalise a 3-year CSR roadmap with quantified targets",
+     "ja": "定量目標を含む3か年のCSRロードマップを策定する"
     },
     "tags": []
    },
@@ -38,7 +42,8 @@
     "id": "GOV04",
     "label": {
      "fr": "Intégrer des critères RSE dans la rémunération variable des dirigeants",
-     "en": "Add CSR criteria to executive variable pay"
+     "en": "Add CSR criteria to executive variable pay",
+     "ja": "経営陣の変動報酬にCSR指標を組み込む"
     },
     "tags": []
    },
@@ -46,7 +51,8 @@
     "id": "GOV05",
     "label": {
      "fr": "Créer un comité RSE qui se réunit au moins chaque trimestre",
-     "en": "Set up a CSR committee that meets at least every quarter"
+     "en": "Set up a CSR committee that meets at least every quarter",
+     "ja": "少なくとも四半期に一度開催するCSR委員会を設置する"
     },
     "tags": [
      "quick"
@@ -56,7 +62,8 @@
     "id": "GOV06",
     "label": {
      "fr": "Nommer un relais RSE dans chaque pays ou filiale",
-     "en": "Appoint a CSR contact in each country or subsidiary"
+     "en": "Appoint a CSR contact in each country or subsidiary",
+     "ja": "各国・各子会社にCSR担当者を置く"
     },
     "tags": []
    },
@@ -64,7 +71,8 @@
     "id": "GOV07",
     "label": {
      "fr": "Cartographier les attentes des parties prenantes (clients, salariés, investisseurs)",
-     "en": "Map stakeholder expectations (customers, employees, investors)"
+     "en": "Map stakeholder expectations (customers, employees, investors)",
+     "ja": "ステークホルダー（顧客、従業員、投資家）の期待を整理する"
     },
     "tags": []
    },
@@ -72,7 +80,8 @@
     "id": "GOV08",
     "label": {
      "fr": "Présenter les résultats RSE au conseil d'administration une fois par an",
-     "en": "Present CSR results to the board once a year"
+     "en": "Present CSR results to the board once a year",
+     "ja": "年に一度、CSRの成果を取締役会に報告する"
     },
     "tags": [
      "quick"
@@ -84,14 +93,16 @@
   "id": "CLI",
   "name": {
    "fr": "Climat et énergie",
-   "en": "Climate and energy"
+   "en": "Climate and energy",
+   "ja": "気候変動・エネルギー"
   },
   "items": [
    {
     "id": "CLI01",
     "label": {
      "fr": "Réaliser un bilan carbone scopes 1 et 2",
-     "en": "Measure scope 1 and 2 emissions"
+     "en": "Measure scope 1 and 2 emissions",
+     "ja": "スコープ1・2の排出量を算定する"
     },
     "tags": [
      "reg"
@@ -101,7 +112,8 @@
     "id": "CLI02",
     "label": {
      "fr": "Étendre le bilan carbone au scope 3 (achats, cloud, transport, déplacements)",
-     "en": "Extend the carbon footprint to scope 3 (purchases, cloud, transport, travel)"
+     "en": "Extend the carbon footprint to scope 3 (purchases, cloud, transport, travel)",
+     "ja": "算定範囲をスコープ3（購買、クラウド、輸送、出張）に広げる"
     },
     "tags": [
      "reg"
@@ -111,7 +123,8 @@
     "id": "CLI03",
     "label": {
      "fr": "Fixer des objectifs de réduction alignés sur l'Accord de Paris",
-     "en": "Set reduction targets aligned with the Paris Agreement"
+     "en": "Set reduction targets aligned with the Paris Agreement",
+     "ja": "パリ協定に整合した削減目標を設定する"
     },
     "tags": []
    },
@@ -119,7 +132,8 @@
     "id": "CLI04",
     "label": {
      "fr": "Faire valider les objectifs par la SBTi",
-     "en": "Have targets validated by the SBTi"
+     "en": "Have targets validated by the SBTi",
+     "ja": "削減目標についてSBTiの認定を取得する"
     },
     "tags": []
    },
@@ -127,7 +141,8 @@
     "id": "CLI05",
     "label": {
      "fr": "Passer à un contrat d'électricité renouvelable",
-     "en": "Switch to a renewable electricity contract"
+     "en": "Switch to a renewable electricity contract",
+     "ja": "再生可能エネルギーの電力契約に切り替える"
     },
     "tags": [
      "quick"
@@ -137,7 +152,8 @@
     "id": "CLI06",
     "label": {
      "fr": "Suivre les consommations d'énergie par site chaque mois",
-     "en": "Track energy use per site every month"
+     "en": "Track energy use per site every month",
+     "ja": "拠点ごとのエネルギー使用量を毎月把握する"
     },
     "tags": [
      "quick"
@@ -147,7 +163,8 @@
     "id": "CLI07",
     "label": {
      "fr": "Mettre en place une politique de déplacements professionnels bas carbone",
-     "en": "Set up a low-carbon business travel policy"
+     "en": "Set up a low-carbon business travel policy",
+     "ja": "低炭素な出張ポリシーを導入する"
     },
     "tags": []
    },
@@ -155,7 +172,8 @@
     "id": "CLI08",
     "label": {
      "fr": "Analyser les risques climatiques physiques sur les sites clés",
-     "en": "Assess physical climate risks for key sites"
+     "en": "Assess physical climate risks for key sites",
+     "ja": "主要拠点の物理的な気候リスクを評価する"
     },
     "tags": [
      "reg"
@@ -165,7 +183,8 @@
     "id": "CLI09",
     "label": {
      "fr": "Réaliser un audit énergétique des bâtiments",
-     "en": "Run an energy audit of buildings"
+     "en": "Run an energy audit of buildings",
+     "ja": "建物のエネルギー監査を実施する"
     },
     "tags": [
      "reg"
@@ -177,14 +196,16 @@
   "id": "GIT",
   "name": {
    "fr": "Green IT et numérique responsable",
-   "en": "Green IT and responsible digital"
+   "en": "Green IT and responsible digital",
+   "ja": "グリーンIT・責任あるデジタル"
   },
   "items": [
    {
     "id": "GIT01",
     "label": {
      "fr": "Faire l'inventaire du parc informatique et de son empreinte",
-     "en": "Inventory IT equipment and its footprint"
+     "en": "Inventory IT equipment and its footprint",
+     "ja": "IT機器とその環境負荷を棚卸しする"
     },
     "tags": []
    },
@@ -192,7 +213,8 @@
     "id": "GIT02",
     "label": {
      "fr": "Allonger la durée d'utilisation des ordinateurs et smartphones",
-     "en": "Extend the lifetime of laptops and smartphones"
+     "en": "Extend the lifetime of laptops and smartphones",
+     "ja": "PCやスマートフォンの使用期間を延ばす"
     },
     "tags": [
      "quick"
@@ -202,7 +224,8 @@
     "id": "GIT03",
     "label": {
      "fr": "Acheter du matériel reconditionné quand c'est possible",
-     "en": "Buy refurbished equipment when possible"
+     "en": "Buy refurbished equipment when possible",
+     "ja": "可能な場合は再生品の機器を購入する"
     },
     "tags": [
      "quick"
@@ -212,7 +235,8 @@
     "id": "GIT04",
     "label": {
      "fr": "Passer par une filière certifiée pour le recyclage des déchets électroniques",
-     "en": "Use a certified partner for e-waste recycling"
+     "en": "Use a certified partner for e-waste recycling",
+     "ja": "電子廃棄物は認証を受けたリサイクル業者に委託する"
     },
     "tags": [
      "reg"
@@ -222,7 +246,8 @@
     "id": "GIT05",
     "label": {
      "fr": "Choisir des hébergeurs et clouds avec énergie renouvelable et bon PUE",
-     "en": "Choose hosting and cloud providers with renewable energy and a good PUE"
+     "en": "Choose hosting and cloud providers with renewable energy and a good PUE",
+     "ja": "再生可能エネルギーを使い、PUEの良いホスティング・クラウド事業者を選ぶ"
     },
     "tags": []
    },
@@ -230,7 +255,8 @@
     "id": "GIT06",
     "label": {
      "fr": "Supprimer les données et environnements inutilisés dans le cloud",
-     "en": "Delete unused data and environments in the cloud"
+     "en": "Delete unused data and environments in the cloud",
+     "ja": "クラウド上の不要なデータや環境を削除する"
     },
     "tags": [
      "quick"
@@ -240,7 +266,8 @@
     "id": "GIT07",
     "label": {
      "fr": "Intégrer l'écoconception dans les projets logiciels",
-     "en": "Include eco-design in software projects"
+     "en": "Include eco-design in software projects",
+     "ja": "ソフトウェア開発にエコデザインを取り入れる"
     },
     "tags": []
    },
@@ -248,7 +275,8 @@
     "id": "GIT08",
     "label": {
      "fr": "Sensibiliser les équipes à la sobriété numérique",
-     "en": "Raise team awareness of digital sobriety"
+     "en": "Raise team awareness of digital sobriety",
+     "ja": "デジタルの省エネについてチームの意識を高める"
     },
     "tags": [
      "quick"
@@ -258,7 +286,8 @@
     "id": "GIT09",
     "label": {
      "fr": "Mesurer l'empreinte des usages d'IA générative",
-     "en": "Measure the footprint of generative AI use"
+     "en": "Measure the footprint of generative AI use",
+     "ja": "生成AIの利用による環境負荷を測定する"
     },
     "tags": []
    }
@@ -268,14 +297,16 @@
   "id": "LOG",
   "name": {
    "fr": "Logistique, transport et emballages",
-   "en": "Logistics, transport and packaging"
+   "en": "Logistics, transport and packaging",
+   "ja": "物流・輸送・梱包"
   },
   "items": [
    {
     "id": "LOG01",
     "label": {
      "fr": "Mesurer les émissions du transport par flux et par mode",
-     "en": "Measure transport emissions by flow and mode"
+     "en": "Measure transport emissions by flow and mode",
+     "ja": "輸送ルート別・輸送手段別に排出量を測定する"
     },
     "tags": []
    },
@@ -283,7 +314,8 @@
     "id": "LOG02",
     "label": {
      "fr": "Ajouter des critères carbone dans le choix des transporteurs",
-     "en": "Add carbon criteria to carrier selection"
+     "en": "Add carbon criteria to carrier selection",
+     "ja": "運送会社の選定にCO2基準を加える"
     },
     "tags": []
    },
@@ -291,7 +323,8 @@
     "id": "LOG03",
     "label": {
      "fr": "Tester le report modal (rail, fluvial) sur un flux pilote",
-     "en": "Pilot modal shift (rail, river) on one flow"
+     "en": "Pilot modal shift (rail, river) on one flow",
+     "ja": "一つの輸送ルートでモーダルシフト（鉄道、水運）を試行する"
     },
     "tags": []
    },
@@ -299,7 +332,8 @@
     "id": "LOG04",
     "label": {
      "fr": "Optimiser le taux de remplissage des camions",
-     "en": "Improve truck fill rates"
+     "en": "Improve truck fill rates",
+     "ja": "トラックの積載率を改善する"
     },
     "tags": []
    },
@@ -307,7 +341,8 @@
     "id": "LOG05",
     "label": {
      "fr": "Réduire les emballages plastiques à usage unique",
-     "en": "Reduce single-use plastic packaging"
+     "en": "Reduce single-use plastic packaging",
+     "ja": "使い捨てプラスチック梱包を削減する"
     },
     "tags": [
      "reg"
@@ -317,7 +352,8 @@
     "id": "LOG06",
     "label": {
      "fr": "Mettre en place des emballages réutilisables avec les partenaires clés",
-     "en": "Set up reusable packaging with key partners"
+     "en": "Set up reusable packaging with key partners",
+     "ja": "主要な取引先と再利用可能な梱包を導入する"
     },
     "tags": []
    },
@@ -325,7 +361,8 @@
     "id": "LOG07",
     "label": {
      "fr": "Rejoindre un programme de transport responsable (type EVE ou SmartWay)",
-     "en": "Join a responsible freight programme (such as SmartWay)"
+     "en": "Join a responsible freight programme (such as SmartWay)",
+     "ja": "責任ある貨物輸送プログラム（SmartWayなど）に参加する"
     },
     "tags": []
    },
@@ -333,7 +370,8 @@
     "id": "LOG08",
     "label": {
      "fr": "Rationaliser les stocks pour limiter les pertes et la casse",
-     "en": "Streamline inventory to limit waste and damage"
+     "en": "Streamline inventory to limit waste and damage",
+     "ja": "在庫を適正化し、廃棄や破損を減らす"
     },
     "tags": []
    }
@@ -343,14 +381,16 @@
   "id": "SOC",
   "name": {
    "fr": "Social et conditions de travail",
-   "en": "Labour and working conditions"
+   "en": "Labour and working conditions",
+   "ja": "労働・職場環境"
   },
   "items": [
    {
     "id": "SOC01",
     "label": {
      "fr": "Tenir à jour l'évaluation des risques professionnels de chaque site",
-     "en": "Keep the occupational risk assessment of each site up to date"
+     "en": "Keep the occupational risk assessment of each site up to date",
+     "ja": "各拠点の労働安全リスク評価を最新の状態に保つ"
     },
     "tags": [
      "reg"
@@ -360,7 +400,8 @@
     "id": "SOC02",
     "label": {
      "fr": "Suivre le taux de fréquence et de gravité des accidents",
-     "en": "Track accident frequency and severity rates"
+     "en": "Track accident frequency and severity rates",
+     "ja": "労働災害の度数率と強度率を把握する"
     },
     "tags": []
    },
@@ -368,7 +409,8 @@
     "id": "SOC03",
     "label": {
      "fr": "Étendre les exigences santé et sécurité aux sous-traitants",
-     "en": "Extend health and safety requirements to subcontractors"
+     "en": "Extend health and safety requirements to subcontractors",
+     "ja": "安全衛生の要件を協力会社にも適用する"
     },
     "tags": []
    },
@@ -376,7 +418,8 @@
     "id": "SOC04",
     "label": {
      "fr": "Définir un socle social commun à tous les pays",
-     "en": "Define a common labour baseline for every country"
+     "en": "Define a common labour baseline for every country",
+     "ja": "すべての国に共通する最低労働基準を定める"
     },
     "tags": []
    },
@@ -384,7 +427,8 @@
     "id": "SOC05",
     "label": {
      "fr": "Garantir un salaire décent dans tous les pays d'implantation",
-     "en": "Guarantee a living wage in every country of operation"
+     "en": "Guarantee a living wage in every country of operation",
+     "ja": "すべての事業国で生活賃金を保証する"
     },
     "tags": []
    },
@@ -392,7 +436,8 @@
     "id": "SOC06",
     "label": {
      "fr": "Mener une enquête annuelle d'engagement des salariés",
-     "en": "Run a yearly employee engagement survey"
+     "en": "Run a yearly employee engagement survey",
+     "ja": "従業員エンゲージメント調査を毎年実施する"
     },
     "tags": [
      "quick"
@@ -402,7 +447,8 @@
     "id": "SOC07",
     "label": {
      "fr": "Construire un plan de formation sur le numérique et l'IA",
-     "en": "Build a training plan on digital and AI"
+     "en": "Build a training plan on digital and AI",
+     "ja": "デジタルとAIに関する研修計画を策定する"
     },
     "tags": []
    },
@@ -410,7 +456,8 @@
     "id": "SOC08",
     "label": {
      "fr": "Encadrer le droit à la déconnexion et le télétravail",
-     "en": "Frame the right to disconnect and remote work"
+     "en": "Frame the right to disconnect and remote work",
+     "ja": "つながらない権利とテレワークのルールを定める"
     },
     "tags": [
      "quick"
@@ -420,7 +467,8 @@
     "id": "SOC09",
     "label": {
      "fr": "Proposer un accompagnement psychologique confidentiel",
-     "en": "Offer confidential psychological support"
+     "en": "Offer confidential psychological support",
+     "ja": "秘密が守られる心理的サポートを提供する"
     },
     "tags": []
    }
@@ -430,14 +478,16 @@
   "id": "DEI",
   "name": {
    "fr": "Diversité et inclusion",
-   "en": "Diversity and inclusion"
+   "en": "Diversity and inclusion",
+   "ja": "ダイバーシティ＆インクルージョン"
   },
   "items": [
    {
     "id": "DEI01",
     "label": {
      "fr": "Publier une politique diversité et non-discrimination",
-     "en": "Publish a diversity and non-discrimination policy"
+     "en": "Publish a diversity and non-discrimination policy",
+     "ja": "ダイバーシティと差別禁止に関する方針を公表する"
     },
     "tags": [
      "quick"
@@ -447,7 +497,8 @@
     "id": "DEI02",
     "label": {
      "fr": "Mesurer l'écart de rémunération femmes-hommes",
-     "en": "Measure the gender pay gap"
+     "en": "Measure the gender pay gap",
+     "ja": "男女間の賃金格差を測定する"
     },
     "tags": [
      "reg"
@@ -457,7 +508,8 @@
     "id": "DEI03",
     "label": {
      "fr": "Fixer un objectif de femmes dans les postes de direction",
-     "en": "Set a target for women in leadership roles"
+     "en": "Set a target for women in leadership roles",
+     "ja": "管理職に占める女性比率の目標を設定する"
     },
     "tags": []
    },
@@ -465,7 +517,8 @@
     "id": "DEI04",
     "label": {
      "fr": "Former les managers aux biais dans le recrutement",
-     "en": "Train managers on hiring bias"
+     "en": "Train managers on hiring bias",
+     "ja": "採用におけるバイアスについて管理職を教育する"
     },
     "tags": []
    },
@@ -473,7 +526,8 @@
     "id": "DEI05",
     "label": {
      "fr": "Rendre les postes et les outils accessibles aux personnes en situation de handicap",
-     "en": "Make roles and tools accessible to people with disabilities"
+     "en": "Make roles and tools accessible to people with disabilities",
+     "ja": "障がいのある人が働きやすい職務とツールを整える"
     },
     "tags": [
      "reg"
@@ -483,7 +537,8 @@
     "id": "DEI06",
     "label": {
      "fr": "Soutenir des réseaux internes (femmes, LGBT+, générations)",
-     "en": "Support employee networks (women, LGBT+, generations)"
+     "en": "Support employee networks (women, LGBT+, generations)",
+     "ja": "社内ネットワーク（女性、LGBT+、世代）を支援する"
     },
     "tags": [
      "quick"
@@ -493,7 +548,8 @@
     "id": "DEI07",
     "label": {
      "fr": "Accueillir des alternants et des profils en reconversion",
-     "en": "Welcome apprentices and career changers"
+     "en": "Welcome apprentices and career changers",
+     "ja": "見習い生やキャリアチェンジを目指す人材を受け入れる"
     },
     "tags": []
    }
@@ -503,14 +559,16 @@
   "id": "ETH",
   "name": {
    "fr": "Éthique et conformité",
-   "en": "Ethics and compliance"
+   "en": "Ethics and compliance",
+   "ja": "倫理・コンプライアンス"
   },
   "items": [
    {
     "id": "ETH01",
     "label": {
      "fr": "Rédiger un code de conduite et le traduire pour chaque pays",
-     "en": "Write a code of conduct and translate it for each country"
+     "en": "Write a code of conduct and translate it for each country",
+     "ja": "行動規範を策定し、各国語に翻訳する"
     },
     "tags": []
    },
@@ -518,7 +576,8 @@
     "id": "ETH02",
     "label": {
      "fr": "Former tous les salariés au code de conduite chaque année",
-     "en": "Train all employees on the code of conduct every year"
+     "en": "Train all employees on the code of conduct every year",
+     "ja": "全従業員に毎年、行動規範の研修を行う"
     },
     "tags": []
    },
@@ -526,7 +585,8 @@
     "id": "ETH03",
     "label": {
      "fr": "Cartographier les risques de corruption par pays et par processus",
-     "en": "Map corruption risks by country and process"
+     "en": "Map corruption risks by country and process",
+     "ja": "国別・業務プロセス別に腐敗リスクを洗い出す"
     },
     "tags": [
      "reg"
@@ -536,7 +596,8 @@
     "id": "ETH04",
     "label": {
      "fr": "Encadrer les cadeaux, invitations et conflits d'intérêts",
-     "en": "Frame gifts, hospitality and conflicts of interest"
+     "en": "Frame gifts, hospitality and conflicts of interest",
+     "ja": "贈答品、接待、利益相反のルールを定める"
     },
     "tags": [
      "quick",
@@ -547,7 +608,8 @@
     "id": "ETH05",
     "label": {
      "fr": "Vérifier l'intégrité des intermédiaires et partenaires",
-     "en": "Run integrity checks on intermediaries and partners"
+     "en": "Run integrity checks on intermediaries and partners",
+     "ja": "仲介者や取引先のインテグリティを確認する"
     },
     "tags": [
      "reg"
@@ -557,7 +619,8 @@
     "id": "ETH06",
     "label": {
      "fr": "Mettre en place un canal d'alerte multilingue ouvert aux tiers",
-     "en": "Set up a multilingual whistleblowing channel open to third parties"
+     "en": "Set up a multilingual whistleblowing channel open to third parties",
+     "ja": "社外の関係者も利用できる多言語の通報窓口を設ける"
     },
     "tags": [
      "reg"
@@ -567,7 +630,8 @@
     "id": "ETH07",
     "label": {
      "fr": "Publier une politique sur le lobbying et les contributions politiques",
-     "en": "Publish a policy on lobbying and political contributions"
+     "en": "Publish a policy on lobbying and political contributions",
+     "ja": "ロビー活動と政治献金に関する方針を公表する"
     },
     "tags": []
    },
@@ -575,7 +639,8 @@
     "id": "ETH08",
     "label": {
      "fr": "Encadrer l'usage éthique de l'IA (charte, comité, revue des cas d'usage)",
-     "en": "Frame the ethical use of AI (charter, committee, use case review)"
+     "en": "Frame the ethical use of AI (charter, committee, use case review)",
+     "ja": "AIの倫理的な利用ルール（憲章、委員会、ユースケースの審査）を定める"
     },
     "tags": [
      "reg"
@@ -587,14 +652,16 @@
   "id": "CYB",
   "name": {
    "fr": "Cybersécurité et données",
-   "en": "Cybersecurity and data"
+   "en": "Cybersecurity and data",
+   "ja": "サイバーセキュリティ・データ"
   },
   "items": [
    {
     "id": "CYB01",
     "label": {
      "fr": "Rédiger une politique de sécurité de l'information",
-     "en": "Write an information security policy"
+     "en": "Write an information security policy",
+     "ja": "情報セキュリティ方針を策定する"
     },
     "tags": [
      "quick"
@@ -604,7 +671,8 @@
     "id": "CYB02",
     "label": {
      "fr": "Activer l'authentification multifacteur pour tous les comptes",
-     "en": "Enable multi-factor authentication for every account"
+     "en": "Enable multi-factor authentication for every account",
+     "ja": "すべてのアカウントで多要素認証を有効にする"
     },
     "tags": [
      "quick"
@@ -614,7 +682,8 @@
     "id": "CYB03",
     "label": {
      "fr": "Lancer une démarche de certification ISO 27001",
-     "en": "Start an ISO 27001 certification programme"
+     "en": "Start an ISO 27001 certification programme",
+     "ja": "ISO 27001認証の取得に向けた取り組みを始める"
     },
     "tags": [
      "reg"
@@ -624,7 +693,8 @@
     "id": "CYB04",
     "label": {
      "fr": "Organiser une sensibilisation au phishing chaque année",
-     "en": "Run phishing awareness training every year"
+     "en": "Run phishing awareness training every year",
+     "ja": "フィッシング対策の研修を毎年実施する"
     },
     "tags": [
      "quick"
@@ -634,7 +704,8 @@
     "id": "CYB05",
     "label": {
      "fr": "Tester le plan de continuité et de reprise d'activité",
-     "en": "Test the business continuity and disaster recovery plan"
+     "en": "Test the business continuity and disaster recovery plan",
+     "ja": "事業継続計画と災害復旧計画をテストする"
     },
     "tags": [
      "reg"
@@ -644,7 +715,8 @@
     "id": "CYB06",
     "label": {
      "fr": "Tenir à jour le registre des traitements de données personnelles",
-     "en": "Keep the records of personal data processing up to date"
+     "en": "Keep the records of personal data processing up to date",
+     "ja": "個人データの処理活動の記録を最新の状態に保つ"
     },
     "tags": [
      "reg"
@@ -654,7 +726,8 @@
     "id": "CYB07",
     "label": {
      "fr": "Encadrer les transferts de données hors Union européenne",
-     "en": "Frame data transfers outside the European Union"
+     "en": "Frame data transfers outside the European Union",
+     "ja": "EU域外へのデータ移転を適切に管理する"
     },
     "tags": [
      "reg"
@@ -664,7 +737,8 @@
     "id": "CYB08",
     "label": {
      "fr": "Ajouter des exigences de sécurité dans les contrats prestataires",
-     "en": "Add security requirements to provider contracts"
+     "en": "Add security requirements to provider contracts",
+     "ja": "委託先との契約にセキュリティ要件を加える"
     },
     "tags": []
    }
@@ -674,14 +748,16 @@
   "id": "ACH",
   "name": {
    "fr": "Achats responsables et vigilance",
-   "en": "Sustainable procurement and due diligence"
+   "en": "Sustainable procurement and due diligence",
+   "ja": "持続可能な調達・デューデリジェンス"
   },
   "items": [
    {
     "id": "ACH01",
     "label": {
      "fr": "Rédiger une politique d'achats responsables",
-     "en": "Write a sustainable procurement policy"
+     "en": "Write a sustainable procurement policy",
+     "ja": "持続可能な調達方針を策定する"
     },
     "tags": [
      "quick"
@@ -691,7 +767,8 @@
     "id": "ACH02",
     "label": {
      "fr": "Faire signer un code de conduite à tous les fournisseurs",
-     "en": "Have every supplier sign a code of conduct"
+     "en": "Have every supplier sign a code of conduct",
+     "ja": "すべてのサプライヤーに行動規範への署名を求める"
     },
     "tags": [
      "quick"
@@ -701,7 +778,8 @@
     "id": "ACH03",
     "label": {
      "fr": "Cartographier les risques fournisseurs par pays et par catégorie",
-     "en": "Map supplier risks by country and category"
+     "en": "Map supplier risks by country and category",
+     "ja": "国別・カテゴリー別にサプライヤーリスクを洗い出す"
     },
     "tags": [
      "reg"
@@ -711,7 +789,8 @@
     "id": "ACH04",
     "label": {
      "fr": "Demander une évaluation RSE aux fournisseurs stratégiques",
-     "en": "Ask strategic suppliers for a CSR assessment"
+     "en": "Ask strategic suppliers for a CSR assessment",
+     "ja": "戦略的サプライヤーにCSR評価を求める"
     },
     "tags": []
    },
@@ -719,7 +798,8 @@
     "id": "ACH05",
     "label": {
      "fr": "Fixer un score RSE minimum pour référencer un fournisseur",
-     "en": "Set a minimum CSR score to list a supplier"
+     "en": "Set a minimum CSR score to list a supplier",
+     "ja": "サプライヤー登録に必要な最低CSRスコアを設定する"
     },
     "tags": []
    },
@@ -727,7 +807,8 @@
     "id": "ACH06",
     "label": {
      "fr": "Auditer sur site les fournisseurs les plus à risque",
-     "en": "Audit the highest-risk suppliers on site"
+     "en": "Audit the highest-risk suppliers on site",
+     "ja": "リスクの最も高いサプライヤーを現地監査する"
     },
     "tags": []
    },
@@ -735,7 +816,8 @@
     "id": "ACH07",
     "label": {
      "fr": "Suivre les plans d'actions correctives des fournisseurs",
-     "en": "Track supplier corrective action plans"
+     "en": "Track supplier corrective action plans",
+     "ja": "サプライヤーの是正措置計画の進捗を管理する"
     },
     "tags": []
    },
@@ -743,7 +825,8 @@
     "id": "ACH08",
     "label": {
      "fr": "Identifier les fournisseurs de rang 2 sur les catégories à risque",
-     "en": "Identify tier-2 suppliers in high-risk categories"
+     "en": "Identify tier-2 suppliers in high-risk categories",
+     "ja": "リスクの高いカテゴリーの二次サプライヤーを特定する"
     },
     "tags": [
      "reg"
@@ -753,7 +836,8 @@
     "id": "ACH09",
     "label": {
      "fr": "Lancer un programme climat avec les plus gros fournisseurs émetteurs",
-     "en": "Launch a climate programme with the largest emitting suppliers"
+     "en": "Launch a climate programme with the largest emitting suppliers",
+     "ja": "排出量の多いサプライヤーと気候プログラムを始める"
     },
     "tags": []
    },
@@ -761,7 +845,8 @@
     "id": "ACH10",
     "label": {
      "fr": "Respecter les délais de paiement des PME",
-     "en": "Pay small suppliers on time"
+     "en": "Pay small suppliers on time",
+     "ja": "中小のサプライヤーへの支払期限を守る"
     },
     "tags": [
      "quick",
@@ -772,7 +857,8 @@
     "id": "ACH11",
     "label": {
      "fr": "Publier un plan de vigilance et son compte rendu de mise en œuvre",
-     "en": "Publish a due diligence plan and its implementation report"
+     "en": "Publish a due diligence plan and its implementation report",
+     "ja": "デューデリジェンス計画とその実施報告を公表する"
     },
     "tags": [
      "reg"
@@ -784,14 +870,16 @@
   "id": "REP",
   "name": {
    "fr": "Reporting et communication",
-   "en": "Reporting and communication"
+   "en": "Reporting and communication",
+   "ja": "報告・コミュニケーション"
   },
   "items": [
    {
     "id": "REP01",
     "label": {
      "fr": "Définir une liste d'indicateurs RSE suivis chaque année",
-     "en": "Define a list of CSR KPIs tracked every year"
+     "en": "Define a list of CSR KPIs tracked every year",
+     "ja": "毎年追跡するCSR指標のリストを定める"
     },
     "tags": [
      "quick"
@@ -801,7 +889,8 @@
     "id": "REP02",
     "label": {
      "fr": "Collecter les données RSE de toutes les filiales avec un outil commun",
-     "en": "Collect CSR data from every subsidiary with a shared tool"
+     "en": "Collect CSR data from every subsidiary with a shared tool",
+     "ja": "共通のツールで全子会社のCSRデータを収集する"
     },
     "tags": []
    },
@@ -809,7 +898,8 @@
     "id": "REP03",
     "label": {
      "fr": "Préparer le reporting CSRD (normes ESRS)",
-     "en": "Prepare CSRD reporting (ESRS standards)"
+     "en": "Prepare CSRD reporting (ESRS standards)",
+     "ja": "CSRD（ESRS基準）に基づく報告を準備する"
     },
     "tags": [
      "reg"
@@ -819,7 +909,8 @@
     "id": "REP04",
     "label": {
      "fr": "Faire vérifier les données RSE par un tiers",
-     "en": "Have CSR data verified by a third party"
+     "en": "Have CSR data verified by a third party",
+     "ja": "CSRデータについて第三者による検証を受ける"
     },
     "tags": [
      "reg"
@@ -829,7 +920,8 @@
     "id": "REP05",
     "label": {
      "fr": "Répondre aux questionnaires RSE des clients avec un dossier de preuves prêt",
-     "en": "Answer customer CSR questionnaires with a ready evidence pack"
+     "en": "Answer customer CSR questionnaires with a ready evidence pack",
+     "ja": "エビデンス一式を準備し、顧客のCSR質問票に回答する"
     },
     "tags": [
      "quick"
@@ -839,7 +931,8 @@
     "id": "REP06",
     "label": {
      "fr": "Publier un rapport ou une page RSE accessible au public",
-     "en": "Publish a public CSR report or page"
+     "en": "Publish a public CSR report or page",
+     "ja": "一般に公開するCSRレポートまたはページを公表する"
     },
     "tags": []
    },
@@ -847,7 +940,8 @@
     "id": "REP07",
     "label": {
      "fr": "Éviter l'écoblanchiment : chaque affirmation appuyée par une preuve",
-     "en": "Avoid greenwashing: back every claim with evidence"
+     "en": "Avoid greenwashing: back every claim with evidence",
+     "ja": "グリーンウォッシングを避け、すべての主張を根拠で裏付ける"
     },
     "tags": [
      "quick",
@@ -858,7 +952,8 @@
     "id": "REP08",
     "label": {
      "fr": "Partager les résultats RSE avec les salariés en interne",
-     "en": "Share CSR results with employees internally"
+     "en": "Share CSR results with employees internally",
+     "ja": "CSRの成果を社内の従業員と共有する"
     },
     "tags": [
      "quick"

@@ -8,7 +8,7 @@ human rights, ethics, sustainable procurement). Each question is scored from
 
 from dataclasses import dataclass, field
 
-LANGS = ("fr", "en")
+LANGS = ("fr", "en", "ja")
 
 ANSWER_SCALE = {
     "fr": {
@@ -109,6 +109,9 @@ class Question:
     # More critical when the entity operates in several or higher-risk regions
     international: bool = False
     risk_sensitive: bool = False
+    # Help sheet: evidence to gather and KPI to track (filled from help_sheets.py)
+    evidence: dict = field(default_factory=dict)
+    kpi: dict = field(default_factory=dict)
 
 
 QUESTIONS = [
@@ -446,6 +449,31 @@ QUESTIONS = [
         impact=2, effort=2, regulations=("CSRD",),
     ),
 ]
+
+
+def _merge_japanese_and_help_sheets():
+    """Add Japanese texts and help sheets to the structures defined above."""
+    import translations_ja as ja
+    from help_sheets import HELP_SHEETS
+
+    ANSWER_SCALE["ja"] = dict(ja.ANSWER_SCALE)
+    for table, source in (
+        (PILLARS, ja.PILLARS),
+        (SECTORS, ja.SECTORS),
+        (ENTITY_TYPES, ja.ENTITY_TYPES),
+        (REGIONS, ja.REGIONS),
+        (REGULATIONS, ja.REGULATIONS),
+    ):
+        for key, label in source.items():
+            table[key]["ja"] = label
+    for q in QUESTIONS:
+        for name in ("text", "help", "action"):
+            getattr(q, name)["ja"] = ja.QUESTIONS[q.id][name]
+        q.evidence.update(HELP_SHEETS[q.id]["evidence"])
+        q.kpi.update(HELP_SHEETS[q.id]["kpi"])
+
+
+_merge_japanese_and_help_sheets()
 
 
 def questions_by_pillar(pillar: str) -> list:

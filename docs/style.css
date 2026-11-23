@@ -19,8 +19,8 @@
   --r-lg: 18px;
   --r-md: 12px;
   --r-sm: 8px;
-  --display: "Bricolage Grotesque", "IBM Plex Sans", system-ui, sans-serif;
-  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --display: "Bricolage Grotesque", "IBM Plex Sans", "Noto Sans JP", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "Noto Sans JP", system-ui, -apple-system, "Segoe UI", sans-serif;
   /* Maturity scale, also used in the legend */
   --m0: #F0D9A6;
   --m1: #C8D8C5;
@@ -145,6 +145,20 @@ footer.site { border-top: 1px solid var(--line); margin-top: 48px; padding: 28px
 footer.site .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
 [hidden] { display: none !important; }
+
+/* Japanese: headline font has no Japanese glyphs, use Noto Sans JP throughout */
+:lang(ja) { --display: "Noto Sans JP", system-ui, sans-serif; --body: "Noto Sans JP", system-ui, sans-serif; }
+:lang(ja) body { line-height: 1.7; }
+:lang(ja) .hero h1 { letter-spacing: 0; line-height: 1.2; max-width: 18ch; }
+
+.toast {
+  position: fixed; bottom: 24px; left: 50%; transform: translate(-50%, 20px); background: var(--ink); color: #fff;
+  padding: 10px 16px; border-radius: var(--r-md); font-size: 14px; opacity: 0; pointer-events: none;
+  transition: opacity .2s, transform .2s; z-index: 50;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+.shared-banner { display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; background: var(--ink); color: #fff; border-radius: var(--r-md); padding: 12px 16px; font-size: 14px; margin-bottom: 20px; }
+.shared-banner .btn { background: #fff; color: var(--ink); }
 .visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .print-only { display: none; }
 

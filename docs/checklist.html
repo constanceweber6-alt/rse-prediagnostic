@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='4' y='4' width='44' height='44' rx='8' fill='%231E5B45'/%3E%3Crect x='52' y='4' width='44' height='44' rx='8' fill='%236E9C82'/%3E%3Crect x='4' y='52' width='44' height='44' rx='8' fill='%23C8D8C5'/%3E%3Crect x='52' y='52' width='44' height='44' rx='8' fill='%23F0D9A6'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
   .hero-row { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 40px; align-items: end; }
@@ -56,11 +56,6 @@
   .item input:checked + .txt { color: var(--muted); text-decoration: line-through; text-decoration-color: rgba(102, 116, 110, .6); }
   .item .tags { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
   .empty-state { text-align: center; padding: 48px 20px; color: var(--muted); }
-  .toast {
-    position: fixed; bottom: 24px; left: 50%; transform: translate(-50%, 20px); background: var(--ink); color: #fff;
-    padding: 10px 16px; border-radius: var(--r-md); font-size: 14px; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
-  }
-  .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
   @media (max-width: 900px) {
     .cl-layout { grid-template-columns: minmax(0, 1fr); }
@@ -94,9 +89,10 @@
       <a href="index.html" id="navDiag"></a>
       <a href="checklist.html" aria-current="page" id="navCheck"></a>
     </div>
-    <div class="lang" role="group" aria-label="Langue / Language">
+    <div class="lang" role="group" aria-label="Langue / Language / 言語">
       <button type="button" data-lang="fr">FR</button>
       <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="ja" lang="ja">日本語</button>
     </div>
   </div>
 </nav>
@@ -114,6 +110,7 @@
       <div class="tally-actions">
         <button class="btn btn-primary btn-sm" type="button" id="dlCsv"></button>
         <button class="btn btn-secondary btn-sm" type="button" id="dlPdf"></button>
+        <button class="btn btn-secondary btn-sm" type="button" id="share"></button>
         <button class="btn btn-quiet btn-sm" type="button" id="reset"></button>
       </div>
     </div>
@@ -131,6 +128,7 @@
   </div>
 </div>
 
+<div class="wrap"><div class="shared-banner no-print" id="sharedBanner" hidden><span id="sharedText"></span><button class="btn btn-sm" type="button" id="sharedClose"></button></div></div>
 <main class="wrap cl-layout">
   <ul class="toc" id="toc"></ul>
   <div>
@@ -180,6 +178,14 @@
       yes: "Oui",
       printMeta: (d, t, date) => `${d} actions faites sur ${t}, au ${date}`,
       file: "axes-amelioration-rse.csv",
+      locale: "fr-FR",
+      share: "Copier le lien",
+      shareCopied: "Lien copié. Il contient les actions cochées.",
+      sharePrompt: "Copiez ce lien :",
+      sharedText: "Liste ouverte depuis un lien partagé. Vos modifications restent sur cet appareil.",
+      sharedClose: "Compris",
+      sharedInvalid: "Ce lien de partage est invalide.",
+      loadError: "La liste n'a pas pu être chargée. Rechargez la page.",
     },
     en: {
       brand: "CSR Pre-assessment",
@@ -208,6 +214,50 @@
       yes: "Yes",
       printMeta: (d, t, date) => `${d} of ${t} actions done, as of ${date}`,
       file: "csr-improvement-actions.csv",
+      locale: "en-GB",
+      share: "Copy link",
+      shareCopied: "Link copied. It includes the ticked actions.",
+      sharePrompt: "Copy this link:",
+      sharedText: "List opened from a shared link. Your changes stay on this device.",
+      sharedClose: "Got it",
+      sharedInvalid: "This shared link is invalid.",
+      loadError: "The list could not be loaded. Reload the page.",
+    },
+    ja: {
+      brand: "CSR事前診断",
+      navDiag: "診断",
+      navCheck: "改善チェックリスト",
+      title: (n) => `CSR改善のための${n}の取り組み`,
+      lead: "IT・サプライチェーン企業向けの具体的な取り組みを、テーマ別にまとめました。実施済みの項目にチェックを入れ、残りを絞り込み、リストをダウンロードしてチームと共有できます。",
+      tally: (d, q) => `件が実施済み（うち、すぐに着手可能なもの${q}件）`,
+      search: "取り組みを検索",
+      filters: { all: "すべて", todo: "未実施", done: "実施済み", quick: "すぐに着手可能", reg: "規制関連" },
+      csv: "ダウンロード（CSV）",
+      pdf: "PDFで出力",
+      reset: "すべてのチェックを外す",
+      resetConfirm: "すべてのチェックを外しますか？",
+      checkAll: "すべてチェック",
+      uncheckAll: "すべて外す",
+      quick: "すぐに着手可能",
+      reg: "規制関連",
+      none: "条件に合う取り組みはありません。",
+      saved: "リストをダウンロードしました",
+      cleared: "すべてのチェックを外しました",
+      footer: "制作：コンスタンス・ウェベール",
+      csvHead: ["テーマ", "取り組み", "状況", "すぐに着手可能", "規制関連"],
+      statusDone: "実施済み",
+      statusTodo: "未実施",
+      yes: "はい",
+      printMeta: (d, t, date) => `${date}時点で${t}件中${d}件を実施済み`,
+      file: "csr-improvement-actions-ja.csv",
+      locale: "ja-JP",
+      share: "リンクをコピー",
+      shareCopied: "リンクをコピーしました。チェック済みの項目が含まれます。",
+      sharePrompt: "このリンクをコピーしてください：",
+      sharedText: "共有リンクからリストを開きました。変更内容はこの端末にのみ保存されます。",
+      sharedClose: "閉じる",
+      sharedInvalid: "この共有リンクは無効です。",
+      loadError: "リストを読み込めませんでした。ページを再読み込みしてください。",
     },
   };
   const STORE = "csr-checklist-v1", LANG_KEY = "csr-lang";
@@ -222,7 +272,8 @@
   try {
     const saved = JSON.parse(localStorage.getItem(STORE) || "null");
     if (saved) state = { ...state, ...saved };
-    lang = localStorage.getItem(LANG_KEY) || ((navigator.language || "fr").toLowerCase().startsWith("fr") ? "fr" : "en");
+    const nav = (navigator.language || "fr").toLowerCase();
+    lang = localStorage.getItem(LANG_KEY) || (nav.startsWith("fr") ? "fr" : nav.startsWith("ja") ? "ja" : "en");
   } catch (e) {}
   const save = () => { try { localStorage.setItem(STORE, JSON.stringify(state)); localStorage.setItem(LANG_KEY, lang); } catch (e) {} };
   const X = (k) => TXT[lang][k];
@@ -231,6 +282,31 @@
   function toast(msg) {
     const t = $("toast"); t.textContent = msg; t.classList.add("show");
     clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove("show"), 2200);
+  }
+
+  // Share link: ticked actions are stored as a bit field in the URL (#c=...), no server.
+  function allItems() { return CATS.flatMap((c) => c.items); }
+  function shareUrl() {
+    const items = allItems(), bytes = new Uint8Array(Math.ceil(items.length / 8));
+    items.forEach((it, i) => { if (state.done[it.id]) bytes[i >> 3] |= 1 << (i & 7); });
+    const b64 = btoa(String.fromCharCode(...bytes)).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+    return location.origin + location.pathname + "#c=1." + b64;
+  }
+  function readShared() {
+    if (!location.hash.startsWith("#c=1.")) return location.hash.startsWith("#c=") ? false : null;
+    try {
+      const raw = atob(location.hash.slice(5).replace(/-/g, "+").replace(/_/g, "/"));
+      const items = allItems();
+      if (raw.length !== Math.ceil(items.length / 8)) return false;
+      const done = {};
+      items.forEach((it, i) => { if (raw.charCodeAt(i >> 3) & (1 << (i & 7))) done[it.id] = true; });
+      return done;
+    } catch (e) { return false; }
+  }
+  async function copyShare() {
+    const url = shareUrl();
+    try { await navigator.clipboard.writeText(url); toast(X("shareCopied")); }
+    catch (e) { window.prompt(X("sharePrompt"), url); }
   }
 
   function visible(item) {
@@ -258,6 +334,9 @@
     $("dlCsv").textContent = X("csv");
     $("dlPdf").textContent = X("pdf");
     $("reset").textContent = X("reset");
+    $("share").textContent = X("share");
+    $("sharedText").textContent = X("sharedText");
+    $("sharedClose").textContent = X("sharedClose");
     $("footerText").textContent = X("footer");
     $("printTitle").textContent = X("title")(n);
     $("filters").innerHTML = Object.entries(X("filters")).map(([k, v]) =>
@@ -272,7 +351,7 @@
     $("totalCount").textContent = all.length;
     $("doneBar").style.width = (100 * done.length / all.length) + "%";
     $("tallyText").textContent = X("tally")(done.length, quick);
-    const date = new Date().toLocaleDateString(lang === "fr" ? "fr-FR" : "en-GB");
+    const date = new Date().toLocaleDateString(X("locale"));
     $("printMeta").textContent = X("printMeta")(done.length, all.length, date);
     $("toc").innerHTML = CATS.map((c) => {
       const d = c.items.filter((i) => state.done[i.id]).length;
@@ -361,6 +440,8 @@
     });
     $("dlCsv").addEventListener("click", downloadCsv);
     $("dlPdf").addEventListener("click", () => window.print());
+    $("share").addEventListener("click", copyShare);
+    $("sharedClose").addEventListener("click", () => { $("sharedBanner").hidden = true; });
     $("reset").addEventListener("click", () => {
       if (!Object.keys(state.done).length) return;
       if (!window.confirm(X("resetConfirm"))) return;
@@ -370,8 +451,15 @@
 
   fetch("checklist.json")
     .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then((data) => { CATS = data; bind(); renderAll(); })
-    .catch(() => { $("cats").innerHTML = `<div class="empty-state">${lang === "fr" ? "La liste n'a pas pu être chargée. Rechargez la page." : "The list could not be loaded. Reload the page."}</div>`; });
+    .then((data) => {
+      CATS = data; bind();
+      const shared = readShared();
+      if (shared) { state.done = shared; save(); $("sharedBanner").hidden = false; }
+      renderAll();
+      if (shared === false) toast(X("sharedInvalid"));
+      if (shared !== null) history.replaceState(null, "", location.pathname + location.search);
+    })
+    .catch(() => { $("cats").innerHTML = `<div class="empty-state">${esc(X("loadError"))}</div>`; });
 })();
 </script>
 </body>

@@ -40,6 +40,9 @@
    "report_top_actions": "Les 10 actions prioritaires",
    "unnamed": "Entité sans nom",
    "methodology": "Méthode",
+   "help_sheets": "Fiches d'aide",
+   "evidence": "Preuves à rassembler",
+   "kpi": "Indicateur à suivre",
    "methodology_text": "Chaque réponse est notée de 0 à 3. Le score d'un thème correspond au pourcentage du maximum possible. Le score global pondère les thèmes selon le secteur. La priorité d'une action combine l'impact, la facilité de mise en œuvre et l'écart à combler, ajustés selon le secteur et les zones d'activité."
   },
   "en": {
@@ -82,7 +85,55 @@
    "report_top_actions": "Top 10 priority actions",
    "unnamed": "Unnamed entity",
    "methodology": "Method",
+   "help_sheets": "Help sheets",
+   "evidence": "Evidence to gather",
+   "kpi": "KPI to track",
    "methodology_text": "Each answer is scored from 0 to 3. A theme score is the percentage of the maximum possible. The overall score weights themes by sector. The priority of an action combines impact, ease of implementation and the gap to close, adjusted for sector and regions of operation."
+  },
+  "ja": {
+   "app_title": "IT・サプライチェーン向けCSR事前診断",
+   "tagline": "子会社、国別拠点、サプライヤーのCSR成熟度を約10分で評価し、優先順位付きの行動計画を作成します。",
+   "language": "言語",
+   "step_profile": "1. 評価対象のプロフィール",
+   "entity_name": "評価対象の名称",
+   "entity_name_placeholder": "例：スペイン子会社、サプライヤーXYZ",
+   "sector": "業種",
+   "entity_type": "評価対象の種類",
+   "regions": "事業展開地域",
+   "regions_help": "労働リスクの高い地域では、デューデリジェンス関連の取り組みの優先度が上がります。",
+   "step_questions": "2. 質問票",
+   "scale_title": "回答の基準",
+   "progress": "問回答済み",
+   "results": "3. 結果",
+   "overall": "総合スコア",
+   "level": "レベル",
+   "by_theme": "テーマ別スコア",
+   "radar_title": "テーマ別の成熟度（100点満点）",
+   "action_plan": "優先順位付きの行動計画",
+   "quick_win": "すぐに着手可能",
+   "priority": "優先度",
+   "theme": "テーマ",
+   "action": "推奨される取り組み",
+   "regulations": "注視すべき規制",
+   "regulations_help": "未対応または着手段階の質問に関連する規制です。",
+   "no_regulation": "回答内容からは、重大な規制上のリスクは見つかりませんでした。",
+   "strengths": "強み",
+   "no_strength": "全拠点で展開・測定済みの取り組みはまだありません。初期段階では一般的な状況です。",
+   "download_pdf": "PDFレポートをダウンロード",
+   "download_csv": "回答をダウンロード（CSV）",
+   "international_flag": "3地域以上で事業を展開しているため、国際的な一貫性に関わる取り組みの優先度を上げています。",
+   "risk_flag": "リスクの高い地域で事業を展開しているため、サプライヤーのデューデリジェンスと人権に関わる取り組みの優先度を上げています。",
+   "disclaimer": "本ツールは、市場で用いられるCSR評価の構成を参考にした参考用ツールです。公式な評価に代わるものではなく、いかなる評価機関とも提携していません。",
+   "report_title": "CSR事前診断レポート",
+   "report_entity": "評価対象",
+   "report_date": "日付",
+   "report_top_actions": "優先度の高い10の取り組み",
+   "unnamed": "名称未設定",
+   "methodology": "評価方法",
+   "help_sheets": "取り組みガイド",
+   "evidence": "準備すべきエビデンス",
+   "kpi": "追跡すべき指標",
+   "methodology_text": "各回答は0〜3で採点します。テーマ別スコアは満点に対する割合です。総合スコアは業種に応じてテーマを重み付けしています。取り組みの優先度は、影響度、実施のしやすさ、改善の余地を組み合わせ、業種と事業展開地域に応じて調整しています。"
   }
  },
  "answer_scale": {
@@ -97,78 +148,100 @@
    "1": "Started (one-off actions, nothing written)",
    "2": "Formalised (written policy or procedure)",
    "3": "Deployed and measured in every country (KPIs, evidence)"
+  },
+  "ja": {
+   "0": "未対応",
+   "1": "着手済み（単発の取り組み、文書化なし）",
+   "2": "文書化済み（方針・手順を策定）",
+   "3": "全拠点で展開・測定済み（指標、エビデンスあり）"
   }
  },
  "pillars": {
   "ENV": {
    "fr": "Environnement et Green IT",
-   "en": "Environment and Green IT"
+   "en": "Environment and Green IT",
+   "ja": "環境・グリーンIT"
   },
   "SOC": {
    "fr": "Social et droits humains",
-   "en": "Labour and human rights"
+   "en": "Labour and human rights",
+   "ja": "労働・人権"
   },
   "ETH": {
    "fr": "Éthique et cybersécurité",
-   "en": "Ethics and cybersecurity"
+   "en": "Ethics and cybersecurity",
+   "ja": "倫理・サイバーセキュリティ"
   },
   "ACH": {
    "fr": "Achats responsables et vigilance",
-   "en": "Sustainable procurement and due diligence"
+   "en": "Sustainable procurement and due diligence",
+   "ja": "持続可能な調達・デューデリジェンス"
   }
  },
  "sectors": {
   "IT": {
    "fr": "IT et services numériques",
-   "en": "IT and digital services"
+   "en": "IT and digital services",
+   "ja": "IT・デジタルサービス"
   },
   "SCM": {
    "fr": "Supply chain et logistique",
-   "en": "Supply chain and logistics"
+   "en": "Supply chain and logistics",
+   "ja": "サプライチェーン・物流"
   },
   "HOSP": {
    "fr": "Hôtellerie et services multi-sites",
-   "en": "Hospitality and multi-site services"
+   "en": "Hospitality and multi-site services",
+   "ja": "ホテル・多拠点サービス"
   },
   "HW": {
    "fr": "Matériel et électronique",
-   "en": "Hardware and electronics"
+   "en": "Hardware and electronics",
+   "ja": "ハードウェア・電子機器"
   }
  },
  "entity_types": {
   "GROUP": {
    "fr": "Groupe (vision consolidée)",
-   "en": "Group (consolidated view)"
+   "en": "Group (consolidated view)",
+   "ja": "グループ（連結ベース）"
   },
   "SUB": {
    "fr": "Filiale ou pays",
-   "en": "Subsidiary or country"
+   "en": "Subsidiary or country",
+   "ja": "子会社・国別拠点"
   },
   "SUP": {
    "fr": "Fournisseur",
-   "en": "Supplier"
+   "en": "Supplier",
+   "ja": "サプライヤー"
   }
  },
  "regions": {
   "EU": {
    "fr": "Europe",
-   "en": "Europe"
+   "en": "Europe",
+   "ja": "欧州"
   },
   "NA": {
    "fr": "Amérique du Nord",
-   "en": "North America"
+   "en": "North America",
+   "ja": "北米"
   },
   "APAC": {
    "fr": "Asie-Pacifique",
-   "en": "Asia-Pacific"
+   "en": "Asia-Pacific",
+   "ja": "アジア太平洋"
   },
   "LATAM": {
    "fr": "Amérique latine",
-   "en": "Latin America"
+   "en": "Latin America",
+   "ja": "中南米"
   },
   "MEA": {
    "fr": "Moyen-Orient et Afrique",
-   "en": "Middle East and Africa"
+   "en": "Middle East and Africa",
+   "ja": "中東・アフリカ"
   }
  },
  "higher_risk_regions": [
@@ -179,27 +252,33 @@
  "regulations": {
   "CSRD": {
    "fr": "CSRD (reporting de durabilité européen)",
-   "en": "CSRD (EU sustainability reporting)"
+   "en": "CSRD (EU sustainability reporting)",
+   "ja": "CSRD（EU企業サステナビリティ報告指令）"
   },
   "CSDDD": {
    "fr": "CSDDD (devoir de vigilance européen)",
-   "en": "CSDDD (EU corporate sustainability due diligence)"
+   "en": "CSDDD (EU corporate sustainability due diligence)",
+   "ja": "CSDDD（EU企業サステナビリティ・デューデリジェンス指令）"
   },
   "VIGILANCE": {
    "fr": "Loi française sur le devoir de vigilance",
-   "en": "French Duty of Vigilance Law"
+   "en": "French Duty of Vigilance Law",
+   "ja": "フランス注意義務法"
   },
   "SAPIN2": {
    "fr": "Loi Sapin II (anticorruption)",
-   "en": "Sapin II Law (French anti-corruption)"
+   "en": "Sapin II Law (French anti-corruption)",
+   "ja": "サパンII法（フランス腐敗防止法）"
   },
   "NIS2": {
    "fr": "Directive NIS 2 (cybersécurité)",
-   "en": "NIS 2 Directive (cybersecurity)"
+   "en": "NIS 2 Directive (cybersecurity)",
+   "ja": "NIS2指令（サイバーセキュリティ）"
   },
   "GDPR": {
    "fr": "RGPD (données personnelles)",
-   "en": "GDPR (personal data)"
+   "en": "GDPR (personal data)",
+   "ja": "GDPR（EU一般データ保護規則）"
   }
  },
  "sector_weights": {
@@ -233,28 +312,32 @@
    "threshold": 65,
    "label": {
     "fr": "Avancé",
-    "en": "Advanced"
+    "en": "Advanced",
+    "ja": "先進的"
    }
   },
   {
    "threshold": 45,
    "label": {
     "fr": "Solide",
-    "en": "Good"
+    "en": "Good",
+    "ja": "良好"
    }
   },
   {
    "threshold": 25,
    "label": {
     "fr": "Partiel",
-    "en": "Partial"
+    "en": "Partial",
+    "ja": "部分的"
    }
   },
   {
    "threshold": 0,
    "label": {
     "fr": "Insuffisant",
-    "en": "Insufficient"
+    "en": "Insufficient",
+    "ja": "不十分"
    }
   }
  ],
@@ -266,37 +349,65 @@
    "pillar": "ENV",
    "text": {
     "fr": "Avez-vous une politique environnementale signée par la direction et appliquée dans tous les pays ?",
-    "en": "Do you have an environmental policy signed by top management and applied in every country?"
+    "en": "Do you have an environmental policy signed by top management and applied in every country?",
+    "ja": "経営層が署名し、すべての国で適用される環境方針がありますか？"
    },
    "help": {
     "fr": "Un seul document de référence pour le groupe, traduit et relayé localement.",
-    "en": "One reference document for the whole group, translated and relayed locally."
+    "en": "One reference document for the whole group, translated and relayed locally.",
+    "ja": "グループ共通の基本文書を一つ定め、各国の言語に翻訳して現地に展開します。"
    },
    "action": {
     "fr": "Rédiger une politique environnementale groupe d'une page, la faire signer par la direction et la traduire pour chaque pays.",
-    "en": "Write a one-page group environmental policy, have it signed by top management and translate it for each country."
+    "en": "Write a one-page group environmental policy, have it signed by top management and translate it for each country.",
+    "ja": "1ページのグループ環境方針を作成し、経営層の署名を得たうえで各国語に翻訳する。"
    },
    "impact": 3,
    "effort": 1,
    "regulations": [],
    "sector_boost": {},
    "international": true,
-   "risk_sensitive": false
+   "risk_sensitive": false,
+   "evidence": {
+    "fr": [
+     "Politique environnementale datée et signée par la direction",
+     "Versions traduites pour chaque pays",
+     "Preuve de diffusion (intranet, e-mail, affichage)"
+    ],
+    "en": [
+     "Environmental policy dated and signed by top management",
+     "Translated versions for each country",
+     "Proof of communication (intranet, email, posters)"
+    ],
+    "ja": [
+     "経営層が署名し日付を記載した環境方針",
+     "各国語の翻訳版",
+     "周知の証跡（イントラネット、メール、掲示）"
+    ]
+   },
+   "kpi": {
+    "fr": "Part des pays où la politique est diffusée",
+    "en": "Share of countries where the policy is communicated",
+    "ja": "方針を周知している国の割合"
+   }
   },
   {
    "id": "ENV2",
    "pillar": "ENV",
    "text": {
     "fr": "Mesurez-vous vos émissions de gaz à effet de serre, scope 3 compris (achats, cloud, transport) ?",
-    "en": "Do you measure your greenhouse gas emissions, including scope 3 (purchases, cloud, transport)?"
+    "en": "Do you measure your greenhouse gas emissions, including scope 3 (purchases, cloud, transport)?",
+    "ja": "スコープ3（購買、クラウド、輸送）を含む温室効果ガス排出量を算定していますか？"
    },
    "help": {
     "fr": "Le scope 3 représente souvent la plus grande part des émissions d'une entreprise IT ou logistique.",
-    "en": "Scope 3 often represents most of the emissions of an IT or logistics company."
+    "en": "Scope 3 often represents most of the emissions of an IT or logistics company.",
+    "ja": "ITや物流企業では、スコープ3が排出量の大部分を占めることが多くあります。"
    },
    "action": {
     "fr": "Réaliser un bilan carbone complet (scopes 1, 2 et 3) en commençant par les postes les plus lourds : achats, cloud, transport.",
-    "en": "Run a full carbon footprint (scopes 1, 2 and 3), starting with the heaviest items: purchases, cloud, transport."
+    "en": "Run a full carbon footprint (scopes 1, 2 and 3), starting with the heaviest items: purchases, cloud, transport.",
+    "ja": "購買、クラウド、輸送など影響の大きい項目から、スコープ1・2・3の排出量を算定する。"
    },
    "impact": 3,
    "effort": 2,
@@ -305,22 +416,47 @@
    ],
    "sector_boost": {},
    "international": false,
-   "risk_sensitive": false
+   "risk_sensitive": false,
+   "evidence": {
+    "fr": [
+     "Bilan carbone avec méthode et périmètre (scopes 1, 2 et 3)",
+     "Fichier de calcul et facteurs d'émission utilisés",
+     "Données sources (factures d'énergie, achats, cloud, transport)"
+    ],
+    "en": [
+     "Carbon footprint with method and scope (scopes 1, 2 and 3)",
+     "Calculation file and emission factors used",
+     "Source data (energy bills, purchases, cloud, transport)"
+    ],
+    "ja": [
+     "算定方法と範囲を明記した排出量算定書（スコープ1・2・3）",
+     "計算ファイルと使用した排出係数",
+     "元データ（エネルギー請求書、購買、クラウド、輸送）"
+    ]
+   },
+   "kpi": {
+    "fr": "Émissions totales en tonnes de CO2e, dont part du scope 3",
+    "en": "Total emissions in tonnes of CO2e, including scope 3 share",
+    "ja": "総排出量（t-CO2e）とスコープ3の比率"
+   }
   },
   {
    "id": "ENV3",
    "pillar": "ENV",
    "text": {
     "fr": "Avez-vous des objectifs de réduction alignés sur la science (type SBTi) et suivis chaque année ?",
-    "en": "Do you have science-based reduction targets (SBTi type) tracked every year?"
+    "en": "Do you have science-based reduction targets (SBTi type) tracked every year?",
+    "ja": "科学的根拠に基づく削減目標（SBTiなど）を設定し、毎年進捗を確認していますか？"
    },
    "help": {
     "fr": "Les grands donneurs d'ordre demandent de plus en plus des objectifs validés.",
-    "en": "Large customers increasingly ask their suppliers for validated targets."
+    "en": "Large customers increasingly ask their suppliers for validated targets.",
+    "ja": "大手顧客は、取引先に認定済みの目標を求めるケースが増えています。"
    },
    "action": {
     "fr": "Fixer des objectifs de réduction à 2030 alignés sur l'Accord de Paris et publier leur suivi annuel.",
-    "en": "Set 2030 reduction targets aligned with the Paris Agreement and publish yearly progress."
+    "en": "Set 2030 reduction targets aligned with the Paris Agreement and publish yearly progress.",
+    "ja": "パリ協定に整合した2030年の削減目標を設定し、毎年の進捗を公表する。"
    },
    "impact": 3,
    "effort": 2,
@@ -329,22 +465,47 @@
    ],
    "sector_boost": {},
    "international": false,
-   "risk_sensitive": false
+   "risk_sensitive": false,
+   "evidence": {
+    "fr": [
+     "Objectifs chiffrés et datés validés par la direction",
+     "Trajectoire de réduction et plan d'actions associé",
+     "Lettre d'engagement ou validation SBTi si disponible"
+    ],
+    "en": [
+     "Quantified, dated targets approved by top management",
+     "Reduction pathway and related action plan",
+     "SBTi commitment letter or validation if available"
+    ],
+    "ja": [
+     "経営層が承認した定量・期限付きの目標",
+     "削減の道筋と関連する行動計画",
+     "SBTiのコミットメントレターまたは認定（ある場合）"
+    ]
+   },
+   "kpi": {
+    "fr": "Écart entre émissions réelles et trajectoire cible",
+    "en": "Gap between actual emissions and target pathway",
+    "ja": "実績排出量と目標の道筋との差"
+   }
   },
   {
    "id": "ENV4",
    "pillar": "ENV",
    "text": {
     "fr": "Pilotez-vous l'impact de votre numérique (énergie des data centers et du cloud, durée de vie et recyclage du matériel) ?",
-    "en": "Do you manage your digital footprint (data centre and cloud energy, device lifetime and recycling)?"
+    "en": "Do you manage your digital footprint (data centre and cloud energy, device lifetime and recycling)?",
+    "ja": "デジタル分野の環境負荷（データセンター・クラウドのエネルギー、機器の寿命とリサイクル）を管理していますか？"
    },
    "help": {
     "fr": "Par exemple : PUE des data centers, part d'énergie renouvelable, reconditionnement des ordinateurs, filière DEEE.",
-    "en": "For example: data centre PUE, share of renewable energy, refurbished laptops, e-waste recycling."
+    "en": "For example: data centre PUE, share of renewable energy, refurbished laptops, e-waste recycling.",
+    "ja": "例：データセンターのPUE、再生可能エネルギー比率、再生PCの活用、電子廃棄物のリサイクル。"
    },
    "action": {
     "fr": "Lancer une démarche Green IT : suivre l'énergie du cloud, allonger la durée de vie du matériel et passer par une filière de recyclage certifiée.",
-    "en": "Launch a Green IT plan: track cloud energy, extend device lifetime and use a certified e-waste recycling partner."
+    "en": "Launch a Green IT plan: track cloud energy, extend device lifetime and use a certified e-waste recycling partner.",
+    "ja": "グリーンIT計画を立ち上げ、クラウドのエネルギーを把握し、機器の使用期間を延ばし、認証を受けたリサイクル業者を利用する。"
    },
    "impact": 2,
    "effort": 2,
@@ -354,22 +515,47 @@
     "HW": 1.3
    },
    "international": false,
-   "risk_sensitive": false
+   "risk_sensitive": false,
+   "evidence": {
+    "fr": [
+     "Inventaire du parc informatique avec dates d'achat",
+     "Rapports énergie ou carbone des fournisseurs cloud et data centers",
+     "Certificats de recyclage du matériel en fin de vie"
+    ],
+    "en": [
+     "IT equipment inventory with purchase dates",
+     "Energy or carbon reports from cloud and data centre providers",
+     "Recycling certificates for end-of-life equipment"
+    ],
+    "ja": [
+     "購入日を記載したIT機器の台帳",
+     "クラウド・データセンター事業者のエネルギーまたは排出量報告",
+     "使用済み機器のリサイクル証明書"
+    ]
+   },
+   "kpi": {
+    "fr": "Durée moyenne d'utilisation des ordinateurs portables",
+    "en": "Average lifetime of laptops",
+    "ja": "ノートPCの平均使用年数"
+   }
   },
   {
    "id": "ENV5",
    "pillar": "ENV",
    "text": {
     "fr": "Réduisez-vous les impacts du transport et des emballages (choix des transporteurs, report modal, emballages réutilisables) ?",
-    "en": "Do you reduce transport and packaging impacts (carrier selection, modal shift, reusable packaging)?"
+    "en": "Do you reduce transport and packaging impacts (carrier selection, modal shift, reusable packaging)?",
+    "ja": "輸送と梱包の環境負荷（運送会社の選定、モーダルシフト、再利用可能な梱包）を削減していますか？"
    },
    "help": {
     "fr": "Le transport est un levier majeur pour la logistique et la distribution.",
-    "en": "Transport is a major lever for logistics and distribution."
+    "en": "Transport is a major lever for logistics and distribution.",
+    "ja": "物流・流通業にとって、輸送は最も大きな改善レバーの一つです。"
    },
    "action": {
     "fr": "Intégrer des critères carbone dans le choix des transporteurs et tester le report modal ou les emballages réutilisables sur un flux pilote.",
-    "en": "Add carbon criteria to carrier selection and pilot modal shift or reusable packaging on one flow."
+    "en": "Add carbon criteria to carrier selection and pilot modal shift or reusable packaging on one flow.",
+    "ja": "運送会社の選定にCO2基準を加え、一つの輸送ルートでモーダルシフトや再利用梱包を試行する。"
    },
    "impact": 2,
    "effort": 2,
@@ -380,22 +566,47 @@
     "HW": 1.2
    },
    "international": false,
-   "risk_sensitive": false
+   "risk_sensitive": false,
+   "evidence": {
+    "fr": [
+     "Grille de sélection des transporteurs avec critère carbone",
+     "Bilan des émissions du transport par flux",
+     "Résultats du pilote (report modal ou emballages réutilisables)"
+    ],
+    "en": [
+     "Carrier selection grid including a carbon criterion",
+     "Transport emissions report by flow",
+     "Pilot results (modal shift or reusable packaging)"
+    ],
+    "ja": [
+     "CO2基準を含む運送会社の選定表",
+     "輸送ルート別の排出量報告",
+     "試行結果（モーダルシフトまたは再利用梱包）"
+    ]
+   },
+   "kpi": {
+    "fr": "Émissions par tonne transportée et par kilomètre",
+    "en": "Emissions per tonne-kilometre transported",
+    "ja": "輸送トンキロ当たりの排出量"
+   }
   },
   {
    "id": "SOC1",
    "pillar": "SOC",
    "text": {
     "fr": "Avez-vous un système santé et sécurité commun à tous les sites, sous-traitants compris ?",
-    "en": "Do you have a health and safety system shared by all sites, including subcontractors?"
+    "en": "Do you have a health and safety system shared by all sites, including subcontractors?",
+    "ja": "協力会社を含め、全拠点で共通の労働安全衛生の仕組みがありますか？"
    },
    "help": {
     "fr": "Évaluation des risques, suivi des accidents, formation. La norme de référence est ISO 45001.",
-    "en": "Risk assessment, accident tracking, training. The reference standard is ISO 45001."
+    "en": "Risk assessment, accident tracking, training. The reference standard is ISO 45001.",
+    "ja": "リスク評価、労働災害の記録、教育訓練。代表的な規格はISO 45001です。"
    },
    "action": {
     "fr": "Définir des standards santé et sécurité groupe, suivre le taux d'accidents par site et les étendre aux sous-traitants.",
-    "en": "Define group health and safety standards, track the accident rate per site and extend them to subcontractors."
+    "en": "Define group health and safety standards, track the accident rate per site and extend them to subcontractors.",
+    "ja": "グループ共通の安全衛生基準を定め、拠点ごとの災害発生率を把握し、協力会社にも適用する。"
    },
    "impact": 3,
    "effort": 2,
@@ -406,44 +617,94 @@
     "HW": 1.3
    },
    "international": false,
-   "risk_sensitive": false
+   "risk_sensitive": false,
+   "evidence": {
+    "fr": [
+     "Évaluation des risques professionnels par site",
+     "Registre des accidents et plan de prévention annuel",
+     "Attestations de formation sécurité, sous-traitants compris"
+    ],
+    "en": [
+     "Occupational risk assessment per site",
+     "Accident log and yearly prevention plan",
+     "Safety training records, including subcontractors"
+    ],
+    "ja": [
+     "拠点ごとの労働安全リスク評価",
+     "労働災害の記録と年間の予防計画",
+     "協力会社を含む安全教育の受講記録"
+    ]
+   },
+   "kpi": {
+    "fr": "Taux de fréquence des accidents du travail",
+    "en": "Lost-time injury frequency rate",
+    "ja": "労働災害の度数率"
+   }
   },
   {
    "id": "SOC2",
    "pillar": "SOC",
    "text": {
     "fr": "Avez-vous des standards sociaux minimum communs à tous les pays (temps de travail, salaires, liberté d'association) ?",
-    "en": "Do you have minimum labour standards shared by every country (working hours, wages, freedom of association)?"
+    "en": "Do you have minimum labour standards shared by every country (working hours, wages, freedom of association)?",
+    "ja": "すべての国で共通の最低労働基準（労働時間、賃金、結社の自由）がありますか？"
    },
    "help": {
     "fr": "Un socle commun évite les écarts entre filiales, surtout hors d'Europe.",
-    "en": "A common baseline avoids gaps between subsidiaries, especially outside Europe."
+    "en": "A common baseline avoids gaps between subsidiaries, especially outside Europe.",
+    "ja": "共通の基準を設けることで、特に欧州以外の子会社間の差を防げます。"
    },
    "action": {
     "fr": "Formaliser un socle social groupe (temps de travail, salaire décent, dialogue social) et vérifier son application pays par pays.",
-    "en": "Formalise a group labour baseline (working hours, living wage, social dialogue) and check it country by country."
+    "en": "Formalise a group labour baseline (working hours, living wage, social dialogue) and check it country by country.",
+    "ja": "労働時間、生活賃金、労使対話に関するグループ共通の基準を定め、国ごとに適用状況を確認する。"
    },
    "impact": 3,
    "effort": 2,
    "regulations": [],
    "sector_boost": {},
    "international": true,
-   "risk_sensitive": true
+   "risk_sensitive": true,
+   "evidence": {
+    "fr": [
+     "Socle social groupe validé (temps de travail, salaires, dialogue social)",
+     "Tableau de conformité pays par pays",
+     "Comptes rendus des instances de dialogue social"
+    ],
+    "en": [
+     "Approved group labour baseline (working hours, wages, social dialogue)",
+     "Country-by-country compliance table",
+     "Minutes of employee representative bodies"
+    ],
+    "ja": [
+     "承認済みのグループ共通労働基準（労働時間、賃金、労使対話）",
+     "国別の適合状況一覧",
+     "労使協議の議事録"
+    ]
+   },
+   "kpi": {
+    "fr": "Part des pays conformes au socle social",
+    "en": "Share of countries compliant with the labour baseline",
+    "ja": "共通労働基準に適合している国の割合"
+   }
   },
   {
    "id": "SOC3",
    "pillar": "SOC",
    "text": {
     "fr": "Avez-vous une politique diversité et inclusion avec des indicateurs suivis ?",
-    "en": "Do you have a diversity and inclusion policy with tracked KPIs?"
+    "en": "Do you have a diversity and inclusion policy with tracked KPIs?",
+    "ja": "指標を伴うダイバーシティ＆インクルージョン方針がありますか？"
    },
    "help": {
     "fr": "Par exemple : part de femmes dans le management, écart de rémunération, handicap.",
-    "en": "For example: share of women in management, pay gap, disability inclusion."
+    "en": "For example: share of women in management, pay gap, disability inclusion.",
+    "ja": "例：管理職に占める女性比率、男女間賃金格差、障がい者の雇用と包摂。"
    },
    "action": {
     "fr": "Publier une politique diversité et inclusion et suivre 3 indicateurs : femmes managers, écart salarial, inclusion du handicap.",
-    "en": "Publish a diversity and inclusion policy and track 3 KPIs: women in management, pay gap, disability inclusion."
+    "en": "Publish a diversity and inclusion policy and track 3 KPIs: women in management, pay gap, disability inclusion.",
+    "ja": "D&I方針を公表し、女性管理職比率、賃金格差、障がい者雇用の3つの指標を追跡する。"
    },
    "impact": 2,
    "effort": 1,
@@ -452,22 +713,47 @@
    ],
    "sector_boost": {},
    "international": false,
-   "risk_sensitive": false
+   "risk_sensitive": false,
+   "evidence": {
+    "fr": [
+     "Politique diversité et inclusion signée",
+     "Indicateurs publiés (femmes managers, écart salarial)",
+     "Plan d'actions et formations associées"
+    ],
+    "en": [
+     "Signed diversity and inclusion policy",
+     "Published KPIs (women in management, pay gap)",
+     "Action plan and related training"
+    ],
+    "ja": [
+     "署名済みのD&I方針",
+     "公表している指標（女性管理職比率、賃金格差）",
+     "行動計画と関連する研修"
+    ]
+   },
+   "kpi": {
+    "fr": "Part de femmes dans les postes de management",
+    "en": "Share of women in management roles",
+    "ja": "管理職に占める女性の割合"
+   }
   },
   {
    "id": "SOC4",
    "pillar": "SOC",
    "text": {
     "fr": "Accompagnez-vous les salariés dans l'évolution de leurs compétences (numérique, IA, reconversion) ?",
-    "en": "Do you support employees as their skills evolve (digital, AI, reskilling)?"
+    "en": "Do you support employees as their skills evolve (digital, AI, reskilling)?",
+    "ja": "従業員のスキル変化（デジタル、AI、リスキリング）を支援していますか？"
    },
    "help": {
     "fr": "Plan de formation, parcours de reconversion, entretiens réguliers.",
-    "en": "Training plan, reskilling paths, regular career reviews."
+    "en": "Training plan, reskilling paths, regular career reviews.",
+    "ja": "研修計画、リスキリングの機会、定期的なキャリア面談。"
    },
    "action": {
     "fr": "Construire un plan de montée en compétences sur le numérique et l'IA, et suivre le nombre d'heures de formation par salarié.",
-    "en": "Build an upskilling plan on digital and AI, and track training hours per employee."
+    "en": "Build an upskilling plan on digital and AI, and track training hours per employee.",
+    "ja": "デジタルとAIに関するスキルアップ計画を策定し、従業員一人当たりの研修時間を追跡する。"
    },
    "impact": 2,
    "effort": 2,
@@ -476,22 +762,47 @@
     "IT": 1.3
    },
    "international": false,
-   "risk_sensitive": false
+   "risk_sensitive": false,
+   "evidence": {
+    "fr": [
+     "Plan de formation annuel incluant le numérique et l'IA",
+     "Suivi des heures de formation par salarié",
+     "Comptes rendus des entretiens professionnels"
+    ],
+    "en": [
+     "Yearly training plan including digital and AI",
+     "Training hours tracked per employee",
+     "Records of career review meetings"
+    ],
+    "ja": [
+     "デジタルとAIを含む年間研修計画",
+     "従業員ごとの研修時間の記録",
+     "キャリア面談の記録"
+    ]
+   },
+   "kpi": {
+    "fr": "Heures de formation par salarié et par an",
+    "en": "Training hours per employee per year",
+    "ja": "従業員一人当たりの年間研修時間"
+   }
   },
   {
    "id": "SOC5",
    "pillar": "SOC",
    "text": {
     "fr": "Avez-vous cartographié les risques de droits humains liés à vos activités dans chaque pays ?",
-    "en": "Have you mapped the human rights risks linked to your operations in each country?"
+    "en": "Have you mapped the human rights risks linked to your operations in each country?",
+    "ja": "各国の事業活動に関わる人権リスクを洗い出していますか？"
    },
    "help": {
     "fr": "Travail forcé, travail des enfants, conditions de travail des prestataires.",
-    "en": "Forced labour, child labour, working conditions of service providers."
+    "en": "Forced labour, child labour, working conditions of service providers.",
+    "ja": "強制労働、児童労働、業務委託先の労働条件など。"
    },
    "action": {
     "fr": "Réaliser une cartographie des risques droits humains par pays et par activité, puis définir des mesures pour les risques les plus élevés.",
-    "en": "Map human rights risks by country and activity, then define measures for the highest risks."
+    "en": "Map human rights risks by country and activity, then define measures for the highest risks.",
+    "ja": "国別・事業別に人権リスクを洗い出し、リスクの高い項目について対策を定める。"
    },
    "impact": 3,
    "effort": 2,
@@ -501,44 +812,94 @@
    ],
    "sector_boost": {},
    "international": true,
-   "risk_sensitive": true
+   "risk_sensitive": true,
+   "evidence": {
+    "fr": [
+     "Cartographie des risques droits humains par pays et par activité",
+     "Plan de mesures pour les risques les plus élevés",
+     "Mention dans le plan de vigilance si vous y êtes soumis"
+    ],
+    "en": [
+     "Human rights risk map by country and activity",
+     "Measures for the highest risks",
+     "Reference in the due diligence plan if you are subject to one"
+    ],
+    "ja": [
+     "国別・事業別の人権リスクマップ",
+     "リスクの高い項目への対策計画",
+     "該当する場合はデューデリジェンス計画への記載"
+    ]
+   },
+   "kpi": {
+    "fr": "Part des risques élevés couverts par une mesure",
+    "en": "Share of high risks covered by a measure",
+    "ja": "対策が講じられている高リスク項目の割合"
+   }
   },
   {
    "id": "ETH1",
    "pillar": "ETH",
    "text": {
     "fr": "Avez-vous un code de conduite traduit dans toutes les langues et des formations suivies par tous ?",
-    "en": "Do you have a code of conduct translated into every language, with training completed by all employees?"
+    "en": "Do you have a code of conduct translated into every language, with training completed by all employees?",
+    "ja": "全言語に翻訳された行動規範があり、全従業員が研修を受けていますか？"
    },
    "help": {
     "fr": "Un code non traduit ou jamais expliqué reste lettre morte dans les filiales.",
-    "en": "A code that is not translated or explained stays a dead letter in subsidiaries."
+    "en": "A code that is not translated or explained stays a dead letter in subsidiaries.",
+    "ja": "翻訳も説明もされない行動規範は、子会社では形骸化してしまいます。"
    },
    "action": {
     "fr": "Traduire le code de conduite dans les langues de chaque pays et lancer une formation en ligne obligatoire avec suivi du taux de complétion.",
-    "en": "Translate the code of conduct for every country and launch mandatory e-learning with completion tracking."
+    "en": "Translate the code of conduct for every country and launch mandatory e-learning with completion tracking.",
+    "ja": "行動規範を各国語に翻訳し、受講率を管理する必須のeラーニングを開始する。"
    },
    "impact": 3,
    "effort": 1,
    "regulations": [],
    "sector_boost": {},
    "international": true,
-   "risk_sensitive": false
+   "risk_sensitive": false,
+   "evidence": {
+    "fr": [
+     "Code de conduite traduit dans chaque langue",
+     "Module de formation et taux de complétion",
+     "Accusés de lecture signés par les salariés"
+    ],
+    "en": [
+     "Code of conduct translated into each language",
+     "Training module and completion rate",
+     "Read acknowledgements signed by employees"
+    ],
+    "ja": [
+     "各国語に翻訳された行動規範",
+     "研修教材と受講完了率",
+     "従業員が署名した受領確認書"
+    ]
+   },
+   "kpi": {
+    "fr": "Taux de salariés formés au code de conduite",
+    "en": "Share of employees trained on the code of conduct",
+    "ja": "行動規範の研修を受けた従業員の割合"
+   }
   },
   {
    "id": "ETH2",
    "pillar": "ETH",
    "text": {
     "fr": "Avez-vous un programme anticorruption basé sur une cartographie des risques ?",
-    "en": "Do you have an anti-corruption programme based on a risk map?"
+    "en": "Do you have an anti-corruption programme based on a risk map?",
+    "ja": "リスク評価に基づく腐敗防止プログラムがありますか？"
    },
    "help": {
     "fr": "Règles cadeaux et conflits d'intérêts, contrôle des intermédiaires, conformité Sapin II, FCPA ou UK Bribery Act.",
-    "en": "Gifts and conflicts of interest rules, third-party checks, compliance with Sapin II, FCPA or UK Bribery Act."
+    "en": "Gifts and conflicts of interest rules, third-party checks, compliance with Sapin II, FCPA or UK Bribery Act.",
+    "ja": "贈答品・利益相反のルール、仲介者の確認、サパンII法・FCPA・英国贈収賄法への対応。"
    },
    "action": {
     "fr": "Cartographier les risques de corruption par pays et par processus, puis encadrer cadeaux, conflits d'intérêts et intermédiaires.",
-    "en": "Map corruption risks by country and process, then frame gifts, conflicts of interest and intermediaries."
+    "en": "Map corruption risks by country and process, then frame gifts, conflicts of interest and intermediaries.",
+    "ja": "国別・業務プロセス別に腐敗リスクを洗い出し、贈答品、利益相反、仲介者に関するルールを定める。"
    },
    "impact": 3,
    "effort": 2,
@@ -547,22 +908,47 @@
    ],
    "sector_boost": {},
    "international": false,
-   "risk_sensitive": true
+   "risk_sensitive": true,
+   "evidence": {
+    "fr": [
+     "Cartographie des risques de corruption",
+     "Politique cadeaux, invitations et conflits d'intérêts",
+     "Registre des vérifications sur les intermédiaires"
+    ],
+    "en": [
+     "Corruption risk map",
+     "Gifts, hospitality and conflicts of interest policy",
+     "Log of integrity checks on intermediaries"
+    ],
+    "ja": [
+     "腐敗リスクマップ",
+     "贈答品・接待・利益相反に関する方針",
+     "仲介者に対する確認の記録"
+    ]
+   },
+   "kpi": {
+    "fr": "Part des salariés exposés formés à l'anticorruption",
+    "en": "Share of exposed employees trained on anti-corruption",
+    "ja": "対象となる従業員のうち腐敗防止研修の受講者の割合"
+   }
   },
   {
    "id": "ETH3",
    "pillar": "ETH",
    "text": {
     "fr": "Avez-vous un dispositif d'alerte multilingue, accessible aussi aux fournisseurs et partenaires ?",
-    "en": "Do you have a multilingual whistleblowing channel, also open to suppliers and partners?"
+    "en": "Do you have a multilingual whistleblowing channel, also open to suppliers and partners?",
+    "ja": "サプライヤーや取引先も利用できる、多言語の内部通報窓口がありますか？"
    },
    "help": {
     "fr": "Confidentiel, disponible dans toutes les langues du groupe, avec un traitement des alertes suivi.",
-    "en": "Confidential, available in every group language, with tracked case handling."
+    "en": "Confidential, available in every group language, with tracked case handling.",
+    "ja": "匿名性が守られ、グループの全言語で利用でき、通報の対応状況が管理されていること。"
    },
    "action": {
     "fr": "Déployer un canal d'alerte en ligne multilingue, ouvert aux tiers, et suivre le délai de traitement des alertes.",
-    "en": "Deploy a multilingual online whistleblowing channel open to third parties and track case handling time."
+    "en": "Deploy a multilingual online whistleblowing channel open to third parties and track case handling time.",
+    "ja": "社外の関係者も利用できる多言語のオンライン通報窓口を導入し、対応期間を管理する。"
    },
    "impact": 2,
    "effort": 1,
@@ -572,22 +958,47 @@
    ],
    "sector_boost": {},
    "international": true,
-   "risk_sensitive": false
+   "risk_sensitive": false,
+   "evidence": {
+    "fr": [
+     "Procédure d'alerte publiée et accessible aux tiers",
+     "Langues disponibles et canaux d'accès",
+     "Registre anonymisé du traitement des alertes"
+    ],
+    "en": [
+     "Whistleblowing procedure published and open to third parties",
+     "Available languages and access channels",
+     "Anonymised log of case handling"
+    ],
+    "ja": [
+     "公開され、社外の関係者も利用できる通報手続き",
+     "対応言語と利用経路",
+     "匿名化した通報対応の記録"
+    ]
+   },
+   "kpi": {
+    "fr": "Délai moyen de traitement des alertes",
+    "en": "Average case handling time",
+    "ja": "通報への平均対応期間"
+   }
   },
   {
    "id": "ETH4",
    "pillar": "ETH",
    "text": {
     "fr": "Votre sécurité de l'information est-elle certifiée (ISO 27001, SOC 2) et exigée de vos prestataires ?",
-    "en": "Is your information security certified (ISO 27001, SOC 2) and required from your providers?"
+    "en": "Is your information security certified (ISO 27001, SOC 2) and required from your providers?",
+    "ja": "情報セキュリティの認証（ISO 27001、SOC 2）を取得し、委託先にも求めていますか？"
    },
    "help": {
     "fr": "Point critique pour les entreprises IT et pour tout groupe qui manipule des données clients.",
-    "en": "Critical for IT companies and any group handling customer data."
+    "en": "Critical for IT companies and any group handling customer data.",
+    "ja": "IT企業や顧客データを扱うすべてのグループにとって重要な項目です。"
    },
    "action": {
     "fr": "Engager une démarche ISO 27001 sur le périmètre le plus sensible et ajouter des exigences de sécurité dans les contrats prestataires.",
-    "en": "Start an ISO 27001 programme on the most sensitive scope and add security requirements to provider contracts."
+    "en": "Start an ISO 27001 programme on the most sensitive scope and add security requirements to provider contracts.",
+    "ja": "最も重要な範囲でISO 27001の取り組みを開始し、委託先との契約にセキュリティ要件を加える。"
    },
    "impact": 3,
    "effort": 3,
@@ -598,22 +1009,47 @@
     "IT": 1.5
    },
    "international": false,
-   "risk_sensitive": false
+   "risk_sensitive": false,
+   "evidence": {
+    "fr": [
+     "Certificat ISO 27001 ou rapport SOC 2, avec son périmètre",
+     "Politique de sécurité de l'information",
+     "Clauses de sécurité dans les contrats prestataires"
+    ],
+    "en": [
+     "ISO 27001 certificate or SOC 2 report, with its scope",
+     "Information security policy",
+     "Security clauses in provider contracts"
+    ],
+    "ja": [
+     "適用範囲を明記したISO 27001認証書またはSOC 2報告書",
+     "情報セキュリティ方針",
+     "委託先契約のセキュリティ条項"
+    ]
+   },
+   "kpi": {
+    "fr": "Part des prestataires critiques avec exigences de sécurité",
+    "en": "Share of critical providers with security requirements",
+    "ja": "セキュリティ要件を課している重要委託先の割合"
+   }
   },
   {
    "id": "ETH5",
    "pillar": "ETH",
    "text": {
     "fr": "Êtes-vous en conformité avec les lois sur les données personnelles dans chaque pays (RGPD, transferts internationaux) ?",
-    "en": "Do you comply with personal data laws in each country (GDPR, international transfers)?"
+    "en": "Do you comply with personal data laws in each country (GDPR, international transfers)?",
+    "ja": "各国の個人情報保護法（GDPR、国際データ移転）に対応していますか？"
    },
    "help": {
     "fr": "Registre des traitements, clauses de transfert hors UE, gestion des demandes des personnes.",
-    "en": "Records of processing, transfer clauses outside the EU, handling of data subject requests."
+    "en": "Records of processing, transfer clauses outside the EU, handling of data subject requests.",
+    "ja": "処理活動の記録、EU域外への移転条項、本人からの請求への対応。"
    },
    "action": {
     "fr": "Mettre à jour le registre des traitements, sécuriser les transferts de données hors UE et nommer un relais données par pays.",
-    "en": "Update the records of processing, secure data transfers outside the EU and appoint a data contact in each country."
+    "en": "Update the records of processing, secure data transfers outside the EU and appoint a data contact in each country.",
+    "ja": "処理活動の記録を更新し、EU域外へのデータ移転を適切に管理し、各国にデータ保護の担当者を置く。"
    },
    "impact": 2,
    "effort": 2,
@@ -625,44 +1061,94 @@
     "HOSP": 1.3
    },
    "international": true,
-   "risk_sensitive": false
+   "risk_sensitive": false,
+   "evidence": {
+    "fr": [
+     "Registre des traitements à jour",
+     "Clauses de transfert pour les données hors Union européenne",
+     "Procédure de traitement des demandes des personnes"
+    ],
+    "en": [
+     "Up-to-date records of processing",
+     "Transfer clauses for data outside the European Union",
+     "Procedure for data subject requests"
+    ],
+    "ja": [
+     "最新の処理活動の記録",
+     "EU域外へのデータ移転に関する条項",
+     "本人からの請求に対応する手順"
+    ]
+   },
+   "kpi": {
+    "fr": "Délai moyen de réponse aux demandes des personnes",
+    "en": "Average response time to data subject requests",
+    "ja": "本人からの請求への平均回答期間"
+   }
   },
   {
    "id": "ACH1",
    "pillar": "ACH",
    "text": {
     "fr": "Avez-vous une politique d'achats responsables et un code de conduite fournisseurs signé ?",
-    "en": "Do you have a sustainable procurement policy and a signed supplier code of conduct?"
+    "en": "Do you have a sustainable procurement policy and a signed supplier code of conduct?",
+    "ja": "持続可能な調達方針があり、サプライヤー行動規範への署名を得ていますか？"
    },
    "help": {
     "fr": "Le code fournisseurs fixe vos attentes en matière d'environnement, de social et d'éthique.",
-    "en": "The supplier code sets your expectations on environment, labour and ethics."
+    "en": "The supplier code sets your expectations on environment, labour and ethics.",
+    "ja": "サプライヤー行動規範は、環境・労働・倫理に関する期待事項を示すものです。"
    },
    "action": {
     "fr": "Rédiger une politique d'achats responsables et faire signer un code de conduite à tous les nouveaux fournisseurs.",
-    "en": "Write a sustainable procurement policy and have every new supplier sign a code of conduct."
+    "en": "Write a sustainable procurement policy and have every new supplier sign a code of conduct.",
+    "ja": "持続可能な調達方針を策定し、すべての新規サプライヤーに行動規範への署名を求める。"
    },
    "impact": 3,
    "effort": 1,
    "regulations": [],
    "sector_boost": {},
    "international": false,
-   "risk_sensitive": false
+   "risk_sensitive": false,
+   "evidence": {
+    "fr": [
+     "Politique d'achats responsables signée",
+     "Code de conduite fournisseurs",
+     "Liste des fournisseurs signataires"
+    ],
+    "en": [
+     "Signed sustainable procurement policy",
+     "Supplier code of conduct",
+     "List of suppliers who signed it"
+    ],
+    "ja": [
+     "署名済みの持続可能な調達方針",
+     "サプライヤー行動規範",
+     "署名したサプライヤーの一覧"
+    ]
+   },
+   "kpi": {
+    "fr": "Part des achats couverts par le code fournisseurs signé",
+    "en": "Share of spend covered by a signed supplier code",
+    "ja": "署名済み行動規範でカバーされる調達額の割合"
+   }
   },
   {
    "id": "ACH2",
    "pillar": "ACH",
    "text": {
     "fr": "Avez-vous cartographié les risques fournisseurs par pays et par catégorie d'achat ?",
-    "en": "Have you mapped supplier risks by country and purchasing category?"
+    "en": "Have you mapped supplier risks by country and purchasing category?",
+    "ja": "国別・購買カテゴリー別にサプライヤーリスクを洗い出していますか？"
    },
    "help": {
     "fr": "Base du plan de vigilance : savoir où concentrer les contrôles.",
-    "en": "Basis of a due diligence plan: knowing where to focus checks."
+    "en": "Basis of a due diligence plan: knowing where to focus checks.",
+    "ja": "デューデリジェンス計画の基本であり、重点的に確認すべき対象を明確にします。"
    },
    "action": {
     "fr": "Construire une cartographie des risques fournisseurs (pays, catégorie, volume) pour cibler les 20 % de fournisseurs les plus exposés.",
-    "en": "Build a supplier risk map (country, category, spend) to target the 20% most exposed suppliers."
+    "en": "Build a supplier risk map (country, category, spend) to target the 20% most exposed suppliers.",
+    "ja": "国、カテゴリー、取引額でサプライヤーリスクを可視化し、最もリスクの高い上位20％に重点を置く。"
    },
    "impact": 3,
    "effort": 2,
@@ -672,44 +1158,94 @@
    ],
    "sector_boost": {},
    "international": true,
-   "risk_sensitive": true
+   "risk_sensitive": true,
+   "evidence": {
+    "fr": [
+     "Cartographie des risques fournisseurs (pays, catégorie, volume)",
+     "Méthode de notation des risques",
+     "Liste des fournisseurs prioritaires et actions prévues"
+    ],
+    "en": [
+     "Supplier risk map (country, category, spend)",
+     "Risk scoring method",
+     "List of priority suppliers and planned actions"
+    ],
+    "ja": [
+     "サプライヤーリスクマップ（国、カテゴリー、取引額）",
+     "リスク評価の方法",
+     "優先サプライヤーの一覧と予定している対応"
+    ]
+   },
+   "kpi": {
+    "fr": "Part des achats couverts par la cartographie",
+    "en": "Share of spend covered by the risk map",
+    "ja": "リスクマップでカバーされる調達額の割合"
+   }
   },
   {
    "id": "ACH3",
    "pillar": "ACH",
    "text": {
     "fr": "Évaluez-vous la performance RSE de vos fournisseurs stratégiques (notation, questionnaire, audit) ?",
-    "en": "Do you assess the CSR performance of your strategic suppliers (rating, questionnaire, audit)?"
+    "en": "Do you assess the CSR performance of your strategic suppliers (rating, questionnaire, audit)?",
+    "ja": "戦略的サプライヤーのCSR評価（格付け、質問票、監査）を行っていますか？"
    },
    "help": {
     "fr": "Par exemple via une plateforme de notation RSE ou des audits sur site.",
-    "en": "For example through a CSR rating platform or on-site audits."
+    "en": "For example through a CSR rating platform or on-site audits.",
+    "ja": "CSR評価プラットフォームの活用や、現地監査などの方法があります。"
    },
    "action": {
     "fr": "Demander une évaluation RSE à vos fournisseurs stratégiques et fixer un score minimum pour être référencé.",
-    "en": "Ask your strategic suppliers for a CSR assessment and set a minimum score to be listed."
+    "en": "Ask your strategic suppliers for a CSR assessment and set a minimum score to be listed.",
+    "ja": "戦略的サプライヤーにCSR評価を求め、取引継続のための最低スコアを設定する。"
    },
    "impact": 3,
    "effort": 2,
    "regulations": [],
    "sector_boost": {},
    "international": false,
-   "risk_sensitive": true
+   "risk_sensitive": true,
+   "evidence": {
+    "fr": [
+     "Résultats d'évaluation RSE des fournisseurs stratégiques",
+     "Score minimum défini pour le référencement",
+     "Rapports d'audit sur site si disponibles"
+    ],
+    "en": [
+     "CSR assessment results of strategic suppliers",
+     "Minimum score defined for listing",
+     "On-site audit reports if available"
+    ],
+    "ja": [
+     "戦略的サプライヤーのCSR評価結果",
+     "取引登録に必要な最低スコアの基準",
+     "現地監査報告書（ある場合）"
+    ]
+   },
+   "kpi": {
+    "fr": "Part des fournisseurs stratégiques évalués",
+    "en": "Share of strategic suppliers assessed",
+    "ja": "評価を実施した戦略的サプライヤーの割合"
+   }
   },
   {
    "id": "ACH4",
    "pillar": "ACH",
    "text": {
     "fr": "Connaissez-vous vos fournisseurs de rang 2 et l'origine des matières ou services à risque ?",
-    "en": "Do you know your tier-2 suppliers and the origin of high-risk materials or services?"
+    "en": "Do you know your tier-2 suppliers and the origin of high-risk materials or services?",
+    "ja": "二次サプライヤーや、リスクの高い原材料・サービスの由来を把握していますか？"
    },
    "help": {
     "fr": "Minerais pour le matériel, sous-traitance en cascade pour les services, denrées pour l'hôtellerie.",
-    "en": "Minerals for hardware, cascading subcontracting for services, food supplies for hospitality."
+    "en": "Minerals for hardware, cascading subcontracting for services, food supplies for hospitality.",
+    "ja": "ハードウェアの鉱物、サービスの多重下請け、ホテルの食材など。"
    },
    "action": {
     "fr": "Lancer un projet de traçabilité sur une catégorie pilote à risque et demander la liste des sous-traitants aux fournisseurs clés.",
-    "en": "Launch a traceability project on one high-risk pilot category and ask key suppliers for their subcontractor list."
+    "en": "Launch a traceability project on one high-risk pilot category and ask key suppliers for their subcontractor list.",
+    "ja": "リスクの高いカテゴリーで試験的にトレーサビリティを確保し、主要サプライヤーに下請け先の一覧を求める。"
    },
    "impact": 2,
    "effort": 3,
@@ -722,22 +1258,47 @@
     "HOSP": 1.2
    },
    "international": false,
-   "risk_sensitive": true
+   "risk_sensitive": true,
+   "evidence": {
+    "fr": [
+     "Liste des sous-traitants déclarés par les fournisseurs clés",
+     "Données de traçabilité sur la catégorie pilote",
+     "Déclarations d'origine des matières (par exemple minerais)"
+    ],
+    "en": [
+     "Subcontractor list declared by key suppliers",
+     "Traceability data on the pilot category",
+     "Origin declarations for materials (for example minerals)"
+    ],
+    "ja": [
+     "主要サプライヤーが申告した下請け先一覧",
+     "試験カテゴリーのトレーサビリティデータ",
+     "原材料の原産地申告（鉱物など）"
+    ]
+   },
+   "kpi": {
+    "fr": "Part des achats à risque tracés jusqu'au rang 2",
+    "en": "Share of high-risk spend traced to tier 2",
+    "ja": "二次サプライヤーまで追跡できている高リスク調達額の割合"
+   }
   },
   {
    "id": "ACH5",
    "pillar": "ACH",
    "text": {
     "fr": "Accompagnez-vous vos fournisseurs avec des plans d'actions correctives et des objectifs climat ?",
-    "en": "Do you support your suppliers with corrective action plans and climate targets?"
+    "en": "Do you support your suppliers with corrective action plans and climate targets?",
+    "ja": "是正措置計画や気候目標を通じて、サプライヤーを支援していますか？"
    },
    "help": {
     "fr": "Indispensable pour réduire le scope 3, qui dépend largement des fournisseurs.",
-    "en": "Essential to reduce scope 3, which largely depends on suppliers."
+    "en": "Essential to reduce scope 3, which largely depends on suppliers.",
+    "ja": "スコープ3の削減はサプライヤーに大きく左右されるため、欠かせない取り組みです。"
    },
    "action": {
     "fr": "Mettre en place des plans d'actions correctives pour les fournisseurs à risque et un programme climat pour les plus gros émetteurs.",
-    "en": "Set up corrective action plans for risky suppliers and a climate programme for the largest emitters."
+    "en": "Set up corrective action plans for risky suppliers and a climate programme for the largest emitters.",
+    "ja": "リスクの高いサプライヤーには是正措置計画を、排出量の多いサプライヤーには気候プログラムを導入する。"
    },
    "impact": 2,
    "effort": 2,
@@ -746,7 +1307,29 @@
    ],
    "sector_boost": {},
    "international": false,
-   "risk_sensitive": false
+   "risk_sensitive": false,
+   "evidence": {
+    "fr": [
+     "Plans d'actions correctives signés et suivis",
+     "Programme climat fournisseurs et objectifs fixés",
+     "Comptes rendus des revues avec les fournisseurs"
+    ],
+    "en": [
+     "Signed and tracked corrective action plans",
+     "Supplier climate programme and agreed targets",
+     "Minutes of supplier review meetings"
+    ],
+    "ja": [
+     "署名・進捗管理されている是正措置計画",
+     "サプライヤー向け気候プログラムと合意した目標",
+     "サプライヤーとのレビュー会議の議事録"
+    ]
+   },
+   "kpi": {
+    "fr": "Part des actions correctives clôturées dans les délais",
+    "en": "Share of corrective actions closed on time",
+    "ja": "期限内に完了した是正措置の割合"
+   }
   }
  ]
 }

@@ -42,6 +42,8 @@ data = {
             "sector_boost": q.sector_boost,
             "international": q.international,
             "risk_sensitive": q.risk_sensitive,
+            "evidence": q.evidence,
+            "kpi": q.kpi,
         }
         for q in qn.QUESTIONS
     ],

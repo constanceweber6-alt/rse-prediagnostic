@@ -41,6 +41,9 @@ TEXTS = {
         "report_top_actions": "Les 10 actions prioritaires",
         "unnamed": "Entité sans nom",
         "methodology": "Méthode",
+        "help_sheets": "Fiches d'aide",
+        "evidence": "Preuves à rassembler",
+        "kpi": "Indicateur à suivre",
         "methodology_text": "Chaque réponse est notée de 0 à 3. Le score d'un thème correspond au pourcentage du maximum possible. Le score global pondère les thèmes selon le secteur. La priorité d'une action combine l'impact, la facilité de mise en œuvre et l'écart à combler, ajustés selon le secteur et les zones d'activité.",
     },
     "en": {
@@ -83,9 +86,17 @@ TEXTS = {
         "report_top_actions": "Top 10 priority actions",
         "unnamed": "Unnamed entity",
         "methodology": "Method",
+        "help_sheets": "Help sheets",
+        "evidence": "Evidence to gather",
+        "kpi": "KPI to track",
         "methodology_text": "Each answer is scored from 0 to 3. A theme score is the percentage of the maximum possible. The overall score weights themes by sector. The priority of an action combines impact, ease of implementation and the gap to close, adjusted for sector and regions of operation.",
     },
 }
+
+
+from translations_ja import TEXTS as _JA  # noqa: E402
+
+TEXTS["ja"] = _JA
 
 
 def t(lang: str, key: str) -> str:

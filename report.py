@@ -2,6 +2,7 @@
 
 from datetime import date
 from io import BytesIO
+from pathlib import Path
 from xml.sax.saxutils import escape
 
 from reportlab.graphics.shapes import Drawing, Rect, String
@@ -9,6 +10,9 @@ from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.cidfonts import UnicodeCIDFont
+from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import (
     Paragraph,
     SimpleDocTemplate,
@@ -24,15 +28,44 @@ GREEN = colors.HexColor("#1F6F50")
 LIGHT = colors.HexColor("#E8F1EC")
 GREY = colors.HexColor("#5F6B66")
 
+# Japanese font: IPA Gothic is embedded when installed (see packages.txt for
+# Streamlit Cloud). Otherwise fall back to a built-in CID font, which most PDF
+# readers display but which is not embedded in the file.
+IPA_PATHS = [
+    "/usr/share/fonts/opentype/ipafont-gothic/ipag.ttf",
+    "/usr/share/fonts/truetype/fonts-japanese-gothic.ttf",
+    "/Library/Fonts/ipag.ttf",
+]
 
-def _styles():
+
+def _register_japanese_font() -> str:
+    for path in IPA_PATHS:
+        if Path(path).exists():
+            pdfmetrics.registerFont(TTFont("IPAGothic", path))
+            return "IPAGothic"
+    pdfmetrics.registerFont(UnicodeCIDFont("HeiseiKakuGo-W5"))
+    return "HeiseiKakuGo-W5"
+
+
+JA_FONT = _register_japanese_font()
+
+
+def _font(lang: str, bold: bool = False) -> str:
+    if lang == "ja":
+        return JA_FONT
+    return "Helvetica-Bold" if bold else "Helvetica"
+
+
+def _styles(lang: str):
     base = getSampleStyleSheet()
+    extra = {"wordWrap": "CJK"} if lang == "ja" else {}
+    regular, bold = _font(lang), _font(lang, bold=True)
     return {
-        "title": ParagraphStyle("title", parent=base["Title"], textColor=GREEN, fontSize=20, spaceAfter=4),
-        "h2": ParagraphStyle("h2", parent=base["Heading2"], textColor=GREEN, fontSize=13, spaceBefore=10, spaceAfter=4),
-        "body": ParagraphStyle("body", parent=base["BodyText"], fontSize=9.5, leading=13),
-        "small": ParagraphStyle("small", parent=base["BodyText"], fontSize=8, leading=10, textColor=GREY),
-        "cell": ParagraphStyle("cell", parent=base["BodyText"], fontSize=8.5, leading=11),
+        "title": ParagraphStyle("title", parent=base["Title"], fontName=bold, textColor=GREEN, fontSize=20, spaceAfter=4, **extra),
+        "h2": ParagraphStyle("h2", parent=base["Heading2"], fontName=bold, textColor=GREEN, fontSize=13, spaceBefore=10, spaceAfter=4, **extra),
+        "body": ParagraphStyle("body", parent=base["BodyText"], fontName=regular, fontSize=9.5, leading=13, **extra),
+        "small": ParagraphStyle("small", parent=base["BodyText"], fontName=regular, fontSize=8, leading=11, textColor=GREY, **extra),
+        "cell": ParagraphStyle("cell", parent=base["BodyText"], fontName=regular, fontSize=8.5, leading=11, **extra),
     }
 
 
@@ -43,7 +76,7 @@ def _bars(scores: dict, lang: str) -> Drawing:
     d = Drawing(width, row * len(scores))
     for i, (pillar, score) in enumerate(scores.items()):
         y = row * (len(scores) - 1 - i) + 2 * mm
-        d.add(String(0, y + 1.5 * mm, PILLARS[pillar][lang], fontName="Helvetica", fontSize=9, fillColor=colors.black))
+        d.add(String(0, y + 1.5 * mm, PILLARS[pillar][lang], fontName=_font(lang), fontSize=9, fillColor=colors.black))
         d.add(Rect(label_w, y, bar_w, 5 * mm, fillColor=LIGHT, strokeColor=None))
         d.add(Rect(label_w, y, bar_w * score / 100, 5 * mm, fillColor=GREEN, strokeColor=None))
         d.add(String(label_w + bar_w + 3 * mm, y + 1.5 * mm, f"{score:.0f}/100", fontName="Helvetica", fontSize=9))
@@ -51,7 +84,7 @@ def _bars(scores: dict, lang: str) -> Drawing:
 
 
 def build_pdf(result, profile, entity_name: str, lang: str) -> bytes:
-    s = _styles()
+    s = _styles(lang)
     buf = BytesIO()
     doc = SimpleDocTemplate(
         buf, pagesize=A4,
@@ -59,8 +92,8 @@ def build_pdf(result, profile, entity_name: str, lang: str) -> bytes:
         title=t(lang, "report_title"),
     )
     name = entity_name.strip() or t(lang, "unnamed")
-    sep = " : " if lang == "fr" else ": "
-    regions = ", ".join(REGIONS[r][lang] for r in profile.regions) or "-"
+    sep = {"fr": " : ", "en": ": ", "ja": "："}[lang]
+    regions = ("、" if lang == "ja" else ", ").join(REGIONS[r][lang] for r in profile.regions) or "-"
 
     story = [
         Paragraph(t(lang, "report_title"), s["title"]),
@@ -69,7 +102,7 @@ def build_pdf(result, profile, entity_name: str, lang: str) -> bytes:
             f"<b>{t(lang, 'sector')}</b>{sep}{SECTORS[profile.sector][lang]}<br/>"
             f"<b>{t(lang, 'entity_type')}</b>{sep}{ENTITY_TYPES[profile.entity_type][lang]}<br/>"
             f"<b>{t(lang, 'regions')}</b>{sep}{regions}<br/>"
-            f"<b>{t(lang, 'report_date')}</b>{sep}{date.today().strftime('%d/%m/%Y')}",
+            f"<b>{t(lang, 'report_date')}</b>{sep}{date.today().strftime('%Y/%m/%d' if lang == 'ja' else '%d/%m/%Y')}",
             s["body"],
         ),
         Spacer(1, 6 * mm),
@@ -84,7 +117,8 @@ def build_pdf(result, profile, entity_name: str, lang: str) -> bytes:
 
     # Action plan
     story.append(Paragraph(t(lang, "report_top_actions"), s["h2"]))
-    rows = [["#", t(lang, "theme"), t(lang, "action"), t(lang, "quick_win")]]
+    head = ParagraphStyle("head", parent=s["cell"], textColor=colors.white)
+    rows = [["#"] + [Paragraph(t(lang, k), head) for k in ("theme", "action", "quick_win")]]
     for i, a in enumerate(result.actions[:10], start=1):
         rows.append([
             str(i),

@@ -19,10 +19,27 @@ def test_weights_sum_to_one():
         assert set(weights) == set(PILLARS)
 
 
-def test_every_question_has_both_languages():
+def test_every_question_has_all_languages():
     for q in QUESTIONS:
-        for field in (q.text, q.help, q.action):
-            assert field.get("fr") and field.get("en"), q.id
+        for field in (q.text, q.help, q.action, q.kpi):
+            for lang in ("fr", "en", "ja"):
+                assert field.get(lang), (q.id, lang)
+
+
+def test_every_question_has_a_help_sheet():
+    for q in QUESTIONS:
+        for lang in ("fr", "en", "ja"):
+            assert len(q.evidence.get(lang, [])) == 3, (q.id, lang)
+
+
+def test_labels_translated():
+    from questionnaire import ANSWER_SCALE, ENTITY_TYPES, REGIONS, REGULATIONS, SECTORS
+    from i18n import TEXTS
+    for table in (PILLARS, SECTORS, ENTITY_TYPES, REGIONS, REGULATIONS):
+        for key, labels in table.items():
+            assert set(labels) >= {"fr", "en", "ja"}, key
+    assert set(ANSWER_SCALE) == {"fr", "en", "ja"}
+    assert set(TEXTS["ja"]) == set(TEXTS["fr"]) == set(TEXTS["en"])
 
 
 def test_five_questions_per_pillar():
@@ -82,7 +99,17 @@ def test_weak_answers_list_regulations():
     assert "CSDDD" in result.regulations
 
 
+def test_checklist_fully_translated():
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
+    from checklist_data import as_json
+    items = [i for c in as_json() for i in c["items"]]
+    assert len(items) == len({i["id"] for i in items})
+    for i in items:
+        assert all(i["label"].get(l) for l in ("fr", "en", "ja")), i["id"]
+
+
 def test_levels():
+    assert level_for(10)["ja"] == "不十分"
     assert level_for(10)["en"] == "Insufficient"
     assert level_for(30)["en"] == "Partial"
     assert level_for(50)["en"] == "Good"

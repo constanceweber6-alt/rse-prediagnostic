@@ -155,12 +155,18 @@ CATEGORIES = [
 
 
 def as_json():
+    import sys
+    from pathlib import Path
+
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    import translations_ja as ja
+
     return [
         {
             "id": c["id"],
-            "name": c["name"],
+            "name": {**c["name"], "ja": ja.CHECKLIST_CATEGORIES[c["id"]]},
             "items": [
-                {"id": i, "label": {"fr": fr, "en": en}, "tags": tags}
+                {"id": i, "label": {"fr": fr, "en": en, "ja": ja.CHECKLIST_ITEMS[i]}, "tags": tags}
                 for i, fr, en, tags in c["items"]
             ],
         }

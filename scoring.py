@@ -16,10 +16,10 @@ from questionnaire import (
 MAX_ANSWER = 3
 
 LEVELS = [
-    (65, {"fr": "Avancé", "en": "Advanced"}),
-    (45, {"fr": "Solide", "en": "Good"}),
-    (25, {"fr": "Partiel", "en": "Partial"}),
-    (0, {"fr": "Insuffisant", "en": "Insufficient"}),
+    (65, {"fr": "Avancé", "en": "Advanced", "ja": "先進的"}),
+    (45, {"fr": "Solide", "en": "Good", "ja": "良好"}),
+    (25, {"fr": "Partiel", "en": "Partial", "ja": "部分的"}),
+    (0, {"fr": "Insuffisant", "en": "Insufficient", "ja": "不十分"}),
 ]
 
 # Multipliers used to rank actions
