@@ -136,7 +136,7 @@ QUESTIONS = [
             "en": "Do you measure your greenhouse gas emissions, including scope 3 (purchases, cloud, transport)?",
         },
         help={
-            "fr": "Le scope 3 représente souvent plus de 80 % des émissions d'une entreprise IT ou logistique.",
+            "fr": "Le scope 3 représente souvent la plus grande part des émissions d'une entreprise IT ou logistique.",
             "en": "Scope 3 often represents most of the emissions of an IT or logistics company.",
         },
         action={
